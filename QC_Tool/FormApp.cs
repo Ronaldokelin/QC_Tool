@@ -15,6 +15,9 @@ namespace QC_Tool
         public FormApp()
         {
             InitializeComponent();
+            ();
         }
+
+        
     }
 }
