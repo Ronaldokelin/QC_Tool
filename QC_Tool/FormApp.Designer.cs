@@ -45,6 +45,7 @@
             this.tabPageOperator = new System.Windows.Forms.TabPage();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
+            this.buttonTry = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -102,13 +103,14 @@
             // groupBoxSettings
             // 
             this.groupBoxSettings.AutoSize = true;
+            this.groupBoxSettings.Controls.Add(this.buttonTry);
             this.groupBoxSettings.Controls.Add(this.labelEstacao);
             this.groupBoxSettings.Controls.Add(this.labelProduto);
             this.groupBoxSettings.Controls.Add(this.comboBoxEstation);
             this.groupBoxSettings.Controls.Add(this.comboBoxProducts);
             this.groupBoxSettings.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSettings.Name = "groupBoxSettings";
-            this.groupBoxSettings.Size = new System.Drawing.Size(190, 195);
+            this.groupBoxSettings.Size = new System.Drawing.Size(190, 197);
             this.groupBoxSettings.TabIndex = 6;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings:";
@@ -250,6 +252,16 @@
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
             // 
+            // buttonTry
+            // 
+            this.buttonTry.Location = new System.Drawing.Point(64, 143);
+            this.buttonTry.Name = "buttonTry";
+            this.buttonTry.Size = new System.Drawing.Size(102, 35);
+            this.buttonTry.TabIndex = 6;
+            this.buttonTry.Text = "button1";
+            this.buttonTry.UseVisualStyleBackColor = true;
+            this.buttonTry.Click += new System.EventHandler(this.buttonTry_Click);
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +308,7 @@
         private System.Windows.Forms.TabPage tabPageOperator;
         private System.Windows.Forms.TabPage tabPageEngineer;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Button buttonTry;
     }
 }
 
