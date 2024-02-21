@@ -15,9 +15,21 @@ namespace QC_Tool
         public FormApp()
         {
             InitializeComponent();
-            ();
+            CkeckQPM3();
+
+
+        }
+        private void CkeckQPM3()
+        {
+            dataGridViewCheckTools.Rows.Add();
+            dataGridViewCheckTools.Rows[0].Cells[0].Value = "QDCM_motorola_a5269361-8345-11ee-8637-026b10d3716b";
+            dataGridViewCheckTools.Rows[0].Cells[1].Value = "NOk";
         }
 
-        
+        private void OnlyViewComboBoxs()
+        {
+
+        }
+
     }
 }

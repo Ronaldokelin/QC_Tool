@@ -28,58 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.labelQpm3 = new System.Windows.Forms.Label();
-            this.textBoxQpm3Check = new System.Windows.Forms.TextBox();
+            this.comboBoxProducts = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstation = new System.Windows.Forms.ComboBox();
             this.labelProduto = new System.Windows.Forms.Label();
-            this.labelEstaçao = new System.Windows.Forms.Label();
+            this.labelEstacao = new System.Windows.Forms.Label();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
             this.labelCheckTools = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBoxTools = new System.Windows.Forms.GroupBox();
+            this.labelDeveloper = new System.Windows.Forms.Label();
+            this.pictureBoxFlexLogo = new System.Windows.Forms.PictureBox();
+            this.textBoxDetails = new System.Windows.Forms.TextBox();
             this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
+            this.groupBoxTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlexLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxProducts
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(5, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxProducts.BackColor = System.Drawing.Color.White;
+            this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProducts.FormattingEnabled = true;
+            this.comboBoxProducts.Location = new System.Drawing.Point(5, 42);
+            this.comboBoxProducts.Name = "comboBoxProducts";
+            this.comboBoxProducts.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxProducts.TabIndex = 0;
             // 
-            // comboBox2
+            // comboBoxEstation
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(5, 96);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 21);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // labelQpm3
-            // 
-            this.labelQpm3.AutoSize = true;
-            this.labelQpm3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQpm3.Location = new System.Drawing.Point(53, 42);
-            this.labelQpm3.Name = "labelQpm3";
-            this.labelQpm3.Size = new System.Drawing.Size(106, 20);
-            this.labelQpm3.TabIndex = 2;
-            this.labelQpm3.Text = "QPM 3 Check";
-            // 
-            // textBoxQpm3Check
-            // 
-            this.textBoxQpm3Check.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBoxQpm3Check.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxQpm3Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQpm3Check.Location = new System.Drawing.Point(165, 44);
-            this.textBoxQpm3Check.Name = "textBoxQpm3Check";
-            this.textBoxQpm3Check.Size = new System.Drawing.Size(38, 19);
-            this.textBoxQpm3Check.TabIndex = 3;
-            this.textBoxQpm3Check.Text = "to do";
+            this.comboBoxEstation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEstation.BackColor = System.Drawing.Color.White;
+            this.comboBoxEstation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEstation.FormattingEnabled = true;
+            this.comboBoxEstation.Location = new System.Drawing.Point(5, 96);
+            this.comboBoxEstation.Name = "comboBoxEstation";
+            this.comboBoxEstation.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxEstation.TabIndex = 1;
             // 
             // labelProduto
             // 
@@ -91,65 +83,118 @@
             this.labelProduto.TabIndex = 4;
             this.labelProduto.Text = "Produto:";
             // 
-            // labelEstaçao
+            // labelEstacao
             // 
-            this.labelEstaçao.AutoSize = true;
-            this.labelEstaçao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstaçao.Location = new System.Drawing.Point(2, 76);
-            this.labelEstaçao.Name = "labelEstaçao";
-            this.labelEstaçao.Size = new System.Drawing.Size(72, 20);
-            this.labelEstaçao.TabIndex = 5;
-            this.labelEstaçao.Text = "Estação:";
+            this.labelEstacao.AutoSize = true;
+            this.labelEstacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstacao.Location = new System.Drawing.Point(2, 76);
+            this.labelEstacao.Name = "labelEstacao";
+            this.labelEstacao.Size = new System.Drawing.Size(72, 20);
+            this.labelEstacao.TabIndex = 5;
+            this.labelEstacao.Text = "Estação:";
             // 
             // groupBoxSettings
             // 
-            this.groupBoxSettings.Controls.Add(this.labelEstaçao);
+            this.groupBoxSettings.AutoSize = true;
+            this.groupBoxSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxSettings.Controls.Add(this.labelEstacao);
             this.groupBoxSettings.Controls.Add(this.labelProduto);
-            this.groupBoxSettings.Controls.Add(this.comboBox2);
-            this.groupBoxSettings.Controls.Add(this.comboBox1);
-            this.groupBoxSettings.Location = new System.Drawing.Point(33, 80);
+            this.groupBoxSettings.Controls.Add(this.comboBoxEstation);
+            this.groupBoxSettings.Controls.Add(this.comboBoxProducts);
+            this.groupBoxSettings.Location = new System.Drawing.Point(12, 9);
             this.groupBoxSettings.Name = "groupBoxSettings";
-            this.groupBoxSettings.Size = new System.Drawing.Size(182, 147);
+            this.groupBoxSettings.Size = new System.Drawing.Size(184, 195);
             this.groupBoxSettings.TabIndex = 6;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings:";
+            // 
+            // dataGridViewCheckTools
+            // 
+            this.dataGridViewCheckTools.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCheckTools.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewCheckTools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCheckTools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tool,
+            this.Status});
+            this.dataGridViewCheckTools.Location = new System.Drawing.Point(5, 39);
+            this.dataGridViewCheckTools.Name = "dataGridViewCheckTools";
+            this.dataGridViewCheckTools.ReadOnly = true;
+            this.dataGridViewCheckTools.Size = new System.Drawing.Size(568, 153);
+            this.dataGridViewCheckTools.TabIndex = 9;
             // 
             // labelCheckTools
             // 
             this.labelCheckTools.AutoSize = true;
             this.labelCheckTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCheckTools.Location = new System.Drawing.Point(38, 246);
+            this.labelCheckTools.Location = new System.Drawing.Point(1, 16);
             this.labelCheckTools.Name = "labelCheckTools";
             this.labelCheckTools.Size = new System.Drawing.Size(100, 20);
             this.labelCheckTools.TabIndex = 6;
             this.labelCheckTools.Text = "Check Tools:";
             // 
-            // richTextBox1
+            // groupBoxTools
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(500, 264);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.groupBoxTools.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxTools.AutoSize = true;
+            this.groupBoxTools.Controls.Add(this.dataGridViewCheckTools);
+            this.groupBoxTools.Controls.Add(this.labelCheckTools);
+            this.groupBoxTools.Location = new System.Drawing.Point(209, 9);
+            this.groupBoxTools.Name = "groupBoxTools";
+            this.groupBoxTools.Size = new System.Drawing.Size(579, 198);
+            this.groupBoxTools.TabIndex = 10;
+            this.groupBoxTools.TabStop = false;
+            this.groupBoxTools.Text = "Tools:";
             // 
-            // dataGridView1
+            // labelDeveloper
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tool,
-            this.Status});
-            this.dataGridView1.Location = new System.Drawing.Point(66, 302);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 9;
+            this.labelDeveloper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelDeveloper.AutoSize = true;
+            this.labelDeveloper.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeveloper.Location = new System.Drawing.Point(2, 621);
+            this.labelDeveloper.Name = "labelDeveloper";
+            this.labelDeveloper.Size = new System.Drawing.Size(139, 13);
+            this.labelDeveloper.TabIndex = 12;
+            this.labelDeveloper.Text = "Developed by Arquimedes T.";
+            // 
+            // pictureBoxFlexLogo
+            // 
+            this.pictureBoxFlexLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxFlexLogo.Image = global::QC_Tool.Properties.Resources.flex1;
+            this.pictureBoxFlexLogo.Location = new System.Drawing.Point(695, 600);
+            this.pictureBoxFlexLogo.Name = "pictureBoxFlexLogo";
+            this.pictureBoxFlexLogo.Size = new System.Drawing.Size(102, 34);
+            this.pictureBoxFlexLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlexLogo.TabIndex = 11;
+            this.pictureBoxFlexLogo.TabStop = false;
+            // 
+            // textBoxDetails
+            // 
+            this.textBoxDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDetails.BackColor = System.Drawing.Color.White;
+            this.textBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDetails.Location = new System.Drawing.Point(12, 218);
+            this.textBoxDetails.Multiline = true;
+            this.textBoxDetails.Name = "textBoxDetails";
+            this.textBoxDetails.ReadOnly = true;
+            this.textBoxDetails.Size = new System.Drawing.Size(776, 376);
+            this.textBoxDetails.TabIndex = 13;
             // 
             // Tool
             // 
+            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tool.FillWeight = 400F;
             this.Tool.HeaderText = "Tool";
             this.Tool.Name = "Tool";
             // 
             // Status
             // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.FillWeight = 50F;
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             // 
@@ -158,18 +203,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 559);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.labelCheckTools);
+            this.ClientSize = new System.Drawing.Size(800, 636);
+            this.Controls.Add(this.textBoxDetails);
+            this.Controls.Add(this.labelDeveloper);
+            this.Controls.Add(this.pictureBoxFlexLogo);
+            this.Controls.Add(this.groupBoxTools);
             this.Controls.Add(this.groupBoxSettings);
-            this.Controls.Add(this.textBoxQpm3Check);
-            this.Controls.Add(this.labelQpm3);
             this.Name = "FormApp";
             this.Text = "QC Tool";
             this.groupBoxSettings.ResumeLayout(false);
             this.groupBoxSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).EndInit();
+            this.groupBoxTools.ResumeLayout(false);
+            this.groupBoxTools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlexLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,16 +224,17 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label labelQpm3;
-        private System.Windows.Forms.TextBox textBoxQpm3Check;
+        private System.Windows.Forms.ComboBox comboBoxProducts;
+        private System.Windows.Forms.ComboBox comboBoxEstation;
         private System.Windows.Forms.Label labelProduto;
-        private System.Windows.Forms.Label labelEstaçao;
+        private System.Windows.Forms.Label labelEstacao;
         private System.Windows.Forms.GroupBox groupBoxSettings;
+        private System.Windows.Forms.DataGridView dataGridViewCheckTools;
         private System.Windows.Forms.Label labelCheckTools;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBoxTools;
+        private System.Windows.Forms.PictureBox pictureBoxFlexLogo;
+        private System.Windows.Forms.Label labelDeveloper;
+        private System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
