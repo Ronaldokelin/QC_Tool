@@ -41,10 +41,16 @@
             this.textBoxDetails = new System.Windows.Forms.TextBox();
             this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabPageOperator = new System.Windows.Forms.TabPage();
+            this.tabPageEngineer = new System.Windows.Forms.TabPage();
+            this.labelName = new System.Windows.Forms.Label();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlexLogo)).BeginInit();
+            this.tabControlMain.SuspendLayout();
+            this.tabPageOperator.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxProducts
@@ -57,7 +63,7 @@
             this.comboBoxProducts.FormattingEnabled = true;
             this.comboBoxProducts.Location = new System.Drawing.Point(5, 42);
             this.comboBoxProducts.Name = "comboBoxProducts";
-            this.comboBoxProducts.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxProducts.Size = new System.Drawing.Size(172, 21);
             this.comboBoxProducts.TabIndex = 0;
             // 
             // comboBoxEstation
@@ -70,7 +76,7 @@
             this.comboBoxEstation.FormattingEnabled = true;
             this.comboBoxEstation.Location = new System.Drawing.Point(5, 96);
             this.comboBoxEstation.Name = "comboBoxEstation";
-            this.comboBoxEstation.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxEstation.Size = new System.Drawing.Size(172, 21);
             this.comboBoxEstation.TabIndex = 1;
             // 
             // labelProduto
@@ -96,14 +102,13 @@
             // groupBoxSettings
             // 
             this.groupBoxSettings.AutoSize = true;
-            this.groupBoxSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSettings.Controls.Add(this.labelEstacao);
             this.groupBoxSettings.Controls.Add(this.labelProduto);
             this.groupBoxSettings.Controls.Add(this.comboBoxEstation);
             this.groupBoxSettings.Controls.Add(this.comboBoxProducts);
-            this.groupBoxSettings.Location = new System.Drawing.Point(12, 9);
+            this.groupBoxSettings.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSettings.Name = "groupBoxSettings";
-            this.groupBoxSettings.Size = new System.Drawing.Size(184, 195);
+            this.groupBoxSettings.Size = new System.Drawing.Size(190, 195);
             this.groupBoxSettings.TabIndex = 6;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings:";
@@ -121,7 +126,8 @@
             this.dataGridViewCheckTools.Location = new System.Drawing.Point(5, 39);
             this.dataGridViewCheckTools.Name = "dataGridViewCheckTools";
             this.dataGridViewCheckTools.ReadOnly = true;
-            this.dataGridViewCheckTools.Size = new System.Drawing.Size(568, 153);
+            this.dataGridViewCheckTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewCheckTools.Size = new System.Drawing.Size(562, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
             // 
             // labelCheckTools
@@ -141,9 +147,9 @@
             this.groupBoxTools.AutoSize = true;
             this.groupBoxTools.Controls.Add(this.dataGridViewCheckTools);
             this.groupBoxTools.Controls.Add(this.labelCheckTools);
-            this.groupBoxTools.Location = new System.Drawing.Point(209, 9);
+            this.groupBoxTools.Location = new System.Drawing.Point(199, 6);
             this.groupBoxTools.Name = "groupBoxTools";
-            this.groupBoxTools.Size = new System.Drawing.Size(579, 198);
+            this.groupBoxTools.Size = new System.Drawing.Size(573, 198);
             this.groupBoxTools.TabIndex = 10;
             this.groupBoxTools.TabStop = false;
             this.groupBoxTools.Text = "Tools:";
@@ -161,11 +167,11 @@
             // 
             // pictureBoxFlexLogo
             // 
-            this.pictureBoxFlexLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxFlexLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxFlexLogo.Image = global::QC_Tool.Properties.Resources.flex1;
-            this.pictureBoxFlexLogo.Location = new System.Drawing.Point(695, 600);
+            this.pictureBoxFlexLogo.Location = new System.Drawing.Point(678, 4);
             this.pictureBoxFlexLogo.Name = "pictureBoxFlexLogo";
-            this.pictureBoxFlexLogo.Size = new System.Drawing.Size(102, 34);
+            this.pictureBoxFlexLogo.Size = new System.Drawing.Size(119, 54);
             this.pictureBoxFlexLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFlexLogo.TabIndex = 11;
             this.pictureBoxFlexLogo.TabStop = false;
@@ -177,11 +183,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDetails.BackColor = System.Drawing.Color.White;
             this.textBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDetails.Location = new System.Drawing.Point(12, 218);
+            this.textBoxDetails.Location = new System.Drawing.Point(3, 204);
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
             this.textBoxDetails.ReadOnly = true;
-            this.textBoxDetails.Size = new System.Drawing.Size(776, 376);
+            this.textBoxDetails.Size = new System.Drawing.Size(766, 340);
             this.textBoxDetails.TabIndex = 13;
             // 
             // Tool
@@ -190,6 +196,7 @@
             this.Tool.FillWeight = 400F;
             this.Tool.HeaderText = "Tool";
             this.Tool.Name = "Tool";
+            this.Tool.ReadOnly = true;
             // 
             // Status
             // 
@@ -197,6 +204,51 @@
             this.Status.FillWeight = 50F;
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // tabControlMain
+            // 
+            this.tabControlMain.Controls.Add(this.tabPageOperator);
+            this.tabControlMain.Controls.Add(this.tabPageEngineer);
+            this.tabControlMain.Location = new System.Drawing.Point(5, 42);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(783, 576);
+            this.tabControlMain.TabIndex = 14;
+            // 
+            // tabPageOperator
+            // 
+            this.tabPageOperator.Controls.Add(this.groupBoxSettings);
+            this.tabPageOperator.Controls.Add(this.textBoxDetails);
+            this.tabPageOperator.Controls.Add(this.groupBoxTools);
+            this.tabPageOperator.Location = new System.Drawing.Point(4, 22);
+            this.tabPageOperator.Name = "tabPageOperator";
+            this.tabPageOperator.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageOperator.Size = new System.Drawing.Size(775, 550);
+            this.tabPageOperator.TabIndex = 0;
+            this.tabPageOperator.Text = "Operator";
+            this.tabPageOperator.UseVisualStyleBackColor = true;
+            // 
+            // tabPageEngineer
+            // 
+            this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEngineer.Name = "tabPageEngineer";
+            this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEngineer.Size = new System.Drawing.Size(784, 550);
+            this.tabPageEngineer.TabIndex = 1;
+            this.tabPageEngineer.Text = "Engineer";
+            this.tabPageEngineer.UseVisualStyleBackColor = true;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelName.Location = new System.Drawing.Point(5, 2);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(118, 37);
+            this.labelName.TabIndex = 15;
+            this.labelName.Text = "QC Tool";
             // 
             // FormApp
             // 
@@ -204,11 +256,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 636);
-            this.Controls.Add(this.textBoxDetails);
-            this.Controls.Add(this.labelDeveloper);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxFlexLogo);
-            this.Controls.Add(this.groupBoxTools);
-            this.Controls.Add(this.groupBoxSettings);
+            this.Controls.Add(this.tabControlMain);
+            this.Controls.Add(this.labelDeveloper);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormApp";
             this.Text = "QC Tool";
             this.groupBoxSettings.ResumeLayout(false);
@@ -217,6 +269,9 @@
             this.groupBoxTools.ResumeLayout(false);
             this.groupBoxTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlexLogo)).EndInit();
+            this.tabControlMain.ResumeLayout(false);
+            this.tabPageOperator.ResumeLayout(false);
+            this.tabPageOperator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,6 +292,10 @@
         private System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.TabControl tabControlMain;
+        private System.Windows.Forms.TabPage tabPageOperator;
+        private System.Windows.Forms.TabPage tabPageEngineer;
+        private System.Windows.Forms.Label labelName;
     }
 }
 

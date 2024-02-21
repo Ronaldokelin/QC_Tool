@@ -24,6 +24,10 @@ namespace QC_Tool
             dataGridViewCheckTools.Rows.Add();
             dataGridViewCheckTools.Rows[0].Cells[0].Value = "QDCM_motorola_a5269361-8345-11ee-8637-026b10d3716b";
             dataGridViewCheckTools.Rows[0].Cells[1].Value = "NOk";
+
+            if (dataGridViewCheckTools.Rows[0].Cells[1].Value == "NOk")
+                dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
+
         }
 
         private void OnlyViewComboBoxs()
