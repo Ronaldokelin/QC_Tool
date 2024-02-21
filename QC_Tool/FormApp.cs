@@ -16,16 +16,16 @@ namespace QC_Tool
         public FormApp()
         {
             InitializeComponent();
-            CkeckQPM3();
+            PopulateToolDGV();
         }
 
-        private void CkeckQPM3()
+        private void PopulateToolDGV()
         {
             dataGridViewCheckTools.Rows.Add();
             dataGridViewCheckTools.Rows[0].Cells[0].Value = "QualcommPackageManager33";
         }
 
-        private bool QPM3(string tool)
+        private bool CheckProcess(string tool)
         {
             try
             {
@@ -43,20 +43,19 @@ namespace QC_Tool
                 return false;
             }
             catch
-            {
-                return false;
-            }
+            { return false; }
         }
 
         private void buttonTry_Click(object sender, EventArgs e)
         {
-            PopulateDGV();
+            PopulateResultDGV();
         }
-        private void PopulateDGV()
+
+        private void PopulateResultDGV()
         {
             try
             {
-                if (QPM3(dataGridViewCheckTools.Rows[0].Cells[0].Value.ToString()))
+                if (CheckProcess(dataGridViewCheckTools.Rows[0].Cells[0].Value.ToString()))
                 {
                     dataGridViewCheckTools.Rows[0].Cells[1].Value = "PASS";
                     dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Green;
