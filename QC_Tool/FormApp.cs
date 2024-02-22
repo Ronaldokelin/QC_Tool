@@ -15,12 +15,17 @@ namespace QC_Tool
 {
     public partial class FormApp : Form
     {
+        ReadingXMLFile readXML;
         public FormApp()
         {
             InitializeComponent();
             PopulateToolDGV();
+            GetClasses();
         }
-
+        private void GetClasses()
+        {
+            readXML = new ReadingXMLFile();
+        }
         private void PopulateToolDGV()
         {
             dataGridViewCheckTools.Rows.Add();
@@ -51,6 +56,7 @@ namespace QC_Tool
          */
         private void buttonTry_Click(object sender, EventArgs e)
         {
+            readXML.FillingDGVProduct();
         }
 
         /* private void cmd()

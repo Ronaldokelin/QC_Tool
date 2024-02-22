@@ -291,9 +291,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxProducts;
-        private System.Windows.Forms.ComboBox comboBoxEstation;
         private System.Windows.Forms.Label labelProduto;
         private System.Windows.Forms.Label labelEstacao;
         private System.Windows.Forms.GroupBox groupBoxSettings;
@@ -310,6 +307,8 @@
         private System.Windows.Forms.TabPage tabPageEngineer;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Button buttonTry;
+        public System.Windows.Forms.ComboBox comboBoxProducts;
+        public System.Windows.Forms.ComboBox comboBoxEstation;
     }
 }
 
