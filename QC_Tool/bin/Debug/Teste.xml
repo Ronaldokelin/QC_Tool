@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <QC_Tool>
-	<Produto>
-		<Estação>
-			<Licenças>
-				<Tools>
-"to do"
-				</Tools>
-			</Licenças>
-		</Estação>
-	</Produto>
+	<Product>MACAN24
+	
+	<Station>BrdTest
+	
+		<Keys>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Keys>
+			<Keys>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Keys>
+			<Keys>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Keys>
+		</Station>
+		<Station>5GFR1BDTST
+		<Keys>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Keys>
+			<Keys>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Keys>
+			<Keys>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Keys>
+		</Station>
+	</Product>
 </QC_Tool>

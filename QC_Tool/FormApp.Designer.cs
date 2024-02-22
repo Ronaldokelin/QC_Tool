@@ -33,19 +33,19 @@
             this.labelProduto = new System.Windows.Forms.Label();
             this.labelEstacao = new System.Windows.Forms.Label();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.buttonTry = new System.Windows.Forms.Button();
             this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
+            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCheckTools = new System.Windows.Forms.Label();
             this.groupBoxTools = new System.Windows.Forms.GroupBox();
             this.labelDeveloper = new System.Windows.Forms.Label();
             this.pictureBoxFlexLogo = new System.Windows.Forms.PictureBox();
             this.textBoxDetails = new System.Windows.Forms.TextBox();
-            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageOperator = new System.Windows.Forms.TabPage();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
-            this.buttonTry = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -66,6 +66,7 @@
             this.comboBoxProducts.Name = "comboBoxProducts";
             this.comboBoxProducts.Size = new System.Drawing.Size(172, 21);
             this.comboBoxProducts.TabIndex = 0;
+            this.comboBoxProducts.SelectedIndexChanged += new System.EventHandler(this.comboBoxProducts_SelectedIndexChanged);
             // 
             // comboBoxEstation
             // 
@@ -74,6 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEstation.BackColor = System.Drawing.Color.White;
             this.comboBoxEstation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEstation.Enabled = false;
             this.comboBoxEstation.FormattingEnabled = true;
             this.comboBoxEstation.Location = new System.Drawing.Point(5, 96);
             this.comboBoxEstation.Name = "comboBoxEstation";
@@ -110,10 +112,20 @@
             this.groupBoxSettings.Controls.Add(this.comboBoxProducts);
             this.groupBoxSettings.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSettings.Name = "groupBoxSettings";
-            this.groupBoxSettings.Size = new System.Drawing.Size(190, 197);
+            this.groupBoxSettings.Size = new System.Drawing.Size(190, 194);
             this.groupBoxSettings.TabIndex = 6;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings:";
+            // 
+            // buttonTry
+            // 
+            this.buttonTry.Location = new System.Drawing.Point(5, 134);
+            this.buttonTry.Name = "buttonTry";
+            this.buttonTry.Size = new System.Drawing.Size(172, 35);
+            this.buttonTry.TabIndex = 6;
+            this.buttonTry.Text = "button1";
+            this.buttonTry.UseVisualStyleBackColor = true;
+            this.buttonTry.Click += new System.EventHandler(this.buttonTry_Click);
             // 
             // dataGridViewCheckTools
             // 
@@ -131,6 +143,22 @@
             this.dataGridViewCheckTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewCheckTools.Size = new System.Drawing.Size(562, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
+            // 
+            // Tool
+            // 
+            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tool.FillWeight = 400F;
+            this.Tool.HeaderText = "Tool";
+            this.Tool.Name = "Tool";
+            this.Tool.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.FillWeight = 50F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // labelCheckTools
             // 
@@ -154,7 +182,6 @@
             this.groupBoxTools.Size = new System.Drawing.Size(573, 198);
             this.groupBoxTools.TabIndex = 10;
             this.groupBoxTools.TabStop = false;
-            this.groupBoxTools.Text = "Tools:";
             // 
             // labelDeveloper
             // 
@@ -192,22 +219,6 @@
             this.textBoxDetails.Size = new System.Drawing.Size(766, 340);
             this.textBoxDetails.TabIndex = 13;
             // 
-            // Tool
-            // 
-            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tool.FillWeight = 400F;
-            this.Tool.HeaderText = "Tool";
-            this.Tool.Name = "Tool";
-            this.Tool.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.FillWeight = 50F;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabPageOperator);
@@ -236,7 +247,7 @@
             this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
             this.tabPageEngineer.Name = "tabPageEngineer";
             this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEngineer.Size = new System.Drawing.Size(784, 550);
+            this.tabPageEngineer.Size = new System.Drawing.Size(775, 550);
             this.tabPageEngineer.TabIndex = 1;
             this.tabPageEngineer.Text = "Engineer";
             this.tabPageEngineer.UseVisualStyleBackColor = true;
@@ -251,16 +262,6 @@
             this.labelName.Size = new System.Drawing.Size(118, 37);
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
-            // 
-            // buttonTry
-            // 
-            this.buttonTry.Location = new System.Drawing.Point(64, 143);
-            this.buttonTry.Name = "buttonTry";
-            this.buttonTry.Size = new System.Drawing.Size(102, 35);
-            this.buttonTry.TabIndex = 6;
-            this.buttonTry.Text = "button1";
-            this.buttonTry.UseVisualStyleBackColor = true;
-            this.buttonTry.Click += new System.EventHandler(this.buttonTry_Click);
             // 
             // FormApp
             // 
