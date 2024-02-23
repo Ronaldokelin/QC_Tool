@@ -16,12 +16,24 @@ namespace QC_Tool
     public partial class FormApp : Form
     {
         ReadingXMLFile readXML;
+        private static FormApp INSTANCE = null;
+
         public FormApp()
         {
             InitializeComponent();
             PopulateToolDGV();
             GetClasses();
+            INSTANCE = this;
         }
+
+        public static FormApp getInstance()
+        {
+            if (INSTANCE == null)
+                INSTANCE = new FormApp();
+
+            return INSTANCE;
+        }
+
         private void GetClasses()
         {
             readXML = new ReadingXMLFile();
