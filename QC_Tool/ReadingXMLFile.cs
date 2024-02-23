@@ -15,11 +15,9 @@ namespace QC_Tool
         public string[] allProducts;
         FormApp frmApp;
 
-
         public void FillingDGVProduct()
         {
             frmApp = FormApp.getInstance();
-
             doc.Load(@".\Teste.xml");
             frmApp.comboBoxProducts.Items.Clear();
 
@@ -69,9 +67,6 @@ namespace QC_Tool
                               break;                       
         }
     }*/
-
-
-
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
             allProducts = new string[countProductName];
 
@@ -85,25 +80,17 @@ namespace QC_Tool
 
         public void FillingDGVStations(string[] allProductsTemp)
         {
-
             doc.Load(@".\Teste.xml");
 
             int indexProduct = 999;
-
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
-            //allProducts = new string[countProductName];
-
-            /*  for (int i = 0; i < countProductName; i++)
-              {
-                  string productName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                  allProducts[i] = productName;
-              }*/
 
             for (int i = 0; i < allProductsTemp.Length; i++)
             {
                 if (allProductsTemp[i] == frmApp.comboBoxProducts.Text)
                     indexProduct = i;
             }
+
             int countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes.Count;
 
             for (int i = 0; i < countStationName; i++)
