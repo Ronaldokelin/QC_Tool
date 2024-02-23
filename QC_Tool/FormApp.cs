@@ -119,6 +119,8 @@ namespace QC_Tool
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxEstation.Enabled = true;
+            comboBoxEstation.Items.Clear();
+            readXML.FillingDGVStations(readXML.allProducts);
         }
     }
 }

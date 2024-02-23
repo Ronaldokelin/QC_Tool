@@ -11,11 +11,16 @@ namespace QC_Tool
 {
     class ReadingXMLFile
     {
+        XmlDocument doc = new XmlDocument();
+        public string[] allProducts;
+        FormApp frmApp;
+
 
         public void FillingDGVProduct()
         {
-            FormApp frmApp = FormApp.getInstance();
+            frmApp = FormApp.getInstance();
 
+            doc.Load(@".\Teste.xml");
             frmApp.comboBoxProducts.Items.Clear();
 
             /* XmlDocument doc = new XmlDocument();
@@ -49,7 +54,6 @@ namespace QC_Tool
                                 }
                                 //   XmlNodeType.EndElement
                                 //   frmApp.comboBoxProducts.Items.Add(xmlReader.Name);
-
                             }
                         }
                         break;
@@ -62,36 +66,51 @@ namespace QC_Tool
                           case XmlNodeType.EndElement:
                               frmApp.comboBoxProducts.Items.Add("<" + xmlReader.Name + ">");
                               //txtDados.Text += "<" + xmlReader.Name + ">" + Environment.NewLine;
-                              break;
-                              
-
-
+                              break;                       
         }
     }*/
-            XmlDocument doc = new XmlDocument();
 
-            string file = @".\Teste.xml";
 
-            doc.Load(file);
 
-            //Lê o filho de um Nó Pai específico 
-            for (int i = 0; i < 2; i++)
+            int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
+            allProducts = new string[countProductName];
+
+            for (int i = 0; i < countProductName; i++)
             {
                 string productName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
                 frmApp.comboBoxProducts.Items.Add(productName);
-
+                allProducts[i] = productName;
             }
+        }
 
+        public void FillingDGVStations(string[] allProductsTemp)
+        {
 
-            
-            //endereco do aluno
-         /*   for (int i = 0; i <= 4; i++)
+            doc.Load(@".\Teste.xml");
+
+            int indexProduct = 999;
+
+            int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
+            //allProducts = new string[countProductName];
+
+            /*  for (int i = 0; i < countProductName; i++)
+              {
+                  string productName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
+                  allProducts[i] = productName;
+              }*/
+
+            for (int i = 0; i < allProductsTemp.Length; i++)
             {
-                frmApp.comboBoxProducts.Items.Add(doc.SelectSingleNode("Alunos").ChildNodes[3].ChildNodes[i].InnerText);
+                if (allProductsTemp[i] == frmApp.comboBoxProducts.Text)
+                    indexProduct = i;
             }
-            */
+            int countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes.Count;
 
-
+            for (int i = 0; i < countStationName; i++)
+            {
+                string BenchName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
+                frmApp.comboBoxEstation.Items.Add(BenchName);
+            }
         }
     }
 }

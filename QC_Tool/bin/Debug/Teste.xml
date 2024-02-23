@@ -5,13 +5,13 @@
 			<ProductName>MACAN24</ProductName>
 			<Stations>
 				<Bench>
-					<BenchName>BrdTest</BenchName>
+					<BenchName>5GFR1BDTST</BenchName>
 					<Keys>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Keys>
 					<Keys>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Keys>
 					<Keys>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Keys>
 				</Bench>
 				<Bench>
-					<BenchName>5GFR1BDTST</BenchName>
+					<BenchName>BrdTest</BenchName>
 					<Keys>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Keys>
 					<Keys>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Keys>
 					<Keys>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Keys>
@@ -23,7 +23,16 @@
 			</Stations>
 		</Product>
 		<Product>
-			<ProductName>MACAN224</ProductName>
+			<ProductName>CUSCO24</ProductName>
+			<Stations>
+				<Bench>
+					<BenchName>LCDCAL</BenchName>
+					<Keys>QDCM_motorola_a5269361-8345-11ee-8637-026b10d3716b</Keys>
+				</Bench>
+			</Stations>
+		</Product>
+		<Product>
+			<ProductName>VELAR</ProductName>
 			<Stations>
 				<Bench>
 					<BenchName>BrdTest3</BenchName>
