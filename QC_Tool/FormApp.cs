@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace QC_Tool
 {
@@ -74,14 +76,39 @@ namespace QC_Tool
             {
                 string directory = @"C:\Program Files (x86)\Qualcomm\QPM-CLI";
 
-                if (Directory.Exists(directory))
+                if (Directory.EnumerateFileSystemEntries(directory).Any())
+                {
+                    CmdCommands("qpm-cli --license-list", @".\License_List.txt");
+
+
+
                     return "PASS";
+                }
 
                 else
                     return "FAIL";
             }
             catch
             { return "FAIL"; }
+        }
+
+        public void CmdCommands(string command, string path)
+        {
+            try
+            {
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "CMD.exe";
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.Start();
+                cmd.StandardInput.WriteLine(command + " > " + path);
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.Close();
+                cmd.WaitForExit();
+            }
+            catch { }
         }
 
         private void PopulateResultDGV()
@@ -99,17 +126,6 @@ namespace QC_Tool
                     MessageBox.Show("QPM-CLI not found, please install the QPM3");
                     comboBoxProducts.Enabled = false;
                 }
-
-                this.dataGridViewCheckTools.ClearSelection();
-                dataGridViewCheckTools.CurrentCell = null;
-                //dataGridViewCheckTools.ClearSelection();
-                //if (dataGridViewCheckTools.Focused)
-                //    dataGridViewCheckTools.DataBindingComplete -= DataGridView_DataBindingComplete;
-
-                //dataGridViewCheckTools.ClearSelection();
-
-                // dataGridViewCheckTools.SelectedCells[1];
-
             }
 
             catch
