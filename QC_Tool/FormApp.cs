@@ -14,8 +14,8 @@ namespace QC_Tool
         {
             InitializeComponent();
             PopulateToolDGV();
-            GetClasses();
             INSTANCE = this;
+            GetClasses();
             readXML.FillingComboBoxProducts();
         }
 
@@ -94,19 +94,36 @@ namespace QC_Tool
                     dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.White;
 
                 else
+                {
                     dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
+                    MessageBox.Show("QPM-CLI not found, please install the QPM3");
+                    comboBoxProducts.Enabled = false;
+                }
+
+                this.dataGridViewCheckTools.ClearSelection();
+                dataGridViewCheckTools.CurrentCell = null;
+                //dataGridViewCheckTools.ClearSelection();
+                //if (dataGridViewCheckTools.Focused)
+                //    dataGridViewCheckTools.DataBindingComplete -= DataGridView_DataBindingComplete;
+
+                //dataGridViewCheckTools.ClearSelection();
+
+                // dataGridViewCheckTools.SelectedCells[1];
+
             }
 
             catch
             {
                 dataGridViewCheckTools.Rows[0].Cells[1].Value = "FAIL";
                 dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
+                MessageBox.Show("QPM-CLI not found, please install the QPM3");
             }
         }
 
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxEstation.Enabled = true;
+            buttonActions.Enabled = false;
             comboBoxEstation.Items.Clear();
             readXML.FillingComboBoxStations(readXML.allProducts);
         }
@@ -114,6 +131,11 @@ namespace QC_Tool
         private void buttonActions_Click(object sender, EventArgs e)
         {
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+        }
+
+        private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonActions.Enabled = true;
         }
     }
 }

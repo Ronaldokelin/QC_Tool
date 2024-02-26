@@ -99,34 +99,28 @@ namespace QC_Tool
         {
             try
             {
-                if (frmApp.comboBoxEstation.Text != "")
+                doc.Load(@".\Teste.xml");
+                int countTools = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[1].ChildNodes.Count;
+                string[] tools = new string[countTools];
+                int selectedStation = 999;
+                frmApp.dataGridViewCheckTools.Rows.Clear();
+                frmApp.PopulateToolDGV();
+
+                for (int i = 0; i < countStationNameOk; i++)
                 {
-                    doc.Load(@".\Teste.xml");
-                    int countTools = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[1].ChildNodes.Count;
-                    string[] tools = new string[countTools];
-                    int selectedStation=999;
-                    frmApp.dataGridViewCheckTools.Rows.Clear();
-                    frmApp.PopulateToolDGV();
-
-                    for (int i = 0; i < countStationNameOk; i++)
-                    {                        
-                        string BenchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
-                        if (BenchNameSelected == frmApp.comboBoxEstation.Text)
-                            selectedStation = i;
-                    }
-
-                    for (int i = 1; i < countTools; i++) //Filling DGV colummn tools
-                    {
-                        tools[i] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerText;
-                        frmApp.dataGridViewCheckTools.Rows.Add();
-                        frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i];
-
-                    }
+                    string BenchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
+                    if (BenchNameSelected == frmApp.comboBoxEstation.Text)
+                        selectedStation = i;
                 }
-                else
+
+                for (int i = 1; i < countTools; i++) //Filling DGV colummn tools
                 {
-                    MessageBox.Show("Preencha os campos necessários!!!");
+                    tools[i] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerText;
+                    frmApp.dataGridViewCheckTools.Rows.Add();
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i];
+
                 }
+
             }
             catch { }
         }

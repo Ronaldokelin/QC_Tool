@@ -1,7 +1,6 @@
 C:\Projetos\QC_Tool\QC_Tool\bin\Release\QC_Tool.exe.config
 C:\Projetos\QC_Tool\QC_Tool\bin\Release\QC_Tool.exe
 C:\Projetos\QC_Tool\QC_Tool\bin\Release\QC_Tool.pdb
-C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.csprojAssemblyReference.cache
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.FormApp.resources
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.Properties.Resources.resources
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.csproj.GenerateResource.cache
