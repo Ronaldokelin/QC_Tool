@@ -75,19 +75,36 @@ namespace QC_Tool
             try
             {
                 string directory = @"C:\Program Files (x86)\Qualcomm\QPM-CLI";
-
+                string pathSave = @".\License_List.txt";
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdCommands("qpm-cli --license-list", @".\License_List.txt");
+                    CmdCommands("qpm-cli --license-list", pathSave);
 
+                    if (File.Exists(pathSave))
+                    {
+                        using (StreamReader reader = new StreamReader(pathSave))
+                        {
+                            string line = string.Empty;
 
+                            if ((line = reader.ReadLine()) == null)
+                                return "FAIL";
 
-                    return "PASS";
+                            while ((line = reader.ReadLine()) != null)
+                            {
+                                if (line.Contains("is not recognized as an internal or external command"))
+                                    return "FAIL";
+                            }
+                        }
+                    }
+                    else
+                        return "FAIL";
                 }
-
                 else
                     return "FAIL";
+
+                return "PASS";
             }
+
             catch
             { return "FAIL"; }
         }
