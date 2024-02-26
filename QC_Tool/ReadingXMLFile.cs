@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Linq;
-using System.IO;
-
 
 namespace QC_Tool
 {
@@ -13,9 +7,11 @@ namespace QC_Tool
     {
         XmlDocument doc = new XmlDocument();
         public string[] allProducts;
+        public int indexProduct = 999;
+        public int countStationName = 999;
         FormApp frmApp;
 
-        public void FillingDGVProduct()
+        public void FillingComboBoxProducts()
         {
             frmApp = FormApp.getInstance();
             doc.Load(@".\Teste.xml");
@@ -78,26 +74,61 @@ namespace QC_Tool
             }
         }
 
-        public void FillingDGVStations(string[] allProductsTemp)
+        public void FillingComboBoxStations(string[] allProductsTemp)
         {
             doc.Load(@".\Teste.xml");
 
-            int indexProduct = 999;
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
 
-            for (int i = 0; i < allProductsTemp.Length; i++)
+            for (int i = 0; i < allProductsTemp.Length; i++) //Searching the index of the selected product
             {
                 if (allProductsTemp[i] == frmApp.comboBoxProducts.Text)
                     indexProduct = i;
             }
 
-            int countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes.Count;
+            countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes.Count;
 
-            for (int i = 0; i < countStationName; i++)
+            for (int i = 0; i < countStationName; i++) //Filling Combo Box Stations Name
             {
                 string BenchName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
                 frmApp.comboBoxEstation.Items.Add(BenchName);
             }
+        }
+
+        public void FillingDGVTools(int indexProductOk, int countStationNameOk)
+        {
+            try
+            {
+                if (frmApp.comboBoxEstation.Text != "")
+                {
+                    doc.Load(@".\Teste.xml");
+                    int countTools = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[1].ChildNodes.Count;
+                    string[] tools = new string[countTools];
+                    int selectedStation=999;
+                    frmApp.dataGridViewCheckTools.Rows.Clear();
+                    frmApp.PopulateToolDGV();
+
+                    for (int i = 0; i < countStationNameOk; i++)
+                    {                        
+                        string BenchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
+                        if (BenchNameSelected == frmApp.comboBoxEstation.Text)
+                            selectedStation = i;
+                    }
+
+                    for (int i = 1; i < countTools; i++) //Filling DGV colummn tools
+                    {
+                        tools[i] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerText;
+                        frmApp.dataGridViewCheckTools.Rows.Add();
+                        frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i];
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Preencha os campos necessários!!!");
+                }
+            }
+            catch { }
         }
     }
 }

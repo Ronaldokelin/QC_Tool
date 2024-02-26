@@ -1,14 +1,6 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
+﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QC_Tool
@@ -24,6 +16,7 @@ namespace QC_Tool
             PopulateToolDGV();
             GetClasses();
             INSTANCE = this;
+            readXML.FillingComboBoxProducts();
         }
 
         public static FormApp getInstance()
@@ -38,7 +31,7 @@ namespace QC_Tool
         {
             readXML = new ReadingXMLFile();
         }
-        private void PopulateToolDGV()
+        public void PopulateToolDGV()
         {
             dataGridViewCheckTools.Rows.Add();
             dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
@@ -66,10 +59,6 @@ namespace QC_Tool
              { return false; }
          }
          */
-        private void buttonTry_Click(object sender, EventArgs e)
-        {
-            readXML.FillingDGVProduct();
-        }
 
         /* private void cmd()
          {
@@ -106,7 +95,6 @@ namespace QC_Tool
 
                 else
                     dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-
             }
 
             catch
@@ -120,7 +108,12 @@ namespace QC_Tool
         {
             comboBoxEstation.Enabled = true;
             comboBoxEstation.Items.Clear();
-            readXML.FillingDGVStations(readXML.allProducts);
+            readXML.FillingComboBoxStations(readXML.allProducts);
+        }
+
+        private void buttonActions_Click(object sender, EventArgs e)
+        {
+            readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
     }
 }

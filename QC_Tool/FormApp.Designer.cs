@@ -33,7 +33,6 @@
             this.labelProduto = new System.Windows.Forms.Label();
             this.labelEstacao = new System.Windows.Forms.Label();
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
-            this.buttonTry = new System.Windows.Forms.Button();
             this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
             this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.tabPageOperator = new System.Windows.Forms.TabPage();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
+            this.buttonActions = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -105,7 +105,7 @@
             // groupBoxSettings
             // 
             this.groupBoxSettings.AutoSize = true;
-            this.groupBoxSettings.Controls.Add(this.buttonTry);
+            this.groupBoxSettings.Controls.Add(this.buttonActions);
             this.groupBoxSettings.Controls.Add(this.labelEstacao);
             this.groupBoxSettings.Controls.Add(this.labelProduto);
             this.groupBoxSettings.Controls.Add(this.comboBoxEstation);
@@ -116,16 +116,6 @@
             this.groupBoxSettings.TabIndex = 6;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings:";
-            // 
-            // buttonTry
-            // 
-            this.buttonTry.Location = new System.Drawing.Point(5, 134);
-            this.buttonTry.Name = "buttonTry";
-            this.buttonTry.Size = new System.Drawing.Size(172, 35);
-            this.buttonTry.TabIndex = 6;
-            this.buttonTry.Text = "button1";
-            this.buttonTry.UseVisualStyleBackColor = true;
-            this.buttonTry.Click += new System.EventHandler(this.buttonTry_Click);
             // 
             // dataGridViewCheckTools
             // 
@@ -263,6 +253,16 @@
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
             // 
+            // buttonActions
+            // 
+            this.buttonActions.Location = new System.Drawing.Point(5, 145);
+            this.buttonActions.Name = "buttonActions";
+            this.buttonActions.Size = new System.Drawing.Size(171, 30);
+            this.buttonActions.TabIndex = 6;
+            this.buttonActions.Text = "OK";
+            this.buttonActions.UseVisualStyleBackColor = true;
+            this.buttonActions.Click += new System.EventHandler(this.buttonActions_Click);
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,7 +294,6 @@
         private System.Windows.Forms.Label labelProduto;
         private System.Windows.Forms.Label labelEstacao;
         private System.Windows.Forms.GroupBox groupBoxSettings;
-        private System.Windows.Forms.DataGridView dataGridViewCheckTools;
         private System.Windows.Forms.Label labelCheckTools;
         private System.Windows.Forms.GroupBox groupBoxTools;
         private System.Windows.Forms.PictureBox pictureBoxFlexLogo;
@@ -306,9 +305,10 @@
         private System.Windows.Forms.TabPage tabPageOperator;
         private System.Windows.Forms.TabPage tabPageEngineer;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Button buttonTry;
         public System.Windows.Forms.ComboBox comboBoxProducts;
         public System.Windows.Forms.ComboBox comboBoxEstation;
+        private System.Windows.Forms.Button buttonActions;
+        public System.Windows.Forms.DataGridView dataGridViewCheckTools;
     }
 }
 
