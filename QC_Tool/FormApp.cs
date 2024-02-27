@@ -10,14 +10,16 @@ namespace QC_Tool
     public partial class FormApp : Form
     {
         ReadingXMLFile readXML;
+        Cmd CmdC;
+        DataGridView Dgv;
         private static FormApp INSTANCE = null;
 
         public FormApp()
         {
             InitializeComponent();
-            PopulateToolDGV();
-            INSTANCE = this;
             GetClasses();
+            INSTANCE = this;
+            PopulateToolDGV();
             readXML.FillingComboBoxProducts();
         }
 
@@ -32,12 +34,14 @@ namespace QC_Tool
         private void GetClasses()
         {
             readXML = new ReadingXMLFile();
+            CmdC = new Cmd();
+            Dgv = new DataGridView();
         }
         public void PopulateToolDGV()
         {
             dataGridViewCheckTools.Rows.Add();
             dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
-            PopulateResultDGV();
+            Dgv.PopulateResultDGV();
         }
 
         /* private bool CheckProcess(string tool)
@@ -70,7 +74,7 @@ namespace QC_Tool
              Process.Start("CMD.exe", strCmdText);
          }*/
 
-        private string CheckDirectoryQpmCli()
+        public string CheckDirectoryQpmCli()
         {
             try
             {
@@ -78,7 +82,7 @@ namespace QC_Tool
                 string pathSave = @".\License_List.txt";
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdCommands("qpm-cli --license-list", pathSave);
+                    CmdC.Commands("qpm-cli --license-list", pathSave);
 
                     if (File.Exists(pathSave))
                     {
@@ -104,31 +108,11 @@ namespace QC_Tool
 
                 return "PASS";
             }
-
             catch
             { return "FAIL"; }
         }
 
-        public void CmdCommands(string command, string path)
-        {
-            try
-            {
-                Process cmd = new Process();
-                cmd.StartInfo.FileName = "CMD.exe";
-                cmd.StartInfo.CreateNoWindow = true;
-                cmd.StartInfo.RedirectStandardInput = true;
-                cmd.StartInfo.RedirectStandardOutput = true;
-                cmd.StartInfo.UseShellExecute = false;
-                cmd.Start();
-                cmd.StandardInput.WriteLine(command + " > " + path);
-                cmd.StandardInput.Flush();
-                cmd.StandardInput.Close();
-                cmd.WaitForExit();
-            }
-            catch { }
-        }
-
-        private void labelError(string error)
+        public void labelError(string error)
         {
             labelErrorQPM3.Text = error;
             labelErrorQPM3.Visible = true;
@@ -138,33 +122,6 @@ namespace QC_Tool
         }
 
 
-        private void PopulateResultDGV()
-        {
-            try
-            {
-                dataGridViewCheckTools.Rows[0].Cells[1].Value = CheckDirectoryQpmCli();
-
-                if (dataGridViewCheckTools.Rows[0].Cells[1].Value.ToString() == "PASS")
-                    dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.White;
-
-                else
-                {
-                    dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-                   
-                    comboBoxProducts.Enabled = false;
-                    labelError("QPM-CLI not found, please install the QPM3!");
-                }
-            }
-
-            catch
-            {
-                dataGridViewCheckTools.Rows[0].Cells[1].Value = "FAIL";
-                dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-                labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3");
-                labelErrorQPM3.Visible = true;
-
-            }
-        }
 
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {

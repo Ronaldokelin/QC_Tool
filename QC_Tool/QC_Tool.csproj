@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cmd.cs" />
+    <Compile Include="DataGridView.cs" />
     <Compile Include="FormApp.cs">
       <SubType>Form</SubType>
     </Compile>
