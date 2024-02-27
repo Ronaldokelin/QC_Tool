@@ -15,8 +15,8 @@ namespace QC_Tool
         public FormApp()
         {
             InitializeComponent();
-            GetClasses();
             INSTANCE = this;
+            GetClasses();
             Dgv.PopulateToolDGV();
             readXML.FillingComboBoxProducts();
         }

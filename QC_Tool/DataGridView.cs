@@ -36,6 +36,8 @@ namespace QC_Tool
 
         public void PopulateToolDGV()
         {
+            frmApp = FormApp.getInstance();
+
             frmApp.dataGridViewCheckTools.Rows.Add();
             frmApp.dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
             PopulateResultDGV();
