@@ -15,8 +15,8 @@ namespace QC_Tool
             frmApp.labelErrorQPM3.Visible = true;
             frmApp.labelErrorQPM3.ForeColor = Color.Red;
             frmApp.labelErrorQPM3.Enabled = true;
+            frmApp.tabControlMain.TabIndex = 1;
             Application.DoEvents();
         }
-
     }
 }

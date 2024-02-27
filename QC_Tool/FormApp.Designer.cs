@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
             this.comboBoxEstation = new System.Windows.Forms.ComboBox();
             this.labelProduto = new System.Windows.Forms.Label();
@@ -128,7 +128,7 @@
             this.buttonActions.Name = "buttonActions";
             this.buttonActions.Size = new System.Drawing.Size(171, 30);
             this.buttonActions.TabIndex = 6;
-            this.buttonActions.Text = "OK";
+            this.buttonActions.Text = "GET LICENSE ID";
             this.buttonActions.UseVisualStyleBackColor = true;
             this.buttonActions.Click += new System.EventHandler(this.buttonActions_Click);
             // 
@@ -142,14 +142,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCheckTools.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckTools.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckTools.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewCheckTools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCheckTools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tool,
@@ -157,14 +157,14 @@
             this.dataGridViewCheckTools.Location = new System.Drawing.Point(5, 39);
             this.dataGridViewCheckTools.Name = "dataGridViewCheckTools";
             this.dataGridViewCheckTools.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckTools.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckTools.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewCheckTools.RowTemplate.ReadOnly = true;
             this.dataGridViewCheckTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewCheckTools.ShowEditingIcon = false;
@@ -277,9 +277,9 @@
             this.labelErrorQPM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorQPM3.Location = new System.Drawing.Point(6, 263);
             this.labelErrorQPM3.Name = "labelErrorQPM3";
-            this.labelErrorQPM3.Size = new System.Drawing.Size(81, 42);
+            this.labelErrorQPM3.Size = new System.Drawing.Size(280, 42);
             this.labelErrorQPM3.TabIndex = 14;
-            this.labelErrorQPM3.Text = "123";
+            this.labelErrorQPM3.Text = "LABEL ERROR";
             this.labelErrorQPM3.Visible = false;
             // 
             // tabPageEngineer
@@ -340,7 +340,6 @@
         private System.Windows.Forms.PictureBox pictureBoxFlexLogo;
         private System.Windows.Forms.Label labelDeveloper;
         private System.Windows.Forms.TextBox textBoxDetails;
-        private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageOperator;
         private System.Windows.Forms.TabPage tabPageEngineer;
         private System.Windows.Forms.Label labelName;
@@ -351,6 +350,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         public System.Windows.Forms.Label labelErrorQPM3;
+        public System.Windows.Forms.TabControl tabControlMain;
     }
 }
 

@@ -84,12 +84,14 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
-            readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonActions.Enabled = true;
+            readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+
         }
     }
 }
