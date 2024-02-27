@@ -128,6 +128,16 @@ namespace QC_Tool
             catch { }
         }
 
+        private void labelError(string error)
+        {
+            labelErrorQPM3.Text = error;
+            labelErrorQPM3.Visible = true;
+            labelErrorQPM3.ForeColor = Color.Red;
+            labelErrorQPM3.Enabled = true;
+            Application.DoEvents();
+        }
+
+
         private void PopulateResultDGV()
         {
             try
@@ -140,8 +150,9 @@ namespace QC_Tool
                 else
                 {
                     dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-                    MessageBox.Show("QPM-CLI not found, please install the QPM3");
+                   
                     comboBoxProducts.Enabled = false;
+                    labelError("QPM-CLI not found, please install the QPM3!");
                 }
             }
 
@@ -149,7 +160,9 @@ namespace QC_Tool
             {
                 dataGridViewCheckTools.Rows[0].Cells[1].Value = "FAIL";
                 dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-                MessageBox.Show("QPM-CLI not found, please install the QPM3");
+                labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3");
+                labelErrorQPM3.Visible = true;
+
             }
         }
 
