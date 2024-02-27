@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace QC_Tool
 {
@@ -19,7 +17,7 @@ namespace QC_Tool
             InitializeComponent();
             GetClasses();
             INSTANCE = this;
-            PopulateToolDGV();
+            Dgv.PopulateToolDGV();
             readXML.FillingComboBoxProducts();
         }
 
@@ -37,42 +35,6 @@ namespace QC_Tool
             CmdC = new Cmd();
             Dgv = new DataGridView();
         }
-        public void PopulateToolDGV()
-        {
-            dataGridViewCheckTools.Rows.Add();
-            dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
-            Dgv.PopulateResultDGV();
-        }
-
-        /* private bool CheckProcess(string tool)
-         {
-             try
-             {
-                 Process[] processList = Process.GetProcesses();
-                 int i = 0;
-                 string[] list = new string[2000000];
-                 foreach (Process process in processList)
-                 {
-                     string processName = process.ToString();
-                     processName = processName.Replace("System.Diagnostics.Process ", "");
-
-                     if (processName == "(" + tool + ")")
-                         return true;
-                 }
-                 return false;
-             }
-             catch
-             { return false; }
-         }
-         */
-
-        /* private void cmd()
-         {
-             string strCmdText;
-             strCmdText = @"/C qpm-cli --license-list > C:\prod\License_List.txt";
-
-             Process.Start("CMD.exe", strCmdText);
-         }*/
 
         public string CheckDirectoryQpmCli()
         {
@@ -111,17 +73,6 @@ namespace QC_Tool
             catch
             { return "FAIL"; }
         }
-
-        public void labelError(string error)
-        {
-            labelErrorQPM3.Text = error;
-            labelErrorQPM3.Visible = true;
-            labelErrorQPM3.ForeColor = Color.Red;
-            labelErrorQPM3.Enabled = true;
-            Application.DoEvents();
-        }
-
-
 
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {

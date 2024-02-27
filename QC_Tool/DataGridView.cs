@@ -5,6 +5,7 @@ namespace QC_Tool
     class DataGridView
     {
         FormApp frmApp;
+        Utils uts = new Utils();
 
         public void PopulateResultDGV()
         {
@@ -21,7 +22,7 @@ namespace QC_Tool
                 {
                     frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
                     frmApp.comboBoxProducts.Enabled = false;
-                    frmApp.labelError("QPM-CLI not found, please install the QPM3!");
+                    uts.labelError("QPM-CLI not found, please install the QPM3!");
                 }
             }
             catch
@@ -31,6 +32,13 @@ namespace QC_Tool
                 frmApp.labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3");
                 frmApp.labelErrorQPM3.Visible = true;
             }
+        }
+
+        public void PopulateToolDGV()
+        {
+            frmApp.dataGridViewCheckTools.Rows.Add();
+            frmApp.dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
+            PopulateResultDGV();
         }
     }
 }
