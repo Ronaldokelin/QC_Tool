@@ -27,6 +27,26 @@ namespace QC_Tool
             catch { }
         }
 
+        public void Commands(string command)
+        {
+            try
+            {
+                frmApp = FormApp.getInstance();
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "CMD.exe";
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.Start();
+                cmd.StandardInput.WriteLine(command);
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.Close();
+                cmd.WaitForExit();
+            }
+            catch { }
+        }
+
         public bool licenseGroupID(string groupID)
         {
             try
@@ -46,6 +66,16 @@ namespace QC_Tool
                     }
                     return false;
                 }
+            }
+            catch { return false; }
+        }
+
+        public bool GetHostID()
+        {
+            try
+            {
+                Commands(@"qpm-cli --generate-host-id c:\");
+                return true;
             }
             catch { return false; }
         }

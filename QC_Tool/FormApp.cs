@@ -47,7 +47,7 @@ namespace QC_Tool
 
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdC.Commands("qpm-cli --license-list", pathSave + "1");
+                    CmdC.Commands("qpm-cli --license-list", pathSave + "1");//tirar 1
 
                     if (File.Exists(pathSave))
                     {
@@ -87,7 +87,7 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
-
+            CmdC.GetHostID();
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)

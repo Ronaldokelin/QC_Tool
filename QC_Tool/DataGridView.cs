@@ -16,23 +16,20 @@ namespace QC_Tool
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = frmApp.CheckDirectoryQpmCli();
 
                 if (frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value.ToString() == "OK")
-                {
-                    frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.White;
-                    frmApp.buttonActions.Enabled = true;
                     uts.cleanLabel();
-                }
+
 
                 else
                 {
-                    frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
                     frmApp.comboBoxProducts.Enabled = false;
                     uts.labelError("QPM-CLI not found, please install the QPM3!");
                 }
+                formattingDGV();
             }
             catch
             {
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = "NOK";
-                frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
+                formattingDGV();
                 uts.labelError("QPM-CLI not found, please install the QPM3!");
             }
         }
@@ -44,6 +41,20 @@ namespace QC_Tool
             frmApp.dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
             frmApp.dataGridViewCheckTools.Rows[0].Cells[1].Value = "Software";
             PopulateResultDGV();
+        }
+
+        public void formattingDGV()
+        {
+            int rowsDGV = frmApp.dataGridViewCheckTools.Rows.Count;
+
+            for (int i = 0; i < rowsDGV; i++)
+            {
+                if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
+                    frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+
+                else
+                    frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.BackColor = Color.White;
+            }
         }
     }
 }

@@ -66,25 +66,23 @@ namespace QC_Tool
                 }
 
                 int countTools = (doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes.Count) - 1;
-                string[] tools = new string[countTools];
-                string[] type = new string[countTools];
-                string[] path = new string[countTools];
+                string[,] xmlAtributes = new string[3,countTools];
 
                 for (int i = 1; i <= countTools; i++)
                 {
                     int k = i - 1;
 
-                    tools[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
-                    type[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
-                    path[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
+                    xmlAtributes[0,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
+                    xmlAtributes[1,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
+                    xmlAtributes[2,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
 
                     frmApp.dataGridViewCheckTools.Rows.Add();
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[k];
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = type[k];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0,k];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = xmlAtributes[1,k];
 
-                    if (type[k] == "Tool")
+                    if (xmlAtributes[1,k] == "Tool")
                     {
-                        if (verifyFileTool(path[k]))
+                        if (verifyFileTool(xmlAtributes[2,k]))
                         {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
                             uts.cleanLabel();
@@ -98,9 +96,9 @@ namespace QC_Tool
                         }
                     }
 
-                    if (type[k] == "License")
+                    if (xmlAtributes[1,k] == "License")
                     {
-                        if (command.licenseGroupID(path[k]))
+                        if (command.licenseGroupID(xmlAtributes[2,k]))
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
 
                         else
@@ -110,6 +108,7 @@ namespace QC_Tool
                         }
                     }
                 }
+                Dgv.formattingDGV();
             }
             catch { uts.labelError("TO TISTI!!!"); }
         }
