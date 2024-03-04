@@ -78,7 +78,6 @@ namespace QC_Tool
                     frmApp.dataGridViewCheckTools.Rows.Add();
                     frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i - 1];
                     frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = type[i - 1];
-
                 }
 
 

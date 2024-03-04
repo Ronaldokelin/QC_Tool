@@ -15,7 +15,7 @@ namespace QC_Tool
             {
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = frmApp.CheckDirectoryQpmCli();
 
-                if (frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value.ToString() == "PASS")
+                if (frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value.ToString() == "OK")
                     frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.White;
 
                 else
@@ -27,7 +27,7 @@ namespace QC_Tool
             }
             catch
             {
-                frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = "FAIL";
+                frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = "NOK";
                 frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
                 frmApp.labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3");
                 frmApp.labelErrorQPM3.Visible = true;

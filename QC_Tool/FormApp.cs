@@ -53,25 +53,25 @@ namespace QC_Tool
                             string line = string.Empty;
 
                             if ((line = reader.ReadLine()) == null)
-                                return "FAIL";
+                                return "NOK";
 
                             while ((line = reader.ReadLine()) != null)
                             {
                                 if (line.Contains("is not recognized as an internal or external command"))
-                                    return "FAIL";
+                                    return "NOK";
                             }
                         }
                     }
                     else
-                        return "FAIL";
+                        return "NOK";
                 }
                 else
-                    return "FAIL";
+                    return "NOK";
 
-                return "PASS";
+                return "OK";
             }
             catch
-            { return "FAIL"; }
+            { return "NOK"; }
         }
 
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
