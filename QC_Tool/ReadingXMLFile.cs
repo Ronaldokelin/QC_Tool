@@ -15,7 +15,7 @@ namespace QC_Tool
             frmApp = FormApp.getInstance();
             doc.Load(@".\Teste.xml");
             frmApp.comboBoxProducts.Items.Clear();
-         
+
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
             allProducts = new string[countProductName];
 
@@ -53,29 +53,30 @@ namespace QC_Tool
             try
             {
                 doc.Load(@".\Teste.xml");
-                int countTools = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[1].ChildNodes.Count;
-                string[] tools = new string[countTools];
+
+
                 int selectedStation = 999;
                 frmApp.dataGridViewCheckTools.Rows.Clear();
                 Dgv.PopulateToolDGV();
 
-                for (int i = 0; i < countStationNameOk; i++)
+                for (int i = 0; i < countStationNameOk; i++)//Searching the station choosed on comboBox
                 {
                     string BenchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
                     if (BenchNameSelected == frmApp.comboBoxEstation.Text)
                         selectedStation = i;
                 }
 
-                for (int i = 1; i < countTools; i++) //Filling DGV colummn tools
+                int countTools = (doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes.Count) - 1;
+                string[] tools = new string[countTools];
+
+                for (int i = 1; i <= countTools; i++)
                 {
-                    tools[i] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProductOk].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerText;
+                    tools[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerXml;
                     frmApp.dataGridViewCheckTools.Rows.Add();
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i];
-
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i - 1];
                 }
-
             }
-            catch { }
+            catch { frmApp.labelErrorQPM3.Text = "TO TISTI!!!"; }
         }
     }
 }

@@ -37,6 +37,9 @@
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
             this.buttonActions = new System.Windows.Forms.Button();
             this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
+            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCheckTools = new System.Windows.Forms.Label();
             this.groupBoxTools = new System.Windows.Forms.GroupBox();
             this.labelDeveloper = new System.Windows.Forms.Label();
@@ -47,9 +50,7 @@
             this.labelErrorQPM3 = new System.Windows.Forms.Label();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
-            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -173,6 +174,28 @@
             this.dataGridViewCheckTools.Size = new System.Drawing.Size(562, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
             // 
+            // Tool
+            // 
+            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tool.FillWeight = 380F;
+            this.Tool.HeaderText = "Required Tool / Software";
+            this.Tool.Name = "Tool";
+            this.Tool.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.FillWeight = 80F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
             // labelCheckTools
             // 
             this.labelCheckTools.AutoSize = true;
@@ -289,27 +312,15 @@
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
             // 
-            // Tool
+            // buttonHelp
             // 
-            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tool.FillWeight = 380F;
-            this.Tool.HeaderText = "Required Tool / Software";
-            this.Tool.Name = "Tool";
-            this.Tool.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.FillWeight = 80F;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.buttonHelp.Location = new System.Drawing.Point(199, 33);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(84, 24);
+            this.buttonHelp.TabIndex = 16;
+            this.buttonHelp.Text = "button1";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // FormApp
             // 
@@ -317,6 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 636);
+            this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxFlexLogo);
             this.Controls.Add(this.tabControlMain);
@@ -360,6 +372,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }
 

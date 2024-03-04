@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <QC_Tool>
 	<Products>
 		<Product>
@@ -6,38 +6,41 @@
 			<Stations>
 				<Bench>
 					<BenchName>5GFR1BDTST</BenchName>
-					<Tools>
-						<Description>QUTS</Description>
-					</Tools>
-					<Licenses>
-						<Description>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Description>
-						<Description>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Description>
-						<Description>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Description>
-					</Licenses>
+					<Item Name="QUTS-TOOL" Type="TOOL" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
+					<Item Name="QUTS-License" Type="License" Path="9dce5865-178e-11ee-a260-063166a9270b"/>
+					<Item Name="QUTS-License" Type="License" Path="6a5de147-0a30-11ee-a260-063166a9270b"/>
+					<Item Name="QSEQ-License" Type="License" Path="dfb63b47-a827-11ed-9a47-063166a9270b"/>
 				</Bench>
 				<Bench>
 					<BenchName>BrdTest</BenchName>
-					<Tools>
-						<Description>QUTS</Description>
-					</Tools>
-					<Licenses>
-						<Description>QUTS_lenovo_9dce5865-178e-11ee-a260-063166a9270b</Description>
-						<Description>QUTS_lenovo_6a5de147-0a30-11ee-a260-063166a9270b</Description>
-						<Description>QSEQ_lenovo_dfb63b47-a827-11ed-9a47-063166a9270b</Description>
-					</Licenses>
+					<Item Name="QUTS-TOOL" Type="TOOL" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
+					<Item Name="QUTS-License" Type="License" Path="9dce5865-178e-11ee-a260-063166a9270b"/>
+					<Item Name="QUTS-License" Type="License" Path="6a5de147-0a30-11ee-a260-063166a9270b"/>
+					<Item Name="QSEQ-License" Type="License" Path="dfb63b47-a827-11ed-9a47-063166a9270b"/>
 				</Bench>
 				<Bench>
 					<BenchName>LCDCAL</BenchName>
-					<Tools>
-						<Description>QUTS</Description>
-					</Tools>
-					<Licenses>
-						<Description>QDCM_motorola_a5269361-8345-11ee-8637-026b10d3716b</Description>
-					</Licenses>
+					<Item Name="QDCM-License" Type="License" Path="a5269361-8345-11ee-8637-026b10d3716b"/>
+				</Bench>
+			</Stations>
+		</Product>
+		<Product>
+			<ProductName>JUNO</ProductName>
+			<Stations>
+				<Bench>
+					<BenchName>LCDCAL</BenchName>
+					<Item Name="QDCM-License" Type="License" Path="5ce5a859-3ebc-11ed-83ab-063166a9270b"/>
+				</Bench>
+			</Stations>
+		</Product>
+		<Product>
+			<ProductName>VENUS</ProductName>
+			<Stations>
+				<Bench>
+					<BenchName>LCDCAL</BenchName>
+					<Item Name="QDCM-License" Type="License" Path="5525af6a-fb14-11ed-a260-063166a9270b"/>
 				</Bench>
 			</Stations>
 		</Product>
 	</Products>
 </QC_Tool>
-
-	
