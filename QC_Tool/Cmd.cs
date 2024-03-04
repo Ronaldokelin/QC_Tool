@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 
 namespace QC_Tool
 {
@@ -8,10 +9,9 @@ namespace QC_Tool
 
         public void Commands(string command, string path)
         {
-            frmApp = FormApp.getInstance();
-
             try
             {
+                frmApp = FormApp.getInstance();
                 Process cmd = new Process();
                 cmd.StartInfo.FileName = "CMD.exe";
                 cmd.StartInfo.CreateNoWindow = true;
@@ -25,6 +25,29 @@ namespace QC_Tool
                 cmd.WaitForExit();
             }
             catch { }
+        }
+
+        public bool licenseGroupID(string groupID)
+        {
+            try
+            {
+                frmApp = FormApp.getInstance();
+
+                using (var reader = new StreamReader(frmApp.pathFileLicensesList))
+                {
+                    string line = string.Empty;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.Contains("License group ID"))
+                        {
+                            if (line.Contains(groupID))
+                                return true;
+                        }
+                    }
+                    return false;
+                }
+            }
+            catch { return false; }
         }
     }
 }

@@ -365,7 +365,6 @@
         private System.Windows.Forms.Label labelName;
         public System.Windows.Forms.ComboBox comboBoxProducts;
         public System.Windows.Forms.ComboBox comboBoxEstation;
-        private System.Windows.Forms.Button buttonActions;
         public System.Windows.Forms.DataGridView dataGridViewCheckTools;
         public System.Windows.Forms.Label labelErrorQPM3;
         public System.Windows.Forms.TabControl tabControlMain;
@@ -373,6 +372,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.Button buttonHelp;
+        public System.Windows.Forms.Button buttonActions;
     }
 }
 

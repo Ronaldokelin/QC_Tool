@@ -29,7 +29,7 @@ namespace QC_Tool
             {
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = "NOK";
                 frmApp.dataGridViewCheckTools.Rows[0].DefaultCellStyle.BackColor = Color.Red;
-                frmApp.labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3");
+                frmApp.labelErrorQPM3.Text = ("QPM-CLI not found, please install the QPM3!");
                 frmApp.labelErrorQPM3.Visible = true;
             }
         }

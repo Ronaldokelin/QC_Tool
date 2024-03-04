@@ -1,4 +1,7 @@
 ﻿using System.Xml;
+using System.IO;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace QC_Tool
 {
@@ -10,6 +13,9 @@ namespace QC_Tool
         public int countStationName = 999;
         FormApp frmApp;
         DataGridView Dgv = new DataGridView();
+        Utils uts = new Utils();
+        Cmd command = new Cmd();
+
         public void FillingComboBoxProducts()
         {
             frmApp = FormApp.getInstance();
@@ -54,7 +60,6 @@ namespace QC_Tool
             {
                 doc.Load(@".\Teste.xml");
 
-
                 int selectedStation = 999;
                 frmApp.dataGridViewCheckTools.Rows.Clear();
                 Dgv.PopulateToolDGV();
@@ -69,22 +74,61 @@ namespace QC_Tool
                 int countTools = (doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes.Count) - 1;
                 string[] tools = new string[countTools];
                 string[] type = new string[countTools];
+                string[] path = new string[countTools];
+
 
                 for (int i = 1; i <= countTools; i++)
                 {
-                    tools[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
-                    type[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
+                    int k = i - 1;
+
+                    tools[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
+                    type[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
+                    path[k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
 
                     frmApp.dataGridViewCheckTools.Rows.Add();
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i - 1];
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = type[i - 1];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[k];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = type[k];
+
+                    if (type[k] == "Tool")
+                    {
+                        if (verifyFileTool(path[k]))
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
+
+                        else
+                        {
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";
+                            i = countTools;
+                            uts.labelError("  QUTS not found, please install the QUTS!");
+                        }
+                    }
+
+                    if (type[k] == "License")
+                    {
+                        if (command.licenseGroupID(path[k]))
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
+
+                        else
+                        {
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";
+                            frmApp.buttonActions.Enabled = true;
+
+                        }
+                    }
                 }
-
-
-
             }
+            catch { uts.labelError("TO TISTI!!!"); }
+        }
+        private bool verifyFileTool(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                    return true;
 
-            catch { frmApp.labelErrorQPM3.Text = "TO TISTI!!!"; }
+                return false;
+            }
+            catch { return false; }
         }
     }
 }
+

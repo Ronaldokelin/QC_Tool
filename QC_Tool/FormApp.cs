@@ -11,6 +11,7 @@ namespace QC_Tool
         Cmd CmdC;
         DataGridView Dgv;
         private static FormApp INSTANCE = null;
+        public string pathFileLicensesList = string.Empty;
 
         public FormApp()
         {
@@ -42,9 +43,11 @@ namespace QC_Tool
             {
                 string directory = @"C:\Program Files (x86)\Qualcomm\QPM-CLI";
                 string pathSave = @".\License_List.txt";
+                pathFileLicensesList = pathSave;
+
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdC.Commands("qpm-cli --license-list", pathSave);
+                    CmdC.Commands("qpm-cli --license-list", pathSave + "1");
 
                     if (File.Exists(pathSave))
                     {
@@ -89,7 +92,6 @@ namespace QC_Tool
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            buttonActions.Enabled = true;
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
 
         }
