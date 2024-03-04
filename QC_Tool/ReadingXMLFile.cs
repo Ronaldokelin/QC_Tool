@@ -1,7 +1,5 @@
 ﻿using System.Xml;
 using System.IO;
-using System.Windows.Forms;
-using System.Drawing;
 
 namespace QC_Tool
 {
@@ -21,7 +19,6 @@ namespace QC_Tool
             frmApp = FormApp.getInstance();
             doc.Load(@".\Teste.xml");
             frmApp.comboBoxProducts.Items.Clear();
-
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
             allProducts = new string[countProductName];
 
@@ -36,7 +33,6 @@ namespace QC_Tool
         public void FillingComboBoxStations(string[] allProductsTemp)
         {
             doc.Load(@".\Teste.xml");
-
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
 
             for (int i = 0; i < allProductsTemp.Length; i++) //Searching the index of the selected product
@@ -44,7 +40,6 @@ namespace QC_Tool
                 if (allProductsTemp[i] == frmApp.comboBoxProducts.Text)
                     indexProduct = i;
             }
-
             countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes.Count;
 
             for (int i = 0; i < countStationName; i++) //Filling Combo Box Stations Name
@@ -59,7 +54,6 @@ namespace QC_Tool
             try
             {
                 doc.Load(@".\Teste.xml");
-
                 int selectedStation = 999;
                 frmApp.dataGridViewCheckTools.Rows.Clear();
                 Dgv.PopulateToolDGV();
@@ -76,7 +70,6 @@ namespace QC_Tool
                 string[] type = new string[countTools];
                 string[] path = new string[countTools];
 
-
                 for (int i = 1; i <= countTools; i++)
                 {
                     int k = i - 1;
@@ -92,7 +85,10 @@ namespace QC_Tool
                     if (type[k] == "Tool")
                     {
                         if (verifyFileTool(path[k]))
+                        {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
+                            uts.cleanLabel();
+                        }
 
                         else
                         {
@@ -111,7 +107,6 @@ namespace QC_Tool
                         {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";
                             frmApp.buttonActions.Enabled = true;
-
                         }
                     }
                 }

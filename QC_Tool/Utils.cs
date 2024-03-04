@@ -10,13 +10,20 @@ namespace QC_Tool
         public void labelError(string error)
         {
             frmApp = FormApp.getInstance();
-
             frmApp.labelErrorQPM3.Text = error;
             frmApp.labelErrorQPM3.Visible = true;
             frmApp.labelErrorQPM3.ForeColor = Color.Red;
             frmApp.labelErrorQPM3.Enabled = true;
             frmApp.tabControlMain.TabIndex = 1;
             Application.DoEvents();
+        }
+
+        public void cleanLabel()
+        {
+            frmApp = FormApp.getInstance();
+            frmApp.labelErrorQPM3.Text = "";
+            frmApp.labelErrorQPM3.Visible = false;
+            frmApp.labelErrorQPM3.Enabled = false;
         }
     }
 }

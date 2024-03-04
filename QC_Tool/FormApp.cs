@@ -93,15 +93,12 @@ namespace QC_Tool
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
-
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             comboBoxProducts.Text = "MACAN24";
-
             comboBoxEstation.Text = "5GFR1BDTST";
-
         }
     }
 }
