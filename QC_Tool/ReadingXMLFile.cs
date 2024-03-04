@@ -68,14 +68,23 @@ namespace QC_Tool
 
                 int countTools = (doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes.Count) - 1;
                 string[] tools = new string[countTools];
+                string[] type = new string[countTools];
 
                 for (int i = 1; i <= countTools; i++)
                 {
-                    tools[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].InnerXml;
+                    tools[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
+                    type[i - 1] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
+
                     frmApp.dataGridViewCheckTools.Rows.Add();
                     frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = tools[i - 1];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = type[i - 1];
+
                 }
+
+
+
             }
+
             catch { frmApp.labelErrorQPM3.Text = "TO TISTI!!!"; }
         }
     }

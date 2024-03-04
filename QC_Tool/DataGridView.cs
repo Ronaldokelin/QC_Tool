@@ -40,7 +40,7 @@ namespace QC_Tool
 
             frmApp.dataGridViewCheckTools.Rows.Add();
             frmApp.dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
-            frmApp.dataGridViewCheckTools.Rows[0].Cells[1].Value = "SOFTWARE";
+            frmApp.dataGridViewCheckTools.Rows[0].Cells[1].Value = "Software";
             PopulateResultDGV();
         }
     }

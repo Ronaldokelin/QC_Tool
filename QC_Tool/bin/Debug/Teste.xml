@@ -6,14 +6,14 @@
 			<Stations>
 				<Bench>
 					<BenchName>5GFR1BDTST</BenchName>
-					<Item Name="QUTS-TOOL" Type="TOOL" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
+					<Item Name="QUTS-TOOL" Type="Tool" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
 					<Item Name="QUTS-License" Type="License" Path="9dce5865-178e-11ee-a260-063166a9270b"/>
 					<Item Name="QUTS-License" Type="License" Path="6a5de147-0a30-11ee-a260-063166a9270b"/>
 					<Item Name="QSEQ-License" Type="License" Path="dfb63b47-a827-11ed-9a47-063166a9270b"/>
 				</Bench>
 				<Bench>
 					<BenchName>BrdTest</BenchName>
-					<Item Name="QUTS-TOOL" Type="TOOL" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
+					<Item Name="QUTS-TOOL" Type="Tool" Path="C:\Program Files (x86)\Qualcomm\QUTS\bin\QUTS.exe"/>
 					<Item Name="QUTS-License" Type="License" Path="9dce5865-178e-11ee-a260-063166a9270b"/>
 					<Item Name="QUTS-License" Type="License" Path="6a5de147-0a30-11ee-a260-063166a9270b"/>
 					<Item Name="QSEQ-License" Type="License" Path="dfb63b47-a827-11ed-9a47-063166a9270b"/>
