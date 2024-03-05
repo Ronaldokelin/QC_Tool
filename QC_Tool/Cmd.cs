@@ -7,6 +7,7 @@ namespace QC_Tool
     class Cmd
     {
         FormApp frmApp;
+        Logger log = new Logger();
 
         public void Commands(string command, string path)
         {
@@ -76,6 +77,7 @@ namespace QC_Tool
             try
             {
                 Commands(@"qpm-cli --generate-host-id c:\");
+                log.textBoxLog(@"Created folder license ID C:\" + getHostName());
                 return true;
             }
             catch { return false; }

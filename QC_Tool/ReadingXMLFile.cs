@@ -13,6 +13,7 @@ namespace QC_Tool
         DataGridView Dgv = new DataGridView();
         Utils uts = new Utils();
         Cmd command = new Cmd();
+        Logger log = new Logger();
 
 
         public void FillingComboBoxProducts()
@@ -141,7 +142,10 @@ namespace QC_Tool
                     if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
                         errorsLic++;
                 }
-               frmApp.lic = new string[errorsLic];
+
+                frmApp.lic = new string[errorsLic];
+                log.textBoxLog("LICENSES NOK = " + errorsLic);
+
                 int count = 0;
                 for (int i = 0; i < frmApp.dataGridViewCheckTools.RowCount; i++)
                 {

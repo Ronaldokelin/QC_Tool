@@ -212,6 +212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDetails.BackColor = System.Drawing.Color.White;
             this.textBoxDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDetails.Location = new System.Drawing.Point(3, 204);
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
@@ -348,7 +349,6 @@
         private System.Windows.Forms.GroupBox groupBoxTools;
         private System.Windows.Forms.PictureBox pictureBoxFlexLogo;
         private System.Windows.Forms.Label labelDeveloper;
-        private System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.TabPage tabPageOperator;
         private System.Windows.Forms.TabPage tabPageEngineer;
         private System.Windows.Forms.Label labelName;
@@ -362,6 +362,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        public System.Windows.Forms.TextBox textBoxDetails;
     }
 }
 

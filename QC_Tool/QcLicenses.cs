@@ -11,8 +11,9 @@ namespace QC_Tool
     {
         FormApp frmApp;
         ReadingXMLFile rxf = new ReadingXMLFile();
+        Logger log = new Logger();
 
-        public void copyDirectory(string path)
+        public bool copyDirectory(string path)
         {
             frmApp = FormApp.getInstance();
             string sourceFileName = string.Empty;
@@ -25,16 +26,23 @@ namespace QC_Tool
                     {
                         destFileName = (@"Q:\QualcommLicenseRequests\" + frmApp.lic[i] + @"\" + path);
                         if (!Directory.Exists(destFileName))
+                        {
                             Directory.CreateDirectory(destFileName);
+                            log.textBoxLog("Created folder at: " + destFileName);
+                        }
 
                         sourceFileName = (@"C:\" + path + @"\" + path + ".id");
 
                         if (File.Exists(sourceFileName))
-                            File.Copy(sourceFileName, (destFileName + @"\" + path + ".id"));
+                        {
+                            File.Copy(sourceFileName, (destFileName + @"\" + path + ".id"), true);
+                            log.textBoxLog("Copy file at: " + destFileName + @"\" + path + ".id");
+                        }
                     }
                 }
+                return true;
             }
-            catch { }
+            catch { return false; }
         }
     }
 }

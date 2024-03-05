@@ -91,9 +91,12 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
-            CmdC.GetHostID();
-            readXML.countNokLicenses();
-            QcL.copyDirectory(CmdC.getHostName());
+            if (CmdC.GetHostID())
+            {
+                readXML.countNokLicenses();
+                if (QcL.copyDirectory(CmdC.getHostName()))
+                    MessageBox.Show("Send License ID Successfully!!!", "ID License", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
