@@ -10,8 +10,11 @@ namespace QC_Tool
         ReadingXMLFile readXML;
         Cmd CmdC;
         DataGridView Dgv;
+        QcLicenses QcL;
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
+        public string[] lic;
+
 
         public FormApp()
         {
@@ -35,6 +38,7 @@ namespace QC_Tool
             readXML = new ReadingXMLFile();
             CmdC = new Cmd();
             Dgv = new DataGridView();
+            QcL = new QcLicenses();
         }
 
         public string CheckDirectoryQpmCli()
@@ -89,6 +93,7 @@ namespace QC_Tool
         {
             CmdC.GetHostID();
             readXML.countNokLicenses();
+            QcL.copyDirectory(CmdC.getHostName());
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace QC_Tool
         Utils uts = new Utils();
         Cmd command = new Cmd();
 
+
         public void FillingComboBoxProducts()
         {
             frmApp = FormApp.getInstance();
@@ -140,14 +141,14 @@ namespace QC_Tool
                     if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
                         errorsLic++;
                 }
-                string[] lic = new string[errorsLic];
-
+               frmApp.lic = new string[errorsLic];
+                int count = 0;
                 for (int i = 0; i < frmApp.dataGridViewCheckTools.RowCount; i++)
                 {
                     if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
                     {
-                        int j = 0;
-                        lic[j] = frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString();
+                        frmApp.lic[count] = frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString();
+                        count++;
                     }
                 }
             }

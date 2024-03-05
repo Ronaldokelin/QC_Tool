@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Net;
 
 namespace QC_Tool
 {
@@ -78,6 +79,16 @@ namespace QC_Tool
                 return true;
             }
             catch { return false; }
+        }
+
+        public string getHostName()
+        {
+            try
+            {
+                string hostname = Dns.GetHostName();
+                return hostname;
+            }
+            catch { return ""; }
         }
     }
 }
