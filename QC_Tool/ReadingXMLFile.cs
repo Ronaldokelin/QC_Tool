@@ -66,23 +66,26 @@ namespace QC_Tool
                 }
 
                 int countTools = (doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes.Count) - 1;
-                string[,] xmlAtributes = new string[3,countTools];
+                string[,] xmlAtributes = new string[3, countTools];
 
                 for (int i = 1; i <= countTools; i++)
                 {
                     int k = i - 1;
 
-                    xmlAtributes[0,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
-                    xmlAtributes[1,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
-                    xmlAtributes[2,k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
+                    xmlAtributes[0, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
+                    xmlAtributes[1, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
+                    xmlAtributes[2, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
 
                     frmApp.dataGridViewCheckTools.Rows.Add();
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0,k];
-                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = xmlAtributes[1,k];
+                    if (xmlAtributes[1, k] != "Tool")
+                        frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0, k] + "_" + xmlAtributes[2, k];
+                    else
+                        frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0, k];
+                    frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = xmlAtributes[1, k];
 
-                    if (xmlAtributes[1,k] == "Tool")
+                    if (xmlAtributes[1, k] == "Tool")
                     {
-                        if (verifyFileTool(xmlAtributes[2,k]))
+                        if (verifyFileTool(xmlAtributes[2, k]))
                         {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
                             uts.cleanLabel();
@@ -96,9 +99,9 @@ namespace QC_Tool
                         }
                     }
 
-                    if (xmlAtributes[1,k] == "License")
+                    if (xmlAtributes[1, k] == "License")
                     {
-                        if (command.licenseGroupID(xmlAtributes[2,k]))
+                        if (command.licenseGroupID(xmlAtributes[2, k]))
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
 
                         else
@@ -112,6 +115,7 @@ namespace QC_Tool
             }
             catch { uts.labelError("TO TISTI!!!"); }
         }
+
         private bool verifyFileTool(string path)
         {
             try
@@ -122,6 +126,32 @@ namespace QC_Tool
                 return false;
             }
             catch { return false; }
+        }
+
+        public void countNokLicenses()
+        {
+            try
+            {
+                frmApp = FormApp.getInstance();
+                int errorsLic = 0;
+
+                for (int i = 0; i < frmApp.dataGridViewCheckTools.RowCount; i++)
+                {
+                    if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
+                        errorsLic++;
+                }
+                string[] lic = new string[errorsLic];
+
+                for (int i = 0; i < frmApp.dataGridViewCheckTools.RowCount; i++)
+                {
+                    if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
+                    {
+                        int j = 0;
+                        lic[j] = frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString();
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

@@ -88,6 +88,7 @@ namespace QC_Tool
         private void buttonActions_Click(object sender, EventArgs e)
         {
             CmdC.GetHostID();
+            readXML.countNokLicenses();
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)

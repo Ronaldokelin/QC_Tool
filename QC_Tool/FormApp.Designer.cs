@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
             this.comboBoxEstation = new System.Windows.Forms.ComboBox();
             this.labelProduto = new System.Windows.Forms.Label();
@@ -37,9 +35,6 @@
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
             this.buttonActions = new System.Windows.Forms.Button();
             this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
-            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCheckTools = new System.Windows.Forms.Label();
             this.groupBoxTools = new System.Windows.Forms.GroupBox();
             this.labelDeveloper = new System.Windows.Forms.Label();
@@ -51,6 +46,9 @@
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
+            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -144,14 +142,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCheckTools.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckTools.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCheckTools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCheckTools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tool,
@@ -160,46 +150,18 @@
             this.dataGridViewCheckTools.Location = new System.Drawing.Point(5, 39);
             this.dataGridViewCheckTools.Name = "dataGridViewCheckTools";
             this.dataGridViewCheckTools.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckTools.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCheckTools.RowTemplate.ReadOnly = true;
             this.dataGridViewCheckTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewCheckTools.ShowEditingIcon = false;
             this.dataGridViewCheckTools.Size = new System.Drawing.Size(562, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
             // 
-            // Tool
-            // 
-            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tool.FillWeight = 380F;
-            this.Tool.HeaderText = "Required Tool / Software";
-            this.Tool.Name = "Tool";
-            this.Tool.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.FillWeight = 80F;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
             // labelCheckTools
             // 
             this.labelCheckTools.AutoSize = true;
+            this.labelCheckTools.BackColor = System.Drawing.Color.Transparent;
             this.labelCheckTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCheckTools.ForeColor = System.Drawing.Color.Black;
             this.labelCheckTools.Location = new System.Drawing.Point(1, 16);
             this.labelCheckTools.Name = "labelCheckTools";
             this.labelCheckTools.Size = new System.Drawing.Size(100, 20);
@@ -213,6 +175,8 @@
             this.groupBoxTools.AutoSize = true;
             this.groupBoxTools.Controls.Add(this.dataGridViewCheckTools);
             this.groupBoxTools.Controls.Add(this.labelCheckTools);
+            this.groupBoxTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxTools.ForeColor = System.Drawing.Color.White;
             this.groupBoxTools.Location = new System.Drawing.Point(199, 6);
             this.groupBoxTools.Name = "groupBoxTools";
             this.groupBoxTools.Size = new System.Drawing.Size(573, 198);
@@ -322,6 +286,31 @@
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
+            // Tool
+            // 
+            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tool.FillWeight = 336F;
+            this.Tool.HeaderText = "Required Tool / Software";
+            this.Tool.Name = "Tool";
+            this.Tool.ReadOnly = true;
+            this.Tool.Width = 390;
+            // 
+            // Type
+            // 
+            this.Type.FillWeight = 90F;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 75;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.FillWeight = 20F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,11 +357,11 @@
         public System.Windows.Forms.DataGridView dataGridViewCheckTools;
         public System.Windows.Forms.Label labelErrorQPM3;
         public System.Windows.Forms.TabControl tabControlMain;
+        private System.Windows.Forms.Button buttonHelp;
+        public System.Windows.Forms.Button buttonActions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.Button buttonHelp;
-        public System.Windows.Forms.Button buttonActions;
     }
 }
 
