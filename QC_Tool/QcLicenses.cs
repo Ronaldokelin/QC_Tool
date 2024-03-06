@@ -33,8 +33,10 @@ namespace QC_Tool
                         {
                             File.Copy(sourceFileName, (destFileName + @"\" + path + ".id"), true);
                             log.textBoxLog("Copy file at: " + destFileName + @"\" + path + ".id");
+
                         }
                     }
+                    //timer
                 }
                 return true;
             }

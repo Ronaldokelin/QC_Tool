@@ -2,7 +2,7 @@
 
 ---- License details for ID = 4e7daa7f-c77c-11ee-81f9-06ef9a91c98d ----
 Activation ID    : 4e7daa7f-c77c-11ee-81f9-06ef9a91c98d
-License group ID : dfb63b47-a827-11ed-9a47-063166a9270b
+License group ID : dfb63b47-a827-11ed-9a47-063166a9270
 Username         : ejw011@lenovo.com
 Activation Date  : 2024-02-09 18:52:00.0
 Product          : bluetooth_and_ant_qrct_module
@@ -156,7 +156,7 @@ Status           : A
 
 ---- License details for ID = a5aef5ae-c77f-11ee-81f9-06ef9a91c98d ----
 Activation ID    : a5aef5ae-c77f-11ee-81f9-06ef9a91c98d
-License group ID : 6a5de147-0a30-11ee-a260-063166a9270b
+License group ID : 6a5de147-0a30-11ee-a260-063166a9270
 Username         : ejw011@lenovo.com
 Activation Date  : 2024-02-09 19:15:54.0
 Product          : quts
@@ -166,7 +166,7 @@ Status           : A
 
 ---- License details for ID = a779907a-c77f-11ee-81f9-06ef9a91c98d ----
 Activation ID    : a779907a-c77f-11ee-81f9-06ef9a91c98d
-License group ID : 9dce5865-178e-11ee-a260-063166a9270b
+License group ID : 9dce5865-178e-11ee-a260-063166a9270
 Username         : ejw011@lenovo.com
 Activation Date  : 2024-02-09 19:15:57.0
 Product          : qud

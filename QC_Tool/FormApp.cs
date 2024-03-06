@@ -14,6 +14,8 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
+        private System.Threading.Timer timer;
+        int countTimer = 0;
 
         public FormApp()
         {
@@ -93,9 +95,11 @@ namespace QC_Tool
             if (CmdC.GetHostID())
             {
                 readXML.countNokLicenses();
+                //callTimer();
                 if (QcL.copyDirectory(CmdC.getHostName()))
                     MessageBox.Show("Send License ID Successfully!!!", "ID License", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,6 +111,16 @@ namespace QC_Tool
         {
             comboBoxProducts.Text = "MACAN24";
             comboBoxEstation.Text = "5GFR1BDTST";
+        }
+
+        private void callTimer()
+        {
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromSeconds(10);
+            timer = new System.Threading.Timer((obj) =>
+            {
+               
+            }, null, startTimeSpan, periodTimeSpan);
         }
     }
 }

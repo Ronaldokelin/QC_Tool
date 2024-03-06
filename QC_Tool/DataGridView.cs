@@ -55,10 +55,5 @@ namespace QC_Tool
                     frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.BackColor = Color.Green;
             }
         }
-
-        public void ExpiryDate()
-        {
-
-        }
     }
 }
