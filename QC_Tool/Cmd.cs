@@ -49,7 +49,7 @@ namespace QC_Tool
             catch { }
         }
 
-        public bool licenseGroupID(string groupID)
+        public string licenseGroupID(string groupID)
         {
             try
             {
@@ -63,13 +63,20 @@ namespace QC_Tool
                         if (line.Contains("License group ID"))
                         {
                             if (line.Contains(groupID))
-                                return true;
+                            {
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    line = reader.ReadLine();
+                                }
+                                string[] expiryDate = line.Split(' ');
+                                return expiryDate[8];
+                            }
                         }
                     }
-                    return false;
+                    return "";
                 }
             }
-            catch { return false; }
+            catch { return ""; }
         }
 
         public bool GetHostID()

@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using System.IO;
+using System;
 
 namespace QC_Tool
 {
@@ -14,6 +15,8 @@ namespace QC_Tool
         Utils uts = new Utils();
         Cmd command = new Cmd();
         Logger log = new Logger();
+        private System.Threading.Timer timer;
+        int countTimer = 0;
 
 
         public void FillingComboBoxProducts()
@@ -103,9 +106,16 @@ namespace QC_Tool
 
                     if (xmlAtributes[1, k] == "License")
                     {
-                        if (command.licenseGroupID(xmlAtributes[2, k]))
+                        string dateLic = command.licenseGroupID(xmlAtributes[2, k]);
+                        if (dateLic != "")
+                        {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
+                            var licExpiry = DateTime.Parse(dateLic);
+                            var today = DateTime.Now;
+                            var diff = licExpiry - today;
 
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[3].Value = diff.Days + " days";
+                        }
                         else
                         {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";

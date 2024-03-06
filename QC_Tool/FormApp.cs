@@ -15,7 +15,6 @@ namespace QC_Tool
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
 
-
         public FormApp()
         {
             InitializeComponent();

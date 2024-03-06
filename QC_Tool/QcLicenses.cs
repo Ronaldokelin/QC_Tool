@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace QC_Tool
 {
@@ -18,6 +13,7 @@ namespace QC_Tool
             frmApp = FormApp.getInstance();
             string sourceFileName = string.Empty;
             string destFileName = string.Empty;
+
             try
             {
                 if (Directory.Exists(@"C:\" + path))

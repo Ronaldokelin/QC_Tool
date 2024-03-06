@@ -18,7 +18,6 @@ namespace QC_Tool
                 if (frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value.ToString() == "OK")
                     uts.cleanLabel();
 
-
                 else
                 {
                     frmApp.comboBoxProducts.Enabled = false;
@@ -50,22 +49,16 @@ namespace QC_Tool
             for (int i = 0; i < rowsDGV; i++)
             {
                 if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
-                {
                     frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                   // frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-
-
-                }
 
                 else
-                {
                     frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-                   // frmApp.dataGridViewCheckTools.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-
-                }
             }
         }
 
+        public void ExpiryDate()
+        {
 
+        }
     }
 }

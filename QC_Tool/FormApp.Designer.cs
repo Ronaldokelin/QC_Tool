@@ -49,6 +49,7 @@
             this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExpiryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -146,14 +147,15 @@
             this.dataGridViewCheckTools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tool,
             this.Type,
-            this.Status});
+            this.Status,
+            this.ColumnExpiryDate});
             this.dataGridViewCheckTools.Location = new System.Drawing.Point(5, 39);
             this.dataGridViewCheckTools.Name = "dataGridViewCheckTools";
             this.dataGridViewCheckTools.ReadOnly = true;
             this.dataGridViewCheckTools.RowTemplate.ReadOnly = true;
             this.dataGridViewCheckTools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewCheckTools.ShowEditingIcon = false;
-            this.dataGridViewCheckTools.Size = new System.Drawing.Size(562, 153);
+            this.dataGridViewCheckTools.Size = new System.Drawing.Size(758, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
             // 
             // labelCheckTools
@@ -179,7 +181,7 @@
             this.groupBoxTools.ForeColor = System.Drawing.Color.White;
             this.groupBoxTools.Location = new System.Drawing.Point(199, 6);
             this.groupBoxTools.Name = "groupBoxTools";
-            this.groupBoxTools.Size = new System.Drawing.Size(573, 198);
+            this.groupBoxTools.Size = new System.Drawing.Size(769, 198);
             this.groupBoxTools.TabIndex = 10;
             this.groupBoxTools.TabStop = false;
             // 
@@ -198,7 +200,7 @@
             // 
             this.pictureBoxFlexLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxFlexLogo.Image = global::QC_Tool.Properties.Resources.flex1;
-            this.pictureBoxFlexLogo.Location = new System.Drawing.Point(678, 4);
+            this.pictureBoxFlexLogo.Location = new System.Drawing.Point(865, 4);
             this.pictureBoxFlexLogo.Name = "pictureBoxFlexLogo";
             this.pictureBoxFlexLogo.Size = new System.Drawing.Size(119, 54);
             this.pictureBoxFlexLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,7 +219,7 @@
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
             this.textBoxDetails.ReadOnly = true;
-            this.textBoxDetails.Size = new System.Drawing.Size(766, 340);
+            this.textBoxDetails.Size = new System.Drawing.Size(962, 340);
             this.textBoxDetails.TabIndex = 13;
             // 
             // tabControlMain
@@ -227,7 +229,7 @@
             this.tabControlMain.Location = new System.Drawing.Point(5, 42);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(783, 576);
+            this.tabControlMain.Size = new System.Drawing.Size(979, 576);
             this.tabControlMain.TabIndex = 14;
             // 
             // tabPageOperator
@@ -239,7 +241,7 @@
             this.tabPageOperator.Location = new System.Drawing.Point(4, 22);
             this.tabPageOperator.Name = "tabPageOperator";
             this.tabPageOperator.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOperator.Size = new System.Drawing.Size(775, 550);
+            this.tabPageOperator.Size = new System.Drawing.Size(971, 550);
             this.tabPageOperator.TabIndex = 0;
             this.tabPageOperator.Text = "Operator";
             this.tabPageOperator.UseVisualStyleBackColor = true;
@@ -312,12 +314,19 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
+            // ColumnExpiryDate
+            // 
+            this.ColumnExpiryDate.HeaderText = "Expiry Date";
+            this.ColumnExpiryDate.Name = "ColumnExpiryDate";
+            this.ColumnExpiryDate.ReadOnly = true;
+            this.ColumnExpiryDate.Width = 120;
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 636);
+            this.ClientSize = new System.Drawing.Size(987, 636);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxFlexLogo);
@@ -359,10 +368,11 @@
         public System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.Button buttonHelp;
         public System.Windows.Forms.Button buttonActions;
+        public System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        public System.Windows.Forms.TextBox textBoxDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExpiryDate;
     }
 }
 
