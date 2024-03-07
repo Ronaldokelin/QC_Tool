@@ -35,6 +35,10 @@
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
             this.buttonActions = new System.Windows.Forms.Button();
             this.dataGridViewCheckTools = new System.Windows.Forms.DataGridView();
+            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExpiryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCheckTools = new System.Windows.Forms.Label();
             this.groupBoxTools = new System.Windows.Forms.GroupBox();
             this.labelDeveloper = new System.Windows.Forms.Label();
@@ -46,10 +50,6 @@
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.Tool = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnExpiryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -158,6 +158,38 @@
             this.dataGridViewCheckTools.Size = new System.Drawing.Size(758, 153);
             this.dataGridViewCheckTools.TabIndex = 9;
             // 
+            // Tool
+            // 
+            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tool.FillWeight = 336F;
+            this.Tool.HeaderText = "Required Tool / Software";
+            this.Tool.Name = "Tool";
+            this.Tool.ReadOnly = true;
+            this.Tool.Width = 390;
+            // 
+            // Type
+            // 
+            this.Type.FillWeight = 90F;
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 75;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.FillWeight = 20F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // ColumnExpiryDate
+            // 
+            this.ColumnExpiryDate.HeaderText = "Expiry Date";
+            this.ColumnExpiryDate.Name = "ColumnExpiryDate";
+            this.ColumnExpiryDate.ReadOnly = true;
+            this.ColumnExpiryDate.Width = 120;
+            // 
             // labelCheckTools
             // 
             this.labelCheckTools.AutoSize = true;
@@ -248,14 +280,15 @@
             // 
             // labelErrorQPM3
             // 
-            this.labelErrorQPM3.AutoSize = true;
+            this.labelErrorQPM3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelErrorQPM3.Enabled = false;
             this.labelErrorQPM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrorQPM3.Location = new System.Drawing.Point(6, 263);
+            this.labelErrorQPM3.Location = new System.Drawing.Point(3, 505);
             this.labelErrorQPM3.Name = "labelErrorQPM3";
-            this.labelErrorQPM3.Size = new System.Drawing.Size(280, 42);
+            this.labelErrorQPM3.Size = new System.Drawing.Size(965, 42);
             this.labelErrorQPM3.TabIndex = 14;
             this.labelErrorQPM3.Text = "LABEL ERROR";
+            this.labelErrorQPM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelErrorQPM3.Visible = false;
             // 
             // tabPageEngineer
@@ -263,7 +296,7 @@
             this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
             this.tabPageEngineer.Name = "tabPageEngineer";
             this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEngineer.Size = new System.Drawing.Size(775, 550);
+            this.tabPageEngineer.Size = new System.Drawing.Size(971, 550);
             this.tabPageEngineer.TabIndex = 1;
             this.tabPageEngineer.Text = "Engineer";
             this.tabPageEngineer.UseVisualStyleBackColor = true;
@@ -288,38 +321,6 @@
             this.buttonHelp.Text = "button1";
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
-            // Tool
-            // 
-            this.Tool.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tool.FillWeight = 336F;
-            this.Tool.HeaderText = "Required Tool / Software";
-            this.Tool.Name = "Tool";
-            this.Tool.ReadOnly = true;
-            this.Tool.Width = 390;
-            // 
-            // Type
-            // 
-            this.Type.FillWeight = 90F;
-            this.Type.HeaderText = "Type";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 75;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.FillWeight = 20F;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // ColumnExpiryDate
-            // 
-            this.ColumnExpiryDate.HeaderText = "Expiry Date";
-            this.ColumnExpiryDate.Name = "ColumnExpiryDate";
-            this.ColumnExpiryDate.ReadOnly = true;
-            this.ColumnExpiryDate.Width = 120;
             // 
             // FormApp
             // 

@@ -98,7 +98,7 @@ namespace QC_Tool
                         {
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";
                             i = countTools;
-                            uts.labelError("  QUTS not found, please install the QUTS!");
+                            uts.labelError("  QUTS not found, please install the QUTS!", "red");
                         }
                     }
 
@@ -123,7 +123,7 @@ namespace QC_Tool
                 }
                 Dgv.formattingDGV();
             }
-            catch { uts.labelError("TO TISTI!!!"); }
+            catch { uts.labelError("TO TISTI!!!", "red"); }
         }
 
         private bool verifyFileTool(string path)

@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace QC_Tool
 {
     class ResponseLicense
     {
         Cmd CmdC = new Cmd();
+        FormApp frmApp;
+        int countTimer = 0;
+        Utils uts = new Utils();
 
-        public void checkResponse()
-        {
-        }
         public int CopyFunction()
         {
             string filePath = @".\LicensesNOK.txt";
@@ -22,43 +20,51 @@ namespace QC_Tool
             string pattern = ".resp";
             string licNOK = "";
             string path = CmdC.getHostName();
+            frmApp = FormApp.getInstance();
 
             try
             {
-                if (File.Exists(filePath))
+                countTimer += 1;
+
+                if (countTimer >= 4)//mudar pra 12
+                    frmApp.timer.Change(Timeout.Infinite, Timeout.Infinite);
+                else
                 {
-                    using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+
+                    if (File.Exists(filePath))
                     {
-                        licNOK = reader.ReadLine();
-
-                        while (licNOK != null)
+                        using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
                         {
-                            sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
-                            destinationDir = (@"C:\" + path + @"\responses");
-
-                            if (!Directory.Exists(destinationDir))
-                                Directory.CreateDirectory(destinationDir);
-
-                            if (Directory.Exists(sourceDir))
+                            do
                             {
-                                foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
-                                {
-                                    string[] vet = file_name.Split('\\');
-                                    string fileActivate = vet.Last();
-                                    File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
+                                licNOK = reader.ReadLine();
+                                sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
+                                destinationDir = (@"C:\" + path + @"\responses");
 
+                                if (!Directory.Exists(destinationDir))
+                                    Directory.CreateDirectory(destinationDir);
+
+                                if (Directory.Exists(sourceDir))
+                                {
+                                    foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
+                                    {
+                                        uts.cleanLabel();
+                                        string[] vet = file_name.Split('\\');
+                                        string fileActivate = vet.Last();
+                                        File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
+                                    }
                                 }
                             }
-                            licNOK = reader.ReadLine();
+                            while (licNOK != null);
                         }
                     }
                 }
+                return 0;
             }
             catch (IOException)
             {
                 return 1;
             }
-            return 0;
         }
     }
 }

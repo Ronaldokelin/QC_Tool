@@ -15,9 +15,9 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
-        private System.Threading.Timer timer;
+        public System.Threading.Timer timer;
         FileConfig fc = new FileConfig();
-        int countTimer = 0;
+        Utils uts;
 
         public FormApp()
         {
@@ -43,6 +43,7 @@ namespace QC_Tool
             Dgv = new DataGridView();
             QcL = new QcLicenses();
             rl = new ResponseLicense();
+            uts = new Utils();
         }
 
         public string CheckDirectoryQpmCli()
@@ -98,14 +99,16 @@ namespace QC_Tool
             fc.deleteFile();
             buttonActions.Enabled = false;
 
+            uts.labelError("Waiting Response...","orange");
+
             if (CmdC.GetHostID())
             {
                 readXML.countNokLicenses();
-                //callTimer();
+
                 if (QcL.copyDirectory(CmdC.getHostName()))
                 {
                     MessageBox.Show("Send License ID Successfully!!!", "ID License", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    rl.CopyFunction();
+                    callTimer();
                 }
             }
         }
@@ -124,11 +127,11 @@ namespace QC_Tool
         private void callTimer()
         {
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(10);
+            var periodTimeSpan = TimeSpan.FromSeconds(20);
+
             timer = new System.Threading.Timer((obj) =>
             {
-
-
+                rl.CopyFunction();
             }, null, startTimeSpan, periodTimeSpan);
         }
     }

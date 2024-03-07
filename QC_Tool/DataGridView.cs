@@ -21,7 +21,7 @@ namespace QC_Tool
                 else
                 {
                     frmApp.comboBoxProducts.Enabled = false;
-                    uts.labelError("QPM-CLI not found, please install the QPM3!");
+                    uts.labelError("QPM-CLI not found, please install the QPM3!", "red");
                 }
                 formattingDGV();
             }
@@ -29,7 +29,7 @@ namespace QC_Tool
             {
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = "NOK";
                 formattingDGV();
-                uts.labelError("QPM-CLI not found, please install the QPM3!");
+                uts.labelError("QPM-CLI not found, please install the QPM3!", "red");
             }
         }
 
