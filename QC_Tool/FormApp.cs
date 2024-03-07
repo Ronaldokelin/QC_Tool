@@ -11,10 +11,12 @@ namespace QC_Tool
         Cmd CmdC;
         DataGridView Dgv;
         QcLicenses QcL;
+        ResponseLicense rl;
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
         private System.Threading.Timer timer;
+        FileConfig fc = new FileConfig();
         int countTimer = 0;
 
         public FormApp()
@@ -40,6 +42,7 @@ namespace QC_Tool
             CmdC = new Cmd();
             Dgv = new DataGridView();
             QcL = new QcLicenses();
+            rl = new ResponseLicense();
         }
 
         public string CheckDirectoryQpmCli()
@@ -92,14 +95,19 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
+            fc.deleteFile();
+            buttonActions.Enabled = false;
+
             if (CmdC.GetHostID())
             {
                 readXML.countNokLicenses();
                 //callTimer();
                 if (QcL.copyDirectory(CmdC.getHostName()))
+                {
                     MessageBox.Show("Send License ID Successfully!!!", "ID License", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    rl.CopyFunction();
+                }
             }
-
         }
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,7 +115,7 @@ namespace QC_Tool
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
 
-        private void buttonHelp_Click(object sender, EventArgs e)
+        private void buttonHelp_Click(object sender, EventArgs e)//tirar
         {
             comboBoxProducts.Text = "MACAN24";
             comboBoxEstation.Text = "5GFR1BDTST";
@@ -119,7 +127,8 @@ namespace QC_Tool
             var periodTimeSpan = TimeSpan.FromSeconds(10);
             timer = new System.Threading.Timer((obj) =>
             {
-               
+
+
             }, null, startTimeSpan, periodTimeSpan);
         }
     }

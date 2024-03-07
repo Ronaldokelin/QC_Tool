@@ -9,25 +9,47 @@ namespace QC_Tool
 {
     class ResponseLicense
     {
+        Cmd CmdC = new Cmd();
+
         public void checkResponse()
         {
-
         }
-        private int CopyFunction()
+        public int CopyFunction()
         {
+            string filePath = @".\LicensesNOK.txt";
             string destinationDir = "";
             string sourceDir = "";
             string pattern = ".resp";
-            FileInfo fileInfo;
+            string licNOK = "";
+            string path = CmdC.getHostName();
+
             try
             {
-                foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
+                if (File.Exists(filePath))
                 {
-                    fileInfo = new FileInfo(file_name);
+                    using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+                    {
+                        licNOK = reader.ReadLine();
 
-                    File.Copy(file_name, destinationDir + file_name.Substring(sourceDir.Length), true);
+                        while (licNOK != null)
+                        {
+                            sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
+                            destinationDir = (@"C:\" + path + @"\responses");
+
+                            if (!Directory.Exists(destinationDir))
+                                Directory.CreateDirectory(destinationDir);
+
+                            if (Directory.Exists(sourceDir))
+                            {
+                                foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
+                                {
+                                    File.Copy(file_name, destinationDir + file_name, true);
+                                }
+                            }
+                            licNOK = reader.ReadLine();
+                        }
+                    }
                 }
-
             }
             catch (IOException)
             {
@@ -35,7 +57,5 @@ namespace QC_Tool
             }
             return 0;
         }
-
-
     }
 }

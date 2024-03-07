@@ -6,6 +6,16 @@ namespace QC_Tool
     {
         string filepath = @".\LicensesNOK.txt";
 
+        public void deleteFile()
+        {
+            try
+            {
+                if (File.Exists(filepath))
+                    File.Delete(filepath);
+            }
+            catch { }
+        }
+
         public void writeFile(string line)
         {
             try
@@ -32,7 +42,7 @@ namespace QC_Tool
         {
             try
             {
-                if (!File.Exists(filepath))
+                if (!File.Exists(@".\LicensesNOK.txt"))
                 {
                     using (StreamReader reader = new StreamReader(new FileStream(filepath, FileMode.Open, FileAccess.Read)))
                     {
