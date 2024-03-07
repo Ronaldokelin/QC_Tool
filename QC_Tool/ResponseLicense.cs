@@ -43,7 +43,10 @@ namespace QC_Tool
                             {
                                 foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
                                 {
-                                    File.Copy(file_name, destinationDir + file_name, true);
+                                    string[] vet = file_name.Split('\\');
+                                    string fileActivate = vet.Last();
+                                    File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
+
                                 }
                             }
                             licNOK = reader.ReadLine();
