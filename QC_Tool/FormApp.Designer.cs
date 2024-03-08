@@ -46,7 +46,7 @@
             this.textBoxDetails = new System.Windows.Forms.TextBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageOperator = new System.Windows.Forms.TabPage();
-            this.labelErrorQPM3 = new System.Windows.Forms.Label();
+            this.labelWarning = new System.Windows.Forms.Label();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
@@ -224,9 +224,9 @@
             this.labelDeveloper.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeveloper.Location = new System.Drawing.Point(2, 621);
             this.labelDeveloper.Name = "labelDeveloper";
-            this.labelDeveloper.Size = new System.Drawing.Size(139, 13);
+            this.labelDeveloper.Size = new System.Drawing.Size(163, 13);
             this.labelDeveloper.TabIndex = 12;
-            this.labelDeveloper.Text = "Developed by Arquimedes T.";
+            this.labelDeveloper.Text = "Developed by Arquimedes Miguel";
             // 
             // pictureBoxFlexLogo
             // 
@@ -251,7 +251,7 @@
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
             this.textBoxDetails.ReadOnly = true;
-            this.textBoxDetails.Size = new System.Drawing.Size(962, 340);
+            this.textBoxDetails.Size = new System.Drawing.Size(962, 298);
             this.textBoxDetails.TabIndex = 13;
             // 
             // tabControlMain
@@ -261,42 +261,40 @@
             this.tabControlMain.Location = new System.Drawing.Point(5, 42);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(979, 576);
+            this.tabControlMain.Size = new System.Drawing.Size(979, 534);
             this.tabControlMain.TabIndex = 14;
             // 
             // tabPageOperator
             // 
-            this.tabPageOperator.Controls.Add(this.labelErrorQPM3);
             this.tabPageOperator.Controls.Add(this.groupBoxSettings);
             this.tabPageOperator.Controls.Add(this.textBoxDetails);
             this.tabPageOperator.Controls.Add(this.groupBoxTools);
             this.tabPageOperator.Location = new System.Drawing.Point(4, 22);
             this.tabPageOperator.Name = "tabPageOperator";
             this.tabPageOperator.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOperator.Size = new System.Drawing.Size(971, 550);
+            this.tabPageOperator.Size = new System.Drawing.Size(971, 508);
             this.tabPageOperator.TabIndex = 0;
             this.tabPageOperator.Text = "Operator";
             this.tabPageOperator.UseVisualStyleBackColor = true;
             // 
-            // labelErrorQPM3
+            // labelWarning
             // 
-            this.labelErrorQPM3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelErrorQPM3.Enabled = false;
-            this.labelErrorQPM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrorQPM3.Location = new System.Drawing.Point(3, 505);
-            this.labelErrorQPM3.Name = "labelErrorQPM3";
-            this.labelErrorQPM3.Size = new System.Drawing.Size(965, 42);
-            this.labelErrorQPM3.TabIndex = 14;
-            this.labelErrorQPM3.Text = "LABEL ERROR";
-            this.labelErrorQPM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelErrorQPM3.Visible = false;
+            this.labelWarning.Enabled = false;
+            this.labelWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWarning.Location = new System.Drawing.Point(10, 579);
+            this.labelWarning.Name = "labelWarning";
+            this.labelWarning.Size = new System.Drawing.Size(965, 42);
+            this.labelWarning.TabIndex = 14;
+            this.labelWarning.Text = "warning";
+            this.labelWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelWarning.Visible = false;
             // 
             // tabPageEngineer
             // 
             this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
             this.tabPageEngineer.Name = "tabPageEngineer";
             this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEngineer.Size = new System.Drawing.Size(971, 550);
+            this.tabPageEngineer.Size = new System.Drawing.Size(971, 422);
             this.tabPageEngineer.TabIndex = 1;
             this.tabPageEngineer.Text = "Engineer";
             this.tabPageEngineer.UseVisualStyleBackColor = true;
@@ -328,6 +326,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 636);
+            this.Controls.Add(this.labelWarning);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxFlexLogo);
@@ -365,7 +364,7 @@
         public System.Windows.Forms.ComboBox comboBoxProducts;
         public System.Windows.Forms.ComboBox comboBoxEstation;
         public System.Windows.Forms.DataGridView dataGridViewCheckTools;
-        public System.Windows.Forms.Label labelErrorQPM3;
+        public System.Windows.Forms.Label labelWarning;
         public System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.Button buttonHelp;
         public System.Windows.Forms.Button buttonActions;

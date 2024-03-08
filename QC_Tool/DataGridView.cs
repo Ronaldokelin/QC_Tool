@@ -22,6 +22,7 @@ namespace QC_Tool
                 {
                     frmApp.comboBoxProducts.Enabled = false;
                     uts.labelError("QPM-CLI not found, please install the QPM3!", "red");
+                    frmApp.tabControlMain.Enabled = false;
                 }
                 formattingDGV();
             }

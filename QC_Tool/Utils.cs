@@ -10,16 +10,20 @@ namespace QC_Tool
         public void labelError(string error, string colorL)
         {
             frmApp = FormApp.getInstance();
-            frmApp.labelErrorQPM3.Text = error;
-            frmApp.labelErrorQPM3.Visible = true;
-            if (colorL == "red")
-                frmApp.labelErrorQPM3.ForeColor = Color.Red;
-            else if (colorL == "orange")
-                frmApp.labelErrorQPM3.ForeColor = Color.Orange;
-            else if (colorL == "green")
-                frmApp.labelErrorQPM3.ForeColor = Color.Green;
+            frmApp.labelWarning.Text = error;
+            frmApp.labelWarning.Visible = true;
 
-            frmApp.labelErrorQPM3.Enabled = true;
+            if (colorL == "red")
+                frmApp.labelWarning.ForeColor = Color.Red;
+
+            else if (colorL == "orange")
+                frmApp.labelWarning.ForeColor = Color.Orange;
+
+            else if (colorL == "green")
+                frmApp.labelWarning.ForeColor = Color.Green;
+
+            frmApp.labelWarning.Enabled = true;
+            frmApp.labelWarning.BringToFront();
             frmApp.tabControlMain.TabIndex = 1;
             Application.DoEvents();
         }
@@ -27,9 +31,9 @@ namespace QC_Tool
         public void cleanLabel()
         {
             frmApp = FormApp.getInstance();
-            frmApp.labelErrorQPM3.Text = "";
-            frmApp.labelErrorQPM3.Visible = false;
-            frmApp.labelErrorQPM3.Enabled = false;
+            frmApp.labelWarning.Text = "";
+            frmApp.labelWarning.Visible = false;
+            frmApp.labelWarning.Enabled = false;
         }
 
         public void disableAll()//to do
