@@ -97,6 +97,12 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
+            uts.disableAll();
+            getLicensesResponses();
+        }
+
+        private void getLicensesResponses()
+        {
             fc.deleteFile();
             buttonActions.Enabled = false;
 

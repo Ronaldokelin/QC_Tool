@@ -9,10 +9,11 @@ namespace QC_Tool
     class ResponseLicense
     {
         Cmd CmdC = new Cmd();
-        FormApp frmApp;
+        FormApp frmApp = FormApp.getInstance();
         int countTimer = 0;
         Utils uts = new Utils();
         ReadingXMLFile readXML = new ReadingXMLFile();
+        private bool status = false;
 
         public int copyResponseFile()
         {
@@ -22,64 +23,59 @@ namespace QC_Tool
             string pattern = ".resp";
             string licNOK = "";
             string path = CmdC.getHostName();
-            frmApp = FormApp.getInstance();
 
             try
             {
-                countTimer += 1;
+                countTimer++;
 
-                if (countTimer >= 2)//mudar pra 12{
+                if (File.Exists(filePath))
                 {
-                    frmApp.timer.Enabled = false;
-                    frmApp.timer.Stop();
-                    frmApp.timer.Dispose();
-                    Application.DoEvents();
-                    Thread.Sleep(15000);
-                    //uts.cleanLabel();
-                    //uts.labelError("File responses not received from server", "Red");
-                }
-
-                else
-                {
-                    if (File.Exists(filePath))
+                    using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
                     {
-                        using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+                        do
                         {
-                            do
+                            //  frmApp.textBoxDetails.Text += countTimer + "º Attempt" + Environment.NewLine;
+                            licNOK = reader.ReadLine();
+                            sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
+                            destinationDir = (@"C:\" + path + @"\responses");
+
+                            if (!Directory.Exists(destinationDir))
+                                Directory.CreateDirectory(destinationDir);
+
+                            if (Directory.Exists(sourceDir))
                             {
-                                //  frmApp.textBoxDetails.Text += countTimer + "º Attempt" + Environment.NewLine;
-                                licNOK = reader.ReadLine();
-                                sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
-                                destinationDir = (@"C:\" + path + @"\responses");
-
-                                if (!Directory.Exists(destinationDir))
-                                    Directory.CreateDirectory(destinationDir);
-
-                                if (Directory.Exists(sourceDir))
+                                foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
                                 {
-                                    foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
-                                    {
-                                        string[] vet = file_name.Split('\\');
-                                        string fileActivate = vet.Last();
-                                        File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
-                                        //frmApp.timer.Enabled = false;
-                                        //frmApp.timer.Stop();
-                                        //frmApp.timer.Dispose();
-                                        //uts.cleanLabel();
-                                        //uts.labelError("File responses received from server", "Green");
-                                        //activateLicense();
-                                    }
+                                    string[] vet = file_name.Split('\\');
+                                    string fileActivate = vet.Last();
+                                    File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
+                                    status = true;
+                                    //frmApp.timer.Enabled = false;
+                                    //uts.cleanLabel();
+                                    //uts.labelError("File responses received from server", "Green");
+                                    //activateLicense();
                                 }
                             }
-                            while (licNOK != null);
                         }
+                        while (licNOK != null);
                     }
+
                 }
                 return 0;
             }
-            catch (IOException)
+            catch
             {
                 return 1;
+            }
+            finally
+            {
+                if (countTimer >= 2 && !status)
+                {
+                    frmApp.timer.Enabled = false;
+                    //uts.cleanLabel();
+                    //uts.labelError("File responses not received from server", "red");
+                    //activateLicense();            
+                }
             }
         }
 

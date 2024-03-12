@@ -13,7 +13,6 @@ namespace QC_Tool
         {
             try
             {
-                frmApp = FormApp.getInstance();
                 Process cmd = new Process();
                 cmd.StartInfo.FileName = "CMD.exe";
                 cmd.StartInfo.CreateNoWindow = true;
@@ -33,7 +32,6 @@ namespace QC_Tool
         {
             try
             {
-                frmApp = FormApp.getInstance();
                 Process cmd = new Process();
                 cmd.StartInfo.FileName = "CMD.exe";
                 cmd.StartInfo.CreateNoWindow = true;

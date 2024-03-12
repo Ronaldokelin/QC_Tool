@@ -5,11 +5,10 @@ namespace QC_Tool
 {
     class Utils
     {
-        FormApp frmApp;
+        FormApp frmApp = FormApp.getInstance();
 
         public void labelError(string error, string colorL)
         {
-            frmApp = FormApp.getInstance();
             frmApp.labelWarning.Text = error;
             frmApp.labelWarning.Visible = true;
 
@@ -30,7 +29,6 @@ namespace QC_Tool
 
         public void cleanLabel()
         {
-            frmApp = FormApp.getInstance();
             frmApp.labelWarning.Text = "";
             frmApp.labelWarning.Visible = false;
             frmApp.labelWarning.Enabled = false;
@@ -40,6 +38,7 @@ namespace QC_Tool
         {
             frmApp.comboBoxEstation.Enabled = false;
             frmApp.comboBoxProducts.Enabled = false;
+            //frmApp.tabControlMain.Enabled = false;
         }
     }
 }
