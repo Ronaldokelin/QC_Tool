@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace QC_Tool
@@ -15,7 +16,7 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
-        public System.Threading.Timer timer;
+        public System.Timers.Timer timer;
         FileConfig fc = new FileConfig();
         Utils uts;
 
@@ -99,7 +100,7 @@ namespace QC_Tool
             fc.deleteFile();
             buttonActions.Enabled = false;
 
-            uts.labelError("Waiting Response...","orange");
+            uts.labelError("Waiting Response...", "orange");
 
             if (CmdC.GetHostID())
             {
@@ -107,11 +108,12 @@ namespace QC_Tool
 
                 if (QcL.copyDirectory(CmdC.getHostName()))
                 {
-                    MessageBox.Show("Send License ID Successfully!!!", "ID License", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    callTimer();
+                    textBoxDetails.Text += "Send License ID Successfully!!!";
+                    SetTimer();
                 }
             }
         }
+
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,15 +126,17 @@ namespace QC_Tool
             comboBoxEstation.Text = "5GFR1BDTST";
         }
 
-        private void callTimer()
+        private void SetTimer()
         {
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(20);
+            timer = new System.Timers.Timer(10000);
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
+        }
 
-            timer = new System.Threading.Timer((obj) =>
-            {
-                rl.CopyFunction();
-            }, null, startTimeSpan, periodTimeSpan);
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            rl.copyResponseFile();
         }
     }
 }

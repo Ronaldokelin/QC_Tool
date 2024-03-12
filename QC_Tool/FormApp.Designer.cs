@@ -46,8 +46,8 @@
             this.textBoxDetails = new System.Windows.Forms.TextBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageOperator = new System.Windows.Forms.TabPage();
-            this.labelWarning = new System.Windows.Forms.Label();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
+            this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
@@ -277,6 +277,16 @@
             this.tabPageOperator.Text = "Operator";
             this.tabPageOperator.UseVisualStyleBackColor = true;
             // 
+            // tabPageEngineer
+            // 
+            this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEngineer.Name = "tabPageEngineer";
+            this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEngineer.Size = new System.Drawing.Size(971, 508);
+            this.tabPageEngineer.TabIndex = 1;
+            this.tabPageEngineer.Text = "Engineer";
+            this.tabPageEngineer.UseVisualStyleBackColor = true;
+            // 
             // labelWarning
             // 
             this.labelWarning.Enabled = false;
@@ -288,16 +298,6 @@
             this.labelWarning.Text = "warning";
             this.labelWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelWarning.Visible = false;
-            // 
-            // tabPageEngineer
-            // 
-            this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEngineer.Name = "tabPageEngineer";
-            this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEngineer.Size = new System.Drawing.Size(971, 422);
-            this.tabPageEngineer.TabIndex = 1;
-            this.tabPageEngineer.Text = "Engineer";
-            this.tabPageEngineer.UseVisualStyleBackColor = true;
             // 
             // labelName
             // 
@@ -326,10 +326,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 636);
+            this.Controls.Add(this.pictureBoxFlexLogo);
             this.Controls.Add(this.labelWarning);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.pictureBoxFlexLogo);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.labelDeveloper);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

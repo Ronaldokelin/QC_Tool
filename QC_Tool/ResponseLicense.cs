@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -11,8 +12,9 @@ namespace QC_Tool
         FormApp frmApp;
         int countTimer = 0;
         Utils uts = new Utils();
+        ReadingXMLFile readXML = new ReadingXMLFile();
 
-        public int CopyFunction()
+        public int copyResponseFile()
         {
             string filePath = @".\LicensesNOK.txt";
             string destinationDir = "";
@@ -26,17 +28,26 @@ namespace QC_Tool
             {
                 countTimer += 1;
 
-                if (countTimer >= 4)//mudar pra 12
-                    frmApp.timer.Change(Timeout.Infinite, Timeout.Infinite);
+                if (countTimer >= 2)//mudar pra 12{
+                {
+                    frmApp.timer.Enabled = false;
+                    frmApp.timer.Stop();
+                    frmApp.timer.Dispose();
+                    Application.DoEvents();
+                    Thread.Sleep(15000);
+                    //uts.cleanLabel();
+                    //uts.labelError("File responses not received from server", "Red");
+                }
+
                 else
                 {
-
                     if (File.Exists(filePath))
                     {
                         using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
                         {
                             do
                             {
+                                //  frmApp.textBoxDetails.Text += countTimer + "º Attempt" + Environment.NewLine;
                                 licNOK = reader.ReadLine();
                                 sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
                                 destinationDir = (@"C:\" + path + @"\responses");
@@ -48,10 +59,15 @@ namespace QC_Tool
                                 {
                                     foreach (string file_name in Directory.GetFiles(sourceDir, "*" + pattern + "*", System.IO.SearchOption.AllDirectories))
                                     {
-                                        uts.cleanLabel();
                                         string[] vet = file_name.Split('\\');
                                         string fileActivate = vet.Last();
                                         File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
+                                        //frmApp.timer.Enabled = false;
+                                        //frmApp.timer.Stop();
+                                        //frmApp.timer.Dispose();
+                                        //uts.cleanLabel();
+                                        //uts.labelError("File responses received from server", "Green");
+                                        //activateLicense();
                                     }
                                 }
                             }
@@ -65,6 +81,13 @@ namespace QC_Tool
             {
                 return 1;
             }
+        }
+
+        public void activateLicense()
+        {
+            string path = CmdC.getHostName();
+            CmdC.Commands(@"qpm-cli -–process-responses C:\" + path);
+            //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
     }
 }
