@@ -120,6 +120,7 @@ namespace QC_Tool
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
+            buttonActions.Enabled = false;
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
 

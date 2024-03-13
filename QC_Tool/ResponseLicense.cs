@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -14,7 +13,6 @@ namespace QC_Tool
         Utils uts = new Utils();
         ReadingXMLFile readXML = new ReadingXMLFile();
         private bool status = false;
-
 
         public int copyResponseFile()
         {
@@ -72,13 +70,13 @@ namespace QC_Tool
                 copyResponseFile();
                 frmApp.buttonActions.BackColor = Color.Orange;
                 Application.DoEvents();
-                Thread.Sleep(2000); //mudar para 10000
+                Thread.Sleep(2000);
                 count++;
                 frmApp.buttonActions.BackColor = Color.Gray;
                 Application.DoEvents();
                 Thread.Sleep(2000);
             }
-            while (count < 6 && status == false); //mudar para 210
+            while (count < 550 && status == false);
 
             if (status == false)
             {

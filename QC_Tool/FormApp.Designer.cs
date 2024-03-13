@@ -49,7 +49,6 @@
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.buttonHelp = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -309,16 +308,6 @@
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
             // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Location = new System.Drawing.Point(199, 33);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(84, 24);
-            this.buttonHelp.TabIndex = 16;
-            this.buttonHelp.Text = "button1";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +316,6 @@
             this.ClientSize = new System.Drawing.Size(987, 636);
             this.Controls.Add(this.pictureBoxFlexLogo);
             this.Controls.Add(this.labelWarning);
-            this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.labelDeveloper);
@@ -365,7 +353,6 @@
         public System.Windows.Forms.DataGridView dataGridViewCheckTools;
         public System.Windows.Forms.Label labelWarning;
         public System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.Button buttonHelp;
         public System.Windows.Forms.Button buttonActions;
         public System.Windows.Forms.TextBox textBoxDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tool;

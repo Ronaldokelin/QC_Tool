@@ -1,5 +1,175 @@
 [Info] : Listing licenses ....
 
+---- License details for ID = 8710022c-e163-11ee-b3d2-06ef9a91c98d ----
+Activation ID    : 8710022c-e163-11ee-b3d2-06ef9a91c98d
+License group ID : dfb63b47-a827-11ed-9a47-063166a9270b
+Username         : ejw011@lenovo.com
+Activation Date  : 2024-03-13 18:00:07.0
+Product          : bluetooth_and_ant_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : bluetooth_and_ant_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : cdma_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : cellular_multimode_verification_qspr_subsystem
+Features         : GSM, CDMA, LTE, MMW, SmartTX, SUB6, TDSCDMA, WCDMA, MultiMode_MMW, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : cellular_qrct_module
+Features         : XG, SUB-6, MMW, Debug, Verify, CAConformanceParams, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : cellular_rf_calibration_qspr_subsystem
+Features         : MMW, SUB-6, XG, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : connectivity_tag_manager
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : corebsp_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : esc_parser
+Features         : XG, SUB-6, MMW, Conn, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : fm_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : gnss_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : gnss_qspr_subsystem
+Features         : MMW, SUB-6, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : gsmverificationqsprsubsystem
+Features         : QSPR_Subsystem_Database_Files, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : hdr_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : lte_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : mmw_5g_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : noise_profiling_tool
+Features         : MMW, SUB-6, Cellular, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : nv_data_engine
+Features         : NV_5G_Definitions, Validation_Engine, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : pcat
+Features         : Device-Configuration, SW-Download, MBN-Download, ServiceProgramming, advanced_core, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qcrpg_transport
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_manufacturing_tools
+Features         : MMI_Factory_Tool, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_qmsl_fastconnect_rt
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_qspr
+Features         : QLogScheduler.External, QSPR.Plugins.DataCollection.External, QSPR.Plugins.Debug.External, QSPR.Plugins.TestResults.External, QSPR.Plugins.QSPRWinFormsCharts.External, QSPR.Feature.Factory, QDART_QSPR6.0.Factory, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_qspr_x64
+Features         : Factory, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_qualcomm_radio_control_toolkit
+Features         : QDART_Help_Base, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qdart_sbsy_rfcal_x64
+Features         : XG, SUB-6, MMW, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qmine
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qseq_data_engine
+Features         : MMW, Validation_Engine, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qualcomm_compressed_logs_viewer
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qualcomm_factory_debug_tool
+Features         : SUB-6, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qualcomm_manufacturing_command_center
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qualcomm_manufacturing_support_library_rt
+Features         : QMSL_Cellular, QMSL_MMW, QMSL_SUB-6, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qualcomm_test_sequencing_system
+Features         : MMW, Cellular, SUB-6, QSEQ_NSVFS, QSEQ_WLAN, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qud
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : quts
+Features         : 1-3G, advanced_core, Core, GPS, Connectivity
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : qxdm5
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : radiated_verification_qspr_subsystem
+Features         : SUB-6, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : rfc_data_engine
+Features         : MMW, Validation_Engine, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : rfcal_data_engine
+Features         : Validation_Engine, Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : station_calibration_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : sub-6_5g_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : td-scdma_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : test_instrument_library_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : tuner_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : wcdma_verification_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : wigig_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : wlan_ctl_toneplan
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : wlan_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : wlan_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : zigbee_15.4_qrct_module
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Product          : zigbee_15.4_qspr_subsystem
+Features         : Core
+Expiry Date      : 2026-12-15 00:00:00.0
+Status           : A
+
+---- License details for ID = 8a7e9285-e163-11ee-b3d2-06ef9a91c98d ----
+Activation ID    : 8a7e9285-e163-11ee-b3d2-06ef9a91c98d
+License group ID : 6a5de147-0a30-11ee-a260-063166a9270b
+Username         : ejw011@lenovo.com
+Activation Date  : 2024-03-13 18:00:13.0
+Product          : quts
+Features         : QUTS.FullAccess, advanced_core, Core
+Expiry Date      : 2030-09-13 00:00:00.0
+Status           : A
+
 ---- License details for ID = c3a754dc-e152-11ee-b3d2-06ef9a91c98d ----
 Activation ID    : c3a754dc-e152-11ee-b3d2-06ef9a91c98d
 License group ID : 9dce5865-178e-11ee-a260-063166a9270b
