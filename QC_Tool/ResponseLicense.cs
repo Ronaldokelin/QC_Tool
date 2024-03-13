@@ -84,7 +84,6 @@ namespace QC_Tool
                 frmApp.buttonActions.BackColor = Color.Red;
 
             }
-
             else
             {
                 uts.labelError("File responses received from server!!!", "green");
