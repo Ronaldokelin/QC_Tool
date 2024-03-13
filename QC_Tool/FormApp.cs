@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace QC_Tool
@@ -16,7 +15,6 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
-        public System.Timers.Timer timer;
         FileConfig fc = new FileConfig();
         Utils uts;
 
@@ -114,12 +112,11 @@ namespace QC_Tool
 
                 if (QcL.copyDirectory(CmdC.getHostName()))
                 {
-                    textBoxDetails.Text += "Send License ID Successfully!!!";
-                    SetTimer();
+                    textBoxDetails.Text += "Send License ID Successfully!!!" + Environment.NewLine;
+                    rl.verifyResponseFile();
                 }
             }
         }
-
 
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -130,19 +127,6 @@ namespace QC_Tool
         {
             comboBoxProducts.Text = "MACAN24";
             comboBoxEstation.Text = "5GFR1BDTST";
-        }
-
-        private void SetTimer()
-        {
-            timer = new System.Timers.Timer(10000);
-            timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
-            timer.Enabled = true;
-        }
-
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
-        {
-            rl.copyResponseFile();
         }
     }
 }

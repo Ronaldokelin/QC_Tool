@@ -10,10 +10,10 @@ namespace QC_Tool
     {
         Cmd CmdC = new Cmd();
         FormApp frmApp = FormApp.getInstance();
-        int countTimer = 0;
         Utils uts = new Utils();
         ReadingXMLFile readXML = new ReadingXMLFile();
         private bool status = false;
+
 
         public int copyResponseFile()
         {
@@ -26,7 +26,6 @@ namespace QC_Tool
 
             try
             {
-                countTimer++;
 
                 if (File.Exists(filePath))
                 {
@@ -34,7 +33,6 @@ namespace QC_Tool
                     {
                         do
                         {
-                            //  frmApp.textBoxDetails.Text += countTimer + "º Attempt" + Environment.NewLine;
                             licNOK = reader.ReadLine();
                             sourceDir = (@"Q:\QualcommLicenseRequests\" + licNOK + @"\" + path + @"\responses");
                             destinationDir = (@"C:\" + path + @"\responses");
@@ -50,10 +48,6 @@ namespace QC_Tool
                                     string fileActivate = vet.Last();
                                     File.Copy(file_name, destinationDir + @"\" + fileActivate, true);
                                     status = true;
-                                    //frmApp.timer.Enabled = false;
-                                    //uts.cleanLabel();
-                                    //uts.labelError("File responses received from server", "Green");
-                                    //activateLicense();
                                 }
                             }
                         }
@@ -67,23 +61,42 @@ namespace QC_Tool
             {
                 return 1;
             }
-            finally
+
+        }
+        public void verifyResponseFile()
+        {
+            int count = 0;
+            do
             {
-                if (countTimer >= 2 && !status)
-                {
-                    frmApp.timer.Enabled = false;
-                    //uts.cleanLabel();
-                    //uts.labelError("File responses not received from server", "red");
-                    //activateLicense();            
-                }
+                copyResponseFile();
+                Application.DoEvents();
+                Thread.Sleep(5000);
+                count++;
+                frmApp.labelAttempts.Text = count + "º Attempt...";
+                Application.DoEvents();
+            }
+            while (count < 6 && status == false);
+
+            if (status == false)
+            {
+                uts.labelError("File responses not received from server!!!", "red");
+                frmApp.labelAttempts.Text = "";
+            }
+
+            else
+            {
+                uts.labelError("File responses received from server!!!", "green");
+                frmApp.labelAttempts.Text = "";
+                //activateLicense();
             }
         }
+
 
         public void activateLicense()
         {
             string path = CmdC.getHostName();
             CmdC.Commands(@"qpm-cli -–process-responses C:\" + path);
-            //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+            readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
     }
 }

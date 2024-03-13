@@ -50,6 +50,7 @@
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
+            this.labelAttempts = new System.Windows.Forms.Label();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -109,7 +110,7 @@
             // 
             // groupBoxSettings
             // 
-            this.groupBoxSettings.AutoSize = true;
+            this.groupBoxSettings.Controls.Add(this.labelAttempts);
             this.groupBoxSettings.Controls.Add(this.buttonActions);
             this.groupBoxSettings.Controls.Add(this.labelEstacao);
             this.groupBoxSettings.Controls.Add(this.labelProduto);
@@ -125,7 +126,7 @@
             // buttonActions
             // 
             this.buttonActions.Enabled = false;
-            this.buttonActions.Location = new System.Drawing.Point(5, 145);
+            this.buttonActions.Location = new System.Drawing.Point(5, 142);
             this.buttonActions.Name = "buttonActions";
             this.buttonActions.Size = new System.Drawing.Size(171, 30);
             this.buttonActions.TabIndex = 6;
@@ -320,6 +321,15 @@
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
+            // labelAttempts
+            // 
+            this.labelAttempts.AutoSize = true;
+            this.labelAttempts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttempts.Location = new System.Drawing.Point(3, 172);
+            this.labelAttempts.Name = "labelAttempts";
+            this.labelAttempts.Size = new System.Drawing.Size(0, 16);
+            this.labelAttempts.TabIndex = 7;
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +383,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExpiryDate;
+        public System.Windows.Forms.Label labelAttempts;
     }
 }
 
