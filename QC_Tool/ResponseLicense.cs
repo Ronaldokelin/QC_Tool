@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -69,25 +70,28 @@ namespace QC_Tool
             do
             {
                 copyResponseFile();
+                frmApp.buttonActions.BackColor = Color.Orange;
                 Application.DoEvents();
-                Thread.Sleep(5000);
+                Thread.Sleep(2000); //mudar para 10000
                 count++;
-                frmApp.labelAttempts.Text = count + "º Attempt...";
+                frmApp.buttonActions.BackColor = Color.Gray;
                 Application.DoEvents();
+                Thread.Sleep(2000);
             }
-            while (count < 6 && status == false);
+            while (count < 6 && status == false); //mudar para 210
 
             if (status == false)
             {
                 uts.labelError("File responses not received from server!!!", "red");
-                frmApp.labelAttempts.Text = "";
+                frmApp.buttonActions.BackColor = Color.Red;
+
             }
 
             else
             {
                 uts.labelError("File responses received from server!!!", "green");
-                frmApp.labelAttempts.Text = "";
-                //activateLicense();
+                frmApp.buttonActions.BackColor = Color.Green;
+                activateLicense();
             }
         }
 
@@ -96,7 +100,7 @@ namespace QC_Tool
         {
             string path = CmdC.getHostName();
             CmdC.Commands(@"qpm-cli -–process-responses C:\" + path);
-            readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+            //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
     }
 }
