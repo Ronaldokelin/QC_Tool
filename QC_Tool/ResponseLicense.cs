@@ -99,7 +99,7 @@ namespace QC_Tool
         public void activateLicense()
         {
             string path = CmdC.getHostName();
-            CmdC.Commands(@"qpm-cli -–process-responses C:\" + path);
+            CmdC.Commands(@"qpm-cli --process-responses C:\" + path);
             //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
     }

@@ -55,7 +55,7 @@ namespace QC_Tool
 
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdC.Commands("qpm-cli --license-list", pathSave + "1");//tirar 1
+                    CmdC.Commands("qpm-cli --license-list", pathSave);
 
                     if (File.Exists(pathSave))
                     {
