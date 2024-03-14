@@ -50,6 +50,7 @@
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -221,7 +222,7 @@
             this.labelDeveloper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDeveloper.AutoSize = true;
             this.labelDeveloper.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDeveloper.Location = new System.Drawing.Point(2, 621);
+            this.labelDeveloper.Location = new System.Drawing.Point(2, 636);
             this.labelDeveloper.Name = "labelDeveloper";
             this.labelDeveloper.Size = new System.Drawing.Size(163, 13);
             this.labelDeveloper.TabIndex = 12;
@@ -309,12 +310,25 @@
             this.labelName.TabIndex = 15;
             this.labelName.Text = "QC Tool";
             // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.White;
+            this.buttonExit.Location = new System.Drawing.Point(902, 624);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 16;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(987, 636);
+            this.ClientSize = new System.Drawing.Size(987, 652);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.pictureBoxFlexLogo);
             this.Controls.Add(this.labelWarning);
             this.Controls.Add(this.labelName);
@@ -361,6 +375,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExpiryDate;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 
