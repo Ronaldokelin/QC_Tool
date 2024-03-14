@@ -49,16 +49,15 @@ namespace QC_Tool
             try
             {
                 string directory = @"C:\Program Files (x86)\Qualcomm\QPM-CLI";
-                string pathSave = @".\License_List.txt";
+                string pathSave = @"C:\temp\License_List.txt";
                 pathFileLicensesList = pathSave;
 
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
                     if (File.Exists(pathSave))
-                    {
                         File.Delete(pathSave);
-                        CmdC.Commands("qpm-cli --license-list", pathSave);
-                    }
+
+                    CmdC.Commands("qpm-cli --license-list", pathSave);
 
                     if (File.Exists(pathSave))
                     {
