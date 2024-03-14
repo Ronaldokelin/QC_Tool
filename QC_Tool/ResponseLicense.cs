@@ -13,6 +13,7 @@ namespace QC_Tool
         Utils uts = new Utils();
         ReadingXMLFile readXML = new ReadingXMLFile();
         private bool status = false;
+        QcLicenses ql = new QcLicenses();
 
         public int copyResponseFile()
         {
@@ -69,10 +70,12 @@ namespace QC_Tool
             {
                 copyResponseFile();
                 frmApp.buttonActions.BackColor = Color.Orange;
+                uts.labelError("Waiting Response..", "orange");
                 Application.DoEvents();
                 Thread.Sleep(2000);
                 count++;
                 frmApp.buttonActions.BackColor = Color.Gray;
+                uts.labelError("Waiting Response...", "orange");
                 Application.DoEvents();
                 Thread.Sleep(2000);
             }
@@ -98,6 +101,7 @@ namespace QC_Tool
             string path = CmdC.getHostName();
             CmdC.Commands(@"qpm-cli --process-responses C:\" + path);
             //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
+            ql.verifyInstallLicense();
         }
     }
 }

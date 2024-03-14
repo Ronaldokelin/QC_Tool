@@ -55,7 +55,11 @@ namespace QC_Tool
 
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
                 {
-                    CmdC.Commands("qpm-cli --license-list", pathSave);
+                    if (File.Exists(pathSave))
+                    {
+                        File.Delete(pathSave);
+                        CmdC.Commands("qpm-cli --license-list", pathSave);
+                    }
 
                     if (File.Exists(pathSave))
                     {
@@ -104,15 +108,15 @@ namespace QC_Tool
             fc.deleteFile();
             buttonActions.Enabled = false;
 
-            uts.labelError("Waiting Response...", "orange");
-
             if (CmdC.GetHostID())
             {
                 readXML.countNokLicenses();
 
-                if (QcL.copyDirectory(CmdC.getHostName()))
+                if (QcL.copyDirectory())
                 {
                     textBoxDetails.Text += "Send License ID Successfully!!!" + Environment.NewLine;
+                    textBoxDetails.Text += "Waiting to receive license file within the next 30 min!!!" + Environment.NewLine;
+
                     rl.verifyResponseFile();
                 }
             }

@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using System.IO;
 using System;
+using System.Windows.Forms;
 
 namespace QC_Tool
 {
@@ -35,7 +36,6 @@ namespace QC_Tool
 
         public void FillingComboBoxStations(string[] allProductsTemp)
         {
-            doc.Load(@".\Teste.xml");
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
 
             for (int i = 0; i < allProductsTemp.Length; i++) //Searching the index of the selected product
@@ -56,15 +56,17 @@ namespace QC_Tool
         {
             try
             {
+                frmApp = FormApp.getInstance();
                 doc.Load(@".\Teste.xml");
                 int selectedStation = 999;
                 frmApp.dataGridViewCheckTools.Rows.Clear();
                 Dgv.PopulateToolDGV();
+                string benchNameSelected = string.Empty;
 
                 for (int i = 0; i < countStationNameOk; i++)//Searching the station choosed on comboBox
                 {
-                    string BenchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
-                    if (BenchNameSelected == frmApp.comboBoxEstation.Text)
+                    benchNameSelected = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[i].ChildNodes[0].ChildNodes[0].InnerText;
+                    if (benchNameSelected == frmApp.comboBoxEstation.Text)
                         selectedStation = i;
                 }
 
@@ -123,7 +125,11 @@ namespace QC_Tool
                 }
                 Dgv.formattingDGV();
             }
-            catch { uts.labelError("ERROR on FillingDGVTools() method!!!", "red"); }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message + "");
+                uts.labelError("ERROR on FillingDGVTools() method!!!", "red");
+            }
         }
 
         private bool verifyFileTool(string path)
