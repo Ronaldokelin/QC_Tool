@@ -2,11 +2,11 @@
 
 namespace QC_Tool
 {
-    class FileConfig
+    static class FileConfig
     {
-        string filepath = @".\LicensesNOK.txt";
+        static string filepath = @".\LicensesNOK.txt";
 
-        public void deleteFile()
+        public static void deleteFile()
         {
             try
             {
@@ -16,7 +16,7 @@ namespace QC_Tool
             catch { }
         }
 
-        public void writeFile(string line)
+        public static void writeFile(string line)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace QC_Tool
             catch { }
         }
 
-        public void readFile()
+        public static void readFile()
         {
             try
             {

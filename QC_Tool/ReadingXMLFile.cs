@@ -16,7 +16,6 @@ namespace QC_Tool
         Utils uts = new Utils();
         Cmd command = new Cmd();
         Logger log = new Logger();
-        FileConfig fc = new FileConfig();
 
         public void FillingComboBoxProducts()
         {
@@ -165,7 +164,7 @@ namespace QC_Tool
                 {
                     if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
                     {
-                        fc.writeFile(frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString());
+                        FileConfig.writeFile(frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString());
                         frmApp.lic[count] = frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString();
                         count++;
                     }

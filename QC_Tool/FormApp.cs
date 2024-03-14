@@ -15,7 +15,6 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
-        FileConfig fc;
         Utils uts;
 
         public FormApp()
@@ -43,7 +42,6 @@ namespace QC_Tool
             QcL = new QcLicenses();
             rl = new ResponseLicense();
             uts = new Utils();
-            fc = new FileConfig();
         }
 
         public string CheckDirectoryQpmCli()
@@ -106,7 +104,7 @@ namespace QC_Tool
 
         private void getLicensesResponses()
         {
-            fc.deleteFile();
+            FileConfig.deleteFile();
             buttonActions.Enabled = false;
 
             if (CmdC.GetHostID())
