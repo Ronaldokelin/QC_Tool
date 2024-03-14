@@ -15,7 +15,7 @@ namespace QC_Tool
         private static FormApp INSTANCE = null;
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
-        FileConfig fc = new FileConfig();
+        FileConfig fc;
         Utils uts;
 
         public FormApp()
@@ -43,6 +43,7 @@ namespace QC_Tool
             QcL = new QcLicenses();
             rl = new ResponseLicense();
             uts = new Utils();
+            fc = new FileConfig();
         }
 
         public string CheckDirectoryQpmCli()

@@ -5,7 +5,6 @@ namespace QC_Tool
     class QcLicenses
     {
         FormApp frmApp;
-        //ReadingXMLFile rxf = new ReadingXMLFile();
         Logger log = new Logger();
         Cmd CmdC = new Cmd();
 

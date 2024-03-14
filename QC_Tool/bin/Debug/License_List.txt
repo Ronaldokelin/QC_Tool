@@ -2,7 +2,7 @@
 
 ---- License details for ID = 5b81dacd-e20f-11ee-b3d2-06ef9a91c98d ----
 Activation ID    : 5b81dacd-e20f-11ee-b3d2-06ef9a91c98d
-License group ID : 5ce5a859-3ebc-11ed-83ab-063166a9270
+License group ID : 5ce5a859-3ebc-11ed-83ab-063166a9270b
 Username         : jim.walsh@motorola.com
 Activation Date  : 2024-03-14 14:30:08.0
 Product          : qdcm_factory_sm8475

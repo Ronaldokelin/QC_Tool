@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApp));
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
             this.comboBoxEstation = new System.Windows.Forms.ComboBox();
             this.labelProduto = new System.Windows.Forms.Label();
@@ -320,6 +321,7 @@
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.labelDeveloper);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QC Tool  -  v1.0";
