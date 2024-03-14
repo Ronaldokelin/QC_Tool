@@ -36,7 +36,6 @@ namespace QC_Tool
 
                         }
                     }
-                    //timer
                 }
                 return true;
             }

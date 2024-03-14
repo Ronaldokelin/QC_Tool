@@ -123,7 +123,7 @@ namespace QC_Tool
                 }
                 Dgv.formattingDGV();
             }
-            catch { uts.labelError("TO TISTI!!!", "red"); }
+            catch { uts.labelError("ERROR on FillingDGVTools() method!!!", "red"); }
         }
 
         private bool verifyFileTool(string path)

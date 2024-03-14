@@ -117,17 +117,10 @@ namespace QC_Tool
                 }
             }
         }
-
         private void comboBoxEstation_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonActions.Enabled = false;
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
-        }
-
-        private void buttonHelp_Click(object sender, EventArgs e)//tirar
-        {
-            comboBoxProducts.Text = "MACAN24";
-            comboBoxEstation.Text = "5GFR1BDTST";
         }
     }
 }
