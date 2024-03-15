@@ -4,9 +4,7 @@ namespace QC_Tool
 {
     static class FileConfig
     {
-        static string filepath = @".\LicensesNOK.txt";
-
-        public static void deleteFile()
+        public static void deleteFile(string filepath)
         {
             try
             {
@@ -16,7 +14,7 @@ namespace QC_Tool
             catch { }
         }
 
-        public static void writeFile(string line)
+        public static void writeFile(string filepath, string line)
         {
             try
             {
@@ -32,21 +30,6 @@ namespace QC_Tool
                     using (StreamWriter writer = new StreamWriter(new FileStream(filepath, FileMode.Append, FileAccess.Write)))
                     {
                         writer.WriteLine(line);
-                    }
-                }
-            }
-            catch { }
-        }
-
-        public static void readFile()
-        {
-            try
-            {
-                if (!File.Exists(@".\LicensesNOK.txt"))
-                {
-                    using (StreamReader reader = new StreamReader(new FileStream(filepath, FileMode.Open, FileAccess.Read)))
-                    {
-                        reader.ReadLine();
                     }
                 }
             }

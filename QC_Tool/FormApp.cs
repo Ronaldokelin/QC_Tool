@@ -16,6 +16,9 @@ namespace QC_Tool
         public string pathFileLicensesList = string.Empty;
         public string[] lic;
         Utils uts;
+        string filepath = @".\LicensesNOK.txt";
+        string pathSave = @"C:\temp\License_List.txt";
+
 
         public FormApp()
         {
@@ -49,7 +52,6 @@ namespace QC_Tool
             try
             {
                 string directory = @"C:\Program Files (x86)\Qualcomm\QPM-CLI";
-                string pathSave = @"C:\temp\License_List.txt";
                 pathFileLicensesList = pathSave;
 
                 if (Directory.EnumerateFileSystemEntries(directory).Any())
@@ -103,18 +105,17 @@ namespace QC_Tool
 
         private void getLicensesResponses()
         {
-            FileConfig.deleteFile();
+            FileConfig.deleteFile(filepath);
             buttonActions.Enabled = false;
 
             if (CmdC.GetHostID())
             {
-                readXML.countNokLicenses();
+                readXML.countNokLicenses(filepath);
 
                 if (QcL.copyDirectory())
                 {
                     textBoxDetails.Text += "Send License ID Successfully!!!" + Environment.NewLine;
                     textBoxDetails.Text += "Waiting to receive license file within the next 30 min!!!" + Environment.NewLine;
-
                     rl.verifyResponseFile();
                 }
             }
@@ -127,6 +128,8 @@ namespace QC_Tool
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            FileConfig.deleteFile(filepath);
+            FileConfig.deleteFile(pathSave);
             Environment.Exit(0);
         }
     }

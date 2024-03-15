@@ -79,12 +79,14 @@ namespace QC_Tool
                     xmlAtributes[0, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Name"].Value.ToString();
                     xmlAtributes[1, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Type"].Value.ToString();
                     xmlAtributes[2, k] = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[indexProduct].ChildNodes[1].ChildNodes[selectedStation].ChildNodes[i].Attributes["Path"].Value.ToString();
-
                     frmApp.dataGridViewCheckTools.Rows.Add();
+
                     if (xmlAtributes[1, k] != "Tool")
                         frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0, k] + "_" + xmlAtributes[2, k];
+
                     else
                         frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value = xmlAtributes[0, k];
+
                     frmApp.dataGridViewCheckTools.Rows[i].Cells[1].Value = xmlAtributes[1, k];
 
                     if (xmlAtributes[1, k] == "Tool")
@@ -143,7 +145,7 @@ namespace QC_Tool
             catch { return false; }
         }
 
-        public void countNokLicenses()
+        public void countNokLicenses(string path)
         {
             try
             {
@@ -164,7 +166,7 @@ namespace QC_Tool
                 {
                     if (frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value.ToString() == "NOK")
                     {
-                        FileConfig.writeFile(frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString());
+                        FileConfig.writeFile(path, frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString());
                         frmApp.lic[count] = frmApp.dataGridViewCheckTools.Rows[i].Cells[0].Value.ToString();
                         count++;
                     }

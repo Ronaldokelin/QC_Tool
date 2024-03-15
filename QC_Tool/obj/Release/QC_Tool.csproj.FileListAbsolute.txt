@@ -7,4 +7,3 @@ C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.csproj.GenerateResource.cache
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.csproj.CoreCompileInputs.cache
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.exe
 C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.pdb
-C:\Projetos\QC_Tool\QC_Tool\obj\Release\QC_Tool.csprojAssemblyReference.cache

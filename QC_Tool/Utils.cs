@@ -25,12 +25,14 @@ namespace QC_Tool
             frmApp.tabControlMain.TabIndex = 1;
             Application.DoEvents();
         }
+
         public void cleanLabel()
         {
             frmApp.labelWarning.Text = "";
             frmApp.labelWarning.Visible = false;
             frmApp.labelWarning.Enabled = false;
         }
+
         public void disableAll()//to do
         {
             frmApp.comboBoxEstation.Enabled = false;
