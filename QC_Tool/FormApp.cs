@@ -124,5 +124,10 @@ namespace QC_Tool
             buttonActions.Enabled = false;
             readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
