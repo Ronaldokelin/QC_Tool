@@ -271,7 +271,7 @@
             this.tabPageOperator.Controls.Add(this.groupBoxTools);
             this.tabPageOperator.Location = new System.Drawing.Point(4, 22);
             this.tabPageOperator.Name = "tabPageOperator";
-            this.tabPageOperator.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageOperator.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageOperator.Size = new System.Drawing.Size(971, 508);
             this.tabPageOperator.TabIndex = 0;
             this.tabPageOperator.Text = "Operator";
@@ -281,7 +281,7 @@
             // 
             this.tabPageEngineer.Location = new System.Drawing.Point(4, 22);
             this.tabPageEngineer.Name = "tabPageEngineer";
-            this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEngineer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageEngineer.Size = new System.Drawing.Size(971, 508);
             this.tabPageEngineer.TabIndex = 1;
             this.tabPageEngineer.Text = "Engineer";
@@ -291,7 +291,7 @@
             // 
             this.labelWarning.Enabled = false;
             this.labelWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWarning.Location = new System.Drawing.Point(10, 579);
+            this.labelWarning.Location = new System.Drawing.Point(10, 576);
             this.labelWarning.Name = "labelWarning";
             this.labelWarning.Size = new System.Drawing.Size(965, 42);
             this.labelWarning.TabIndex = 14;
@@ -312,6 +312,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExit.BackColor = System.Drawing.Color.White;
             this.buttonExit.Location = new System.Drawing.Point(902, 624);
             this.buttonExit.Name = "buttonExit";
@@ -375,7 +376,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExpiryDate;
-        private System.Windows.Forms.Button buttonExit;
+        public System.Windows.Forms.Button buttonExit;
     }
 }
 

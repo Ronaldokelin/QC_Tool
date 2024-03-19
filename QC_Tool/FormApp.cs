@@ -99,8 +99,10 @@ namespace QC_Tool
 
         private void buttonActions_Click(object sender, EventArgs e)
         {
+            buttonExit.Enabled = false;
             uts.disableAll();
             getLicensesResponses();
+            buttonExit.Enabled = true;
         }
 
         private void getLicensesResponses()

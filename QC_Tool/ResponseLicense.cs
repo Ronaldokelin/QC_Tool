@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -66,26 +67,32 @@ namespace QC_Tool
         public void verifyResponseFile()
         {
             int count = 0;
+            var response = TimeSpan.FromMinutes(30.0);
+
             do
             {
                 copyResponseFile();
                 frmApp.buttonActions.BackColor = Color.Orange;
-                uts.labelError("Waiting Response..", "orange");
+                uts.labelError("Waiting Response " + response + " min", "orange");
+
                 Application.DoEvents();
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
+                response -= TimeSpan.FromSeconds(1);
+
                 count++;
                 frmApp.buttonActions.BackColor = Color.Gray;
-                uts.labelError("Waiting Response...", "orange");
+                uts.labelError("Waiting Response " + response + " min", "orange");
                 Application.DoEvents();
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
+                response -= TimeSpan.FromSeconds(1);
+
             }
-            while (count < 550 && status == false);
+            while (count < 900 && status == false);
 
             if (status == false)
             {
                 uts.labelError("File responses not received from server!!!", "red");
                 frmApp.buttonActions.BackColor = Color.Red;
-
             }
             else
             {
@@ -95,13 +102,13 @@ namespace QC_Tool
             }
         }
 
-
         public void activateLicense()
         {
             string path = CmdC.getHostName();
             CmdC.Commands(@"qpm-cli --process-responses C:\" + path);
             //readXML.FillingDGVTools(readXML.indexProduct, readXML.countStationName);
             ql.verifyInstallLicense();
+            frmApp.buttonExit.Enabled = true;
         }
     }
 }

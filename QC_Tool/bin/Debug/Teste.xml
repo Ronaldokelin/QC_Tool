@@ -20,7 +20,7 @@
 				</Bench>
 				<Bench>
 					<BenchName>LCDCAL</BenchName>
-					<Item Name="QDCM-License" Type="License" Path="a5269361-8345-11ee-8637-026b10d3716b"/>
+					<Item Name="QDCM_motorola" Type="License" Path="a5269361-8345-11ee-8637-026b10d3716b"/>
 				</Bench>
 			</Stations>
 		</Product>
@@ -29,7 +29,7 @@
 			<Stations>
 				<Bench>
 					<BenchName>LCDCAL</BenchName>
-					<Item Name="QDCM-License" Type="License" Path="5ce5a859-3ebc-11ed-83ab-063166a9270b"/>
+					<Item Name="QDCM_motorola" Type="License" Path="5ce5a859-3ebc-11ed-83ab-063166a9270b"/>
 				</Bench>
 			</Stations>
 		</Product>
@@ -38,7 +38,7 @@
 			<Stations>
 				<Bench>
 					<BenchName>LCDCAL</BenchName>
-					<Item Name="QDCM-License" Type="License" Path="5525af6a-fb14-11ed-a260-063166a9270b"/>
+					<Item Name="QDCM_motorola" Type="License" Path="5525af6a-fb14-11ed-a260-063166a9270b"/>
 				</Bench>
 			</Stations>
 		</Product>
