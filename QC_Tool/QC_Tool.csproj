@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cmd.cs" />
+    <Compile Include="CreateNewProduct.cs" />
     <Compile Include="DataGridView.cs" />
     <Compile Include="FileConfig.cs" />
     <Compile Include="FormApp.cs">

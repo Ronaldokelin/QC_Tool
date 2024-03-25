@@ -18,6 +18,7 @@ namespace QC_Tool
         Utils uts;
         string filepath = @".\LicensesNOK.txt";
         string pathSave = @"C:\temp\License_List.txt";
+        CreateNewProduct CnP;
 
 
         public FormApp()
@@ -45,6 +46,7 @@ namespace QC_Tool
             QcL = new QcLicenses();
             rl = new ResponseLicense();
             uts = new Utils();
+            CnP = new CreateNewProduct();
         }
 
         public string CheckDirectoryQpmCli()
@@ -133,6 +135,11 @@ namespace QC_Tool
             FileConfig.deleteFile(filepath);
             FileConfig.deleteFile(pathSave);
             Environment.Exit(0);
+        }
+
+        private void buttonAddPath_Click(object sender, EventArgs e)
+        {
+            CnP.writeToXML();
         }
     }
 }
