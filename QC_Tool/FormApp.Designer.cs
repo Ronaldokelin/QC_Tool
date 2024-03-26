@@ -62,6 +62,8 @@
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
+            this.labelUser = new System.Windows.Forms.Label();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -291,6 +293,8 @@
             // 
             // tabPageEngineer
             // 
+            this.tabPageEngineer.Controls.Add(this.textBoxUser);
+            this.tabPageEngineer.Controls.Add(this.labelUser);
             this.tabPageEngineer.Controls.Add(this.comboBoxBenchName);
             this.tabPageEngineer.Controls.Add(this.buttonAddPath);
             this.tabPageEngineer.Controls.Add(this.comboBoxItemType);
@@ -327,7 +331,7 @@
             // 
             // buttonAddPath
             // 
-            this.buttonAddPath.Location = new System.Drawing.Point(102, 395);
+            this.buttonAddPath.Location = new System.Drawing.Point(102, 443);
             this.buttonAddPath.Name = "buttonAddPath";
             this.buttonAddPath.Size = new System.Drawing.Size(75, 30);
             this.buttonAddPath.TabIndex = 11;
@@ -342,7 +346,7 @@
             this.comboBoxItemType.Items.AddRange(new object[] {
             "Tool",
             "License"});
-            this.comboBoxItemType.Location = new System.Drawing.Point(56, 276);
+            this.comboBoxItemType.Location = new System.Drawing.Point(56, 325);
             this.comboBoxItemType.Name = "comboBoxItemType";
             this.comboBoxItemType.Size = new System.Drawing.Size(121, 26);
             this.comboBoxItemType.TabIndex = 10;
@@ -352,7 +356,7 @@
             // 
             this.textBoxItemPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxItemPath.Location = new System.Drawing.Point(56, 336);
+            this.textBoxItemPath.Location = new System.Drawing.Point(56, 385);
             this.textBoxItemPath.Name = "textBoxItemPath";
             this.textBoxItemPath.Size = new System.Drawing.Size(121, 24);
             this.textBoxItemPath.TabIndex = 9;
@@ -362,17 +366,17 @@
             // 
             this.labelItemPath.AutoSize = true;
             this.labelItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemPath.Location = new System.Drawing.Point(53, 317);
+            this.labelItemPath.Location = new System.Drawing.Point(53, 366);
             this.labelItemPath.Name = "labelItemPath";
-            this.labelItemPath.Size = new System.Drawing.Size(63, 16);
+            this.labelItemPath.Size = new System.Drawing.Size(109, 16);
             this.labelItemPath.TabIndex = 8;
-            this.labelItemPath.Text = "ItemPath:";
+            this.labelItemPath.Text = "License Number:";
             // 
             // labelItemType
             // 
             this.labelItemType.AutoSize = true;
             this.labelItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemType.Location = new System.Drawing.Point(53, 257);
+            this.labelItemType.Location = new System.Drawing.Point(53, 306);
             this.labelItemType.Name = "labelItemType";
             this.labelItemType.Size = new System.Drawing.Size(68, 16);
             this.labelItemType.TabIndex = 6;
@@ -394,9 +398,9 @@
             this.labelItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelItemName.Location = new System.Drawing.Point(53, 188);
             this.labelItemName.Name = "labelItemName";
-            this.labelItemName.Size = new System.Drawing.Size(76, 16);
+            this.labelItemName.Size = new System.Drawing.Size(93, 16);
             this.labelItemName.TabIndex = 4;
-            this.labelItemName.Text = "Item Name:";
+            this.labelItemName.Text = "License Type:";
             // 
             // labelBenchName
             // 
@@ -404,9 +408,9 @@
             this.labelBenchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBenchName.Location = new System.Drawing.Point(53, 118);
             this.labelBenchName.Name = "labelBenchName";
-            this.labelBenchName.Size = new System.Drawing.Size(86, 16);
+            this.labelBenchName.Size = new System.Drawing.Size(52, 16);
             this.labelBenchName.TabIndex = 2;
-            this.labelBenchName.Text = "BenchName:";
+            this.labelBenchName.Text = "Station:";
             // 
             // textBoxProductName
             // 
@@ -462,6 +466,25 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // textBoxUser
+            // 
+            this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUser.Location = new System.Drawing.Point(56, 265);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(121, 24);
+            this.textBoxUser.TabIndex = 14;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(53, 246);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(40, 16);
+            this.labelUser.TabIndex = 13;
+            this.labelUser.Text = "User:";
             // 
             // FormApp
             // 
@@ -531,6 +554,8 @@
         public System.Windows.Forms.TextBox textBoxItemName;
         public System.Windows.Forms.TextBox textBoxProductName;
         public System.Windows.Forms.ComboBox comboBoxBenchName;
+        public System.Windows.Forms.TextBox textBoxUser;
+        private System.Windows.Forms.Label labelUser;
     }
 }
 

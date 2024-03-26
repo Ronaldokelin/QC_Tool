@@ -69,7 +69,7 @@ namespace QC_Tool
                new XElement("BenchName", frmApp.comboBoxBenchName.Text),
 
                new XElement("Item",
-               new XAttribute("Name", frmApp.textBoxItemName.Text),
+               new XAttribute("Name", frmApp.textBoxItemName.Text + "_" + frmApp.textBoxUser.Text),
                new XAttribute("Type", frmApp.comboBoxItemType.Text),
                new XAttribute("Path", frmApp.textBoxItemPath.Text))))));
 
@@ -99,7 +99,7 @@ namespace QC_Tool
                      First().AddFirst(new XElement("Bench",
                                       new XElement("BenchName", frmApp.comboBoxBenchName.Text),
                                       new XElement("Item",
-                                      new XAttribute("Name", frmApp.textBoxItemName.Text),
+                                      new XAttribute("Name", frmApp.textBoxItemName.Text + "_" + frmApp.textBoxUser.Text),
                                       new XAttribute("Type", frmApp.comboBoxItemType.Text),
                                       new XAttribute("Path", frmApp.textBoxItemPath.Text))));
 
