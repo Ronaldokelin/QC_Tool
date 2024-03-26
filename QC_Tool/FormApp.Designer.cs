@@ -48,20 +48,20 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageOperator = new System.Windows.Forms.TabPage();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
+            this.comboBoxBenchName = new System.Windows.Forms.ComboBox();
+            this.buttonAddPath = new System.Windows.Forms.Button();
+            this.comboBoxItemType = new System.Windows.Forms.ComboBox();
+            this.textBoxItemPath = new System.Windows.Forms.TextBox();
+            this.labelItemPath = new System.Windows.Forms.Label();
+            this.labelItemType = new System.Windows.Forms.Label();
+            this.textBoxItemName = new System.Windows.Forms.TextBox();
+            this.labelItemName = new System.Windows.Forms.Label();
+            this.labelBenchName = new System.Windows.Forms.Label();
+            this.textBoxProductName = new System.Windows.Forms.TextBox();
+            this.labelProductName = new System.Windows.Forms.Label();
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.textBoxProductName = new System.Windows.Forms.TextBox();
-            this.labelBenchName = new System.Windows.Forms.Label();
-            this.textBoxItemName = new System.Windows.Forms.TextBox();
-            this.labelItemName = new System.Windows.Forms.Label();
-            this.labelItemType = new System.Windows.Forms.Label();
-            this.textBoxItemPath = new System.Windows.Forms.TextBox();
-            this.labelItemPath = new System.Windows.Forms.Label();
-            this.comboBoxItemType = new System.Windows.Forms.ComboBox();
-            this.buttonAddPath = new System.Windows.Forms.Button();
-            this.comboBoxBenchName = new System.Windows.Forms.ComboBox();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -311,6 +311,123 @@
             this.tabPageEngineer.Text = "Engineer";
             this.tabPageEngineer.UseVisualStyleBackColor = true;
             // 
+            // comboBoxBenchName
+            // 
+            this.comboBoxBenchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBenchName.FormattingEnabled = true;
+            this.comboBoxBenchName.Items.AddRange(new object[] {
+            "5GFR1BDTST",
+            "BrdTest",
+            "LCDCAL"});
+            this.comboBoxBenchName.Location = new System.Drawing.Point(56, 137);
+            this.comboBoxBenchName.Name = "comboBoxBenchName";
+            this.comboBoxBenchName.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxBenchName.TabIndex = 12;
+            this.comboBoxBenchName.Text = "5GFR1BDTST";
+            // 
+            // buttonAddPath
+            // 
+            this.buttonAddPath.Location = new System.Drawing.Point(102, 395);
+            this.buttonAddPath.Name = "buttonAddPath";
+            this.buttonAddPath.Size = new System.Drawing.Size(75, 30);
+            this.buttonAddPath.TabIndex = 11;
+            this.buttonAddPath.Text = "Add";
+            this.buttonAddPath.UseVisualStyleBackColor = true;
+            this.buttonAddPath.Click += new System.EventHandler(this.buttonAddPath_Click);
+            // 
+            // comboBoxItemType
+            // 
+            this.comboBoxItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxItemType.FormattingEnabled = true;
+            this.comboBoxItemType.Items.AddRange(new object[] {
+            "Tool",
+            "License"});
+            this.comboBoxItemType.Location = new System.Drawing.Point(56, 276);
+            this.comboBoxItemType.Name = "comboBoxItemType";
+            this.comboBoxItemType.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxItemType.TabIndex = 10;
+            this.comboBoxItemType.Text = "Tool";
+            // 
+            // textBoxItemPath
+            // 
+            this.textBoxItemPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxItemPath.Location = new System.Drawing.Point(56, 336);
+            this.textBoxItemPath.Name = "textBoxItemPath";
+            this.textBoxItemPath.Size = new System.Drawing.Size(121, 24);
+            this.textBoxItemPath.TabIndex = 9;
+            this.textBoxItemPath.Text = "dasdasdas";
+            // 
+            // labelItemPath
+            // 
+            this.labelItemPath.AutoSize = true;
+            this.labelItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItemPath.Location = new System.Drawing.Point(53, 317);
+            this.labelItemPath.Name = "labelItemPath";
+            this.labelItemPath.Size = new System.Drawing.Size(63, 16);
+            this.labelItemPath.TabIndex = 8;
+            this.labelItemPath.Text = "ItemPath:";
+            // 
+            // labelItemType
+            // 
+            this.labelItemType.AutoSize = true;
+            this.labelItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItemType.Location = new System.Drawing.Point(53, 257);
+            this.labelItemType.Name = "labelItemType";
+            this.labelItemType.Size = new System.Drawing.Size(68, 16);
+            this.labelItemType.TabIndex = 6;
+            this.labelItemType.Text = "ItemType:";
+            // 
+            // textBoxItemName
+            // 
+            this.textBoxItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxItemName.Location = new System.Drawing.Point(56, 207);
+            this.textBoxItemName.Name = "textBoxItemName";
+            this.textBoxItemName.Size = new System.Drawing.Size(121, 24);
+            this.textBoxItemName.TabIndex = 5;
+            this.textBoxItemName.Text = "dasdas";
+            // 
+            // labelItemName
+            // 
+            this.labelItemName.AutoSize = true;
+            this.labelItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItemName.Location = new System.Drawing.Point(53, 188);
+            this.labelItemName.Name = "labelItemName";
+            this.labelItemName.Size = new System.Drawing.Size(76, 16);
+            this.labelItemName.TabIndex = 4;
+            this.labelItemName.Text = "Item Name:";
+            // 
+            // labelBenchName
+            // 
+            this.labelBenchName.AutoSize = true;
+            this.labelBenchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBenchName.Location = new System.Drawing.Point(53, 118);
+            this.labelBenchName.Name = "labelBenchName";
+            this.labelBenchName.Size = new System.Drawing.Size(86, 16);
+            this.labelBenchName.TabIndex = 2;
+            this.labelBenchName.Text = "BenchName:";
+            // 
+            // textBoxProductName
+            // 
+            this.textBoxProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProductName.Location = new System.Drawing.Point(56, 72);
+            this.textBoxProductName.Name = "textBoxProductName";
+            this.textBoxProductName.Size = new System.Drawing.Size(121, 24);
+            this.textBoxProductName.TabIndex = 1;
+            this.textBoxProductName.Text = "VENUS";
+            // 
+            // labelProductName
+            // 
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductName.Location = new System.Drawing.Point(53, 53);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(94, 16);
+            this.labelProductName.TabIndex = 0;
+            this.labelProductName.Text = "ProductName:";
+            // 
             // labelWarning
             // 
             this.labelWarning.Enabled = false;
@@ -345,118 +462,6 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(53, 53);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(94, 16);
-            this.labelProductName.TabIndex = 0;
-            this.labelProductName.Text = "ProductName:";
-            // 
-            // textBoxProductName
-            // 
-            this.textBoxProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductName.Location = new System.Drawing.Point(56, 72);
-            this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(121, 24);
-            this.textBoxProductName.TabIndex = 1;
-            // 
-            // labelBenchName
-            // 
-            this.labelBenchName.AutoSize = true;
-            this.labelBenchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBenchName.Location = new System.Drawing.Point(53, 118);
-            this.labelBenchName.Name = "labelBenchName";
-            this.labelBenchName.Size = new System.Drawing.Size(86, 16);
-            this.labelBenchName.TabIndex = 2;
-            this.labelBenchName.Text = "BenchName:";
-            // 
-            // textBoxItemName
-            // 
-            this.textBoxItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxItemName.Location = new System.Drawing.Point(56, 207);
-            this.textBoxItemName.Name = "textBoxItemName";
-            this.textBoxItemName.Size = new System.Drawing.Size(121, 24);
-            this.textBoxItemName.TabIndex = 5;
-            // 
-            // labelItemName
-            // 
-            this.labelItemName.AutoSize = true;
-            this.labelItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemName.Location = new System.Drawing.Point(53, 188);
-            this.labelItemName.Name = "labelItemName";
-            this.labelItemName.Size = new System.Drawing.Size(76, 16);
-            this.labelItemName.TabIndex = 4;
-            this.labelItemName.Text = "Item Name:";
-            // 
-            // labelItemType
-            // 
-            this.labelItemType.AutoSize = true;
-            this.labelItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemType.Location = new System.Drawing.Point(53, 257);
-            this.labelItemType.Name = "labelItemType";
-            this.labelItemType.Size = new System.Drawing.Size(68, 16);
-            this.labelItemType.TabIndex = 6;
-            this.labelItemType.Text = "ItemType:";
-            // 
-            // textBoxItemPath
-            // 
-            this.textBoxItemPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxItemPath.Location = new System.Drawing.Point(56, 336);
-            this.textBoxItemPath.Name = "textBoxItemPath";
-            this.textBoxItemPath.Size = new System.Drawing.Size(121, 24);
-            this.textBoxItemPath.TabIndex = 9;
-            // 
-            // labelItemPath
-            // 
-            this.labelItemPath.AutoSize = true;
-            this.labelItemPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemPath.Location = new System.Drawing.Point(53, 317);
-            this.labelItemPath.Name = "labelItemPath";
-            this.labelItemPath.Size = new System.Drawing.Size(63, 16);
-            this.labelItemPath.TabIndex = 8;
-            this.labelItemPath.Text = "ItemPath:";
-            // 
-            // comboBoxItemType
-            // 
-            this.comboBoxItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxItemType.FormattingEnabled = true;
-            this.comboBoxItemType.Items.AddRange(new object[] {
-            "Tool",
-            "License"});
-            this.comboBoxItemType.Location = new System.Drawing.Point(56, 276);
-            this.comboBoxItemType.Name = "comboBoxItemType";
-            this.comboBoxItemType.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxItemType.TabIndex = 10;
-            // 
-            // buttonAddPath
-            // 
-            this.buttonAddPath.Location = new System.Drawing.Point(102, 395);
-            this.buttonAddPath.Name = "buttonAddPath";
-            this.buttonAddPath.Size = new System.Drawing.Size(75, 30);
-            this.buttonAddPath.TabIndex = 11;
-            this.buttonAddPath.Text = "Add";
-            this.buttonAddPath.UseVisualStyleBackColor = true;
-            this.buttonAddPath.Click += new System.EventHandler(this.buttonAddPath_Click);
-            // 
-            // comboBoxBenchName
-            // 
-            this.comboBoxBenchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxBenchName.FormattingEnabled = true;
-            this.comboBoxBenchName.Items.AddRange(new object[] {
-            "5GFR1BDTST",
-            "BrdTest",
-            "LCDCAL"});
-            this.comboBoxBenchName.Location = new System.Drawing.Point(56, 137);
-            this.comboBoxBenchName.Name = "comboBoxBenchName";
-            this.comboBoxBenchName.Size = new System.Drawing.Size(121, 26);
-            this.comboBoxBenchName.TabIndex = 12;
             // 
             // FormApp
             // 

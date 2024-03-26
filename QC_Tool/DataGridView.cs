@@ -4,13 +4,12 @@ namespace QC_Tool
 {
     class DataGridView
     {
-        FormApp frmApp;
+        FormApp frmApp  = FormApp.getInstance();
+
         Utils uts = new Utils();
 
         public void PopulateResultDGV()
         {
-            frmApp = FormApp.getInstance();
-
             try
             {
                 frmApp.dataGridViewCheckTools.Rows[0].Cells[2].Value = frmApp.CheckDirectoryQpmCli();
@@ -36,7 +35,7 @@ namespace QC_Tool
 
         public void PopulateToolDGV()
         {
-            frmApp = FormApp.getInstance();
+           // frmApp = FormApp.getInstance();
             frmApp.dataGridViewCheckTools.Rows.Add();
             frmApp.dataGridViewCheckTools.Rows[0].Cells[0].Value = "QPM-CLI";
             frmApp.dataGridViewCheckTools.Rows[0].Cells[1].Value = "Software";

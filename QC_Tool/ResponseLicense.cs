@@ -27,7 +27,6 @@ namespace QC_Tool
 
             try
             {
-
                 if (File.Exists(filePath))
                 {
                     using (StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
@@ -54,7 +53,6 @@ namespace QC_Tool
                         }
                         while (licNOK != null);
                     }
-
                 }
                 return 0;
             }
@@ -85,7 +83,6 @@ namespace QC_Tool
                 Application.DoEvents();
                 Thread.Sleep(1000);
                 response -= TimeSpan.FromSeconds(1);
-
             }
             while (count < 900 && status == false);
 

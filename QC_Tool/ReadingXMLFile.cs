@@ -11,7 +11,7 @@ namespace QC_Tool
         public string[] allProducts;
         public int indexProduct = 999;
         public int countStationName = 999;
-        FormApp frmApp;
+        FormApp frmApp = FormApp.getInstance();
         DataGridView Dgv = new DataGridView();
         Utils uts = new Utils();
         Cmd command = new Cmd();
@@ -19,7 +19,7 @@ namespace QC_Tool
 
         public void FillingComboBoxProducts()
         {
-            frmApp = FormApp.getInstance();
+            //frmApp = FormApp.getInstance();
             doc.Load(@".\Teste.xml");//To do
             frmApp.comboBoxProducts.Items.Clear();
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
@@ -55,7 +55,6 @@ namespace QC_Tool
         {
             try
             {
-                frmApp = FormApp.getInstance();
                 doc.Load(@".\Teste.xml");
                 int selectedStation = 999;
                 frmApp.dataGridViewCheckTools.Rows.Clear();
@@ -149,7 +148,7 @@ namespace QC_Tool
         {
             try
             {
-                frmApp = FormApp.getInstance();
+              //  frmApp = FormApp.getInstance();
                 int errorsLic = 0;
 
                 for (int i = 0; i < frmApp.dataGridViewCheckTools.RowCount; i++)

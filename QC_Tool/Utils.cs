@@ -6,6 +6,7 @@ namespace QC_Tool
     class Utils
     {
         FormApp frmApp = FormApp.getInstance();
+
         public void labelError(string error, string colorL)
         {
             frmApp.labelWarning.Text = error;
