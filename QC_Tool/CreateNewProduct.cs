@@ -10,34 +10,89 @@ namespace QC_Tool
     {
         FormApp frmApp = FormApp.getInstance();
         string filePath = (@".\Teste.xml");
+        XDocument xDocument = XDocument.Load(@".\Teste.xml");
 
         public void writeToXML()
         {
             if (File.Exists(filePath))
             {
-                XDocument xDocument = XDocument.Load(filePath);
-                XElement root = xDocument.Element("QC_Tool");
-                IEnumerable<XElement> rows = root.Descendants("Product");
-                XElement firstRow = rows.First();
-                firstRow.AddBeforeSelf(
-                   new XElement("Product",
-                   new XElement("ProductName", frmApp.textBoxProductName.Text),
+                if (!verifyProductName())
+                    createNewProductXML();
 
-                   new XElement("Stations",
-                   new XElement("Bench",
-                   new XElement("BenchName", frmApp.comboBoxBenchName.Text),
+                else if (!verifyBenchName())
+                {
+                    XElement root = xDocument.Element("QC_Tool");
+                    IEnumerable<XElement> rows = root.Descendants("Bench");
+                    XElement firstRow = rows.FirstOrDefault();
 
-                   new XElement("Item",
-                   new XAttribute("Name", frmApp.textBoxItemName.Text),
-                   new XAttribute("Type", frmApp.comboBoxItemType.Text),
-                   new XAttribute("Path", frmApp.textBoxItemPath.Text))))));
+                    firstRow.AddAfterSelf(
+                       xDocument.Element("QC_Tool")
+                       .Elements("Products")
+                       .Elements("Product")
+                       .Elements("BenchName")
+                       .Elements("Stations")
+                       .Elements("Bench"),
+                       new XElement("BenchName", frmApp.comboBoxBenchName.Text),
 
-                xDocument.Save(filePath);
+                       new XElement("Item",
+                       new XAttribute("Name", frmApp.textBoxItemName.Text),
+                       new XAttribute("Type", frmApp.comboBoxItemType.Text),
+                       new XAttribute("Path", frmApp.textBoxItemPath.Text)));
+
+                    xDocument.Save(filePath);
+                }
             }
             else
-            {
                 MessageBox.Show("XML FILE NOT FOUNDED!!!");
-            }
+        }
+
+        private bool verifyProductName()
+        {
+            if (xDocument.Elements("QC_Tool")
+             .Elements("Products")
+             .Elements("Product")
+             .Elements("ProductName")
+             .Any(x => x.Value == frmApp.textBoxProductName.Text) == true)
+                return true;
+
+            return false;
+        }
+
+        private bool verifyBenchName()
+        {
+            if (xDocument.Elements("QC_Tool")
+             .Elements("Products")
+             .Elements("Product")
+             .Elements("ProductName")
+             .Elements("Stations")
+             .Elements("Bench")
+             .Elements("BenchName")
+             .Any(x => x.Value == frmApp.comboBoxBenchName.Text) == true)
+                return true;
+
+            return false;
+        }
+
+        private void createNewProductXML()
+        {
+            XElement root = xDocument.Element("QC_Tool");
+            IEnumerable<XElement> rows = root.Descendants("Product");
+            XElement firstRow = rows.First();
+
+            firstRow.AddBeforeSelf(
+               new XElement("Product",
+               new XElement("ProductName", frmApp.textBoxProductName.Text),
+
+               new XElement("Stations",
+               new XElement("Bench",
+               new XElement("BenchName", frmApp.comboBoxBenchName.Text),
+
+               new XElement("Item",
+               new XAttribute("Name", frmApp.textBoxItemName.Text),
+               new XAttribute("Type", frmApp.comboBoxItemType.Text),
+               new XAttribute("Path", frmApp.textBoxItemPath.Text))))));
+
+            xDocument.Save(filePath);
         }
     }
 }
