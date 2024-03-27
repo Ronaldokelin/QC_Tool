@@ -144,5 +144,15 @@ namespace QC_Tool
         {
             CnP.writeToXML();
         }
+
+        private void buttonPassProductNameFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxProductNameFile,listBoxProductInclude);
+        }
+
+        private void buttonReturnProductNameFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxProductNameFile, listBoxProductInclude);
+        }
     }
 }

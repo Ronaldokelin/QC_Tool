@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonsFunctionsEngineerTab.cs" />
     <Compile Include="Cmd.cs" />
     <Compile Include="CreateNewProduct.cs" />
     <Compile Include="DataGridView.cs" />

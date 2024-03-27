@@ -49,46 +49,46 @@
             this.tabPageOperator = new System.Windows.Forms.TabPage();
             this.tabPageEngineer = new System.Windows.Forms.TabPage();
             this.groupBoxLicenseNumber = new System.Windows.Forms.GroupBox();
+            this.listBoxLicenseNumberInclude = new System.Windows.Forms.ListBox();
+            this.listBoxLicenseNumberFile = new System.Windows.Forms.ListBox();
             this.button11 = new System.Windows.Forms.Button();
             this.labelItemPath = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.groupBoxType = new System.Windows.Forms.GroupBox();
+            this.listBoxItemTipeInclude = new System.Windows.Forms.ListBox();
+            this.listBoxItemTypeFile = new System.Windows.Forms.ListBox();
             this.button9 = new System.Windows.Forms.Button();
             this.labelItemType = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBoxUserLicense = new System.Windows.Forms.GroupBox();
+            this.listBoxUserInclude = new System.Windows.Forms.ListBox();
+            this.listBoxUserFile = new System.Windows.Forms.ListBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.groupBoxLicenseType = new System.Windows.Forms.GroupBox();
+            this.listBoxLicenseTypeInclude = new System.Windows.Forms.ListBox();
+            this.listBoxLicenseTypeFile = new System.Windows.Forms.ListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.labelItemName = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBoxStation = new System.Windows.Forms.GroupBox();
+            this.listBoxStationInclude = new System.Windows.Forms.ListBox();
+            this.listBoxStationFile = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.labelBenchName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBoxProduct = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.listBoxProductInclude = new System.Windows.Forms.ListBox();
+            this.listBoxProductNameFile = new System.Windows.Forms.ListBox();
+            this.buttonReturnProductNameFile = new System.Windows.Forms.Button();
+            this.buttonPassProductNameFile = new System.Windows.Forms.Button();
             this.labelProductName = new System.Windows.Forms.Label();
             this.buttonAddPath = new System.Windows.Forms.Button();
             this.labelWarning = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.listBoxProductNameFile = new System.Windows.Forms.ListBox();
-            this.listBoxProductInclude = new System.Windows.Forms.ListBox();
-            this.listBoxStationFile = new System.Windows.Forms.ListBox();
-            this.listBoxStationInclude = new System.Windows.Forms.ListBox();
-            this.listBoxLicenseTypeFile = new System.Windows.Forms.ListBox();
-            this.listBoxLicenseTypeInclude = new System.Windows.Forms.ListBox();
-            this.listBoxUserFile = new System.Windows.Forms.ListBox();
-            this.listBoxItemTypeFile = new System.Windows.Forms.ListBox();
-            this.listBoxLicenseNumberFile = new System.Windows.Forms.ListBox();
-            this.listBoxLicenseNumberInclude = new System.Windows.Forms.ListBox();
-            this.listBoxUserInclude = new System.Windows.Forms.ListBox();
-            this.listBoxItemTipeInclude = new System.Windows.Forms.ListBox();
             this.groupBoxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckTools)).BeginInit();
             this.groupBoxTools.SuspendLayout();
@@ -347,16 +347,36 @@
             this.groupBoxLicenseNumber.Controls.Add(this.button11);
             this.groupBoxLicenseNumber.Controls.Add(this.labelItemPath);
             this.groupBoxLicenseNumber.Controls.Add(this.button12);
-            this.groupBoxLicenseNumber.Location = new System.Drawing.Point(423, 335);
+            this.groupBoxLicenseNumber.Location = new System.Drawing.Point(327, 326);
             this.groupBoxLicenseNumber.Name = "groupBoxLicenseNumber";
-            this.groupBoxLicenseNumber.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxLicenseNumber.Size = new System.Drawing.Size(567, 155);
             this.groupBoxLicenseNumber.TabIndex = 20;
             this.groupBoxLicenseNumber.TabStop = false;
             this.groupBoxLicenseNumber.Text = "License Number";
             // 
+            // listBoxLicenseNumberInclude
+            // 
+            this.listBoxLicenseNumberInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLicenseNumberInclude.FormattingEnabled = true;
+            this.listBoxLicenseNumberInclude.HorizontalScrollbar = true;
+            this.listBoxLicenseNumberInclude.Location = new System.Drawing.Point(312, 39);
+            this.listBoxLicenseNumberInclude.Name = "listBoxLicenseNumberInclude";
+            this.listBoxLicenseNumberInclude.Size = new System.Drawing.Size(240, 95);
+            this.listBoxLicenseNumberInclude.TabIndex = 24;
+            // 
+            // listBoxLicenseNumberFile
+            // 
+            this.listBoxLicenseNumberFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLicenseNumberFile.FormattingEnabled = true;
+            this.listBoxLicenseNumberFile.HorizontalScrollbar = true;
+            this.listBoxLicenseNumberFile.Location = new System.Drawing.Point(6, 39);
+            this.listBoxLicenseNumberFile.Name = "listBoxLicenseNumberFile";
+            this.listBoxLicenseNumberFile.Size = new System.Drawing.Size(240, 95);
+            this.listBoxLicenseNumberFile.TabIndex = 22;
+            // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(172, 71);
+            this.button11.Location = new System.Drawing.Point(249, 87);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(60, 42);
             this.button11.TabIndex = 23;
@@ -375,7 +395,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(172, 23);
+            this.button12.Location = new System.Drawing.Point(249, 39);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(60, 42);
             this.button12.TabIndex = 22;
@@ -389,16 +409,36 @@
             this.groupBoxType.Controls.Add(this.button9);
             this.groupBoxType.Controls.Add(this.labelItemType);
             this.groupBoxType.Controls.Add(this.button10);
-            this.groupBoxType.Location = new System.Drawing.Point(423, 174);
+            this.groupBoxType.Location = new System.Drawing.Point(327, 165);
             this.groupBoxType.Name = "groupBoxType";
-            this.groupBoxType.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxType.Size = new System.Drawing.Size(567, 155);
             this.groupBoxType.TabIndex = 19;
             this.groupBoxType.TabStop = false;
             this.groupBoxType.Text = "Type";
             // 
+            // listBoxItemTipeInclude
+            // 
+            this.listBoxItemTipeInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxItemTipeInclude.FormattingEnabled = true;
+            this.listBoxItemTipeInclude.ItemHeight = 16;
+            this.listBoxItemTipeInclude.Location = new System.Drawing.Point(312, 39);
+            this.listBoxItemTipeInclude.Name = "listBoxItemTipeInclude";
+            this.listBoxItemTipeInclude.Size = new System.Drawing.Size(240, 100);
+            this.listBoxItemTipeInclude.TabIndex = 25;
+            // 
+            // listBoxItemTypeFile
+            // 
+            this.listBoxItemTypeFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxItemTypeFile.FormattingEnabled = true;
+            this.listBoxItemTypeFile.ItemHeight = 16;
+            this.listBoxItemTypeFile.Location = new System.Drawing.Point(6, 35);
+            this.listBoxItemTypeFile.Name = "listBoxItemTypeFile";
+            this.listBoxItemTypeFile.Size = new System.Drawing.Size(240, 100);
+            this.listBoxItemTypeFile.TabIndex = 20;
+            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(172, 87);
+            this.button9.Location = new System.Drawing.Point(250, 87);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(60, 42);
             this.button9.TabIndex = 21;
@@ -417,7 +457,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(172, 39);
+            this.button10.Location = new System.Drawing.Point(249, 39);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(60, 42);
             this.button10.TabIndex = 20;
@@ -432,16 +472,36 @@
             this.groupBoxUserLicense.Controls.Add(this.groupBox2);
             this.groupBoxUserLicense.Controls.Add(this.button8);
             this.groupBoxUserLicense.Controls.Add(this.labelUser);
-            this.groupBoxUserLicense.Location = new System.Drawing.Point(423, 13);
+            this.groupBoxUserLicense.Location = new System.Drawing.Point(327, 4);
             this.groupBoxUserLicense.Name = "groupBoxUserLicense";
-            this.groupBoxUserLicense.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxUserLicense.Size = new System.Drawing.Size(567, 155);
             this.groupBoxUserLicense.TabIndex = 18;
             this.groupBoxUserLicense.TabStop = false;
             this.groupBoxUserLicense.Text = "User License";
             // 
+            // listBoxUserInclude
+            // 
+            this.listBoxUserInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxUserInclude.FormattingEnabled = true;
+            this.listBoxUserInclude.ItemHeight = 16;
+            this.listBoxUserInclude.Location = new System.Drawing.Point(312, 39);
+            this.listBoxUserInclude.Name = "listBoxUserInclude";
+            this.listBoxUserInclude.Size = new System.Drawing.Size(240, 100);
+            this.listBoxUserInclude.TabIndex = 24;
+            // 
+            // listBoxUserFile
+            // 
+            this.listBoxUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxUserFile.FormattingEnabled = true;
+            this.listBoxUserFile.ItemHeight = 16;
+            this.listBoxUserFile.Location = new System.Drawing.Point(6, 39);
+            this.listBoxUserFile.Name = "listBoxUserFile";
+            this.listBoxUserFile.Size = new System.Drawing.Size(240, 100);
+            this.listBoxUserFile.TabIndex = 16;
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(172, 87);
+            this.button7.Location = new System.Drawing.Point(249, 87);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 42);
             this.button7.TabIndex = 16;
@@ -459,7 +519,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(172, 39);
+            this.button8.Location = new System.Drawing.Point(249, 39);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(60, 42);
             this.button8.TabIndex = 15;
@@ -483,16 +543,36 @@
             this.groupBoxLicenseType.Controls.Add(this.button5);
             this.groupBoxLicenseType.Controls.Add(this.labelItemName);
             this.groupBoxLicenseType.Controls.Add(this.button6);
-            this.groupBoxLicenseType.Location = new System.Drawing.Point(8, 335);
+            this.groupBoxLicenseType.Location = new System.Drawing.Point(8, 326);
             this.groupBoxLicenseType.Name = "groupBoxLicenseType";
-            this.groupBoxLicenseType.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxLicenseType.Size = new System.Drawing.Size(313, 155);
             this.groupBoxLicenseType.TabIndex = 17;
             this.groupBoxLicenseType.TabStop = false;
             this.groupBoxLicenseType.Text = "License Type";
             // 
+            // listBoxLicenseTypeInclude
+            // 
+            this.listBoxLicenseTypeInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLicenseTypeInclude.FormattingEnabled = true;
+            this.listBoxLicenseTypeInclude.ItemHeight = 16;
+            this.listBoxLicenseTypeInclude.Location = new System.Drawing.Point(191, 39);
+            this.listBoxLicenseTypeInclude.Name = "listBoxLicenseTypeInclude";
+            this.listBoxLicenseTypeInclude.Size = new System.Drawing.Size(110, 100);
+            this.listBoxLicenseTypeInclude.TabIndex = 15;
+            // 
+            // listBoxLicenseTypeFile
+            // 
+            this.listBoxLicenseTypeFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLicenseTypeFile.FormattingEnabled = true;
+            this.listBoxLicenseTypeFile.ItemHeight = 16;
+            this.listBoxLicenseTypeFile.Location = new System.Drawing.Point(9, 39);
+            this.listBoxLicenseTypeFile.Name = "listBoxLicenseTypeFile";
+            this.listBoxLicenseTypeFile.Size = new System.Drawing.Size(110, 100);
+            this.listBoxLicenseTypeFile.TabIndex = 8;
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(165, 87);
+            this.button5.Location = new System.Drawing.Point(125, 87);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 42);
             this.button5.TabIndex = 14;
@@ -511,7 +591,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(165, 39);
+            this.button6.Location = new System.Drawing.Point(125, 39);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 42);
             this.button6.TabIndex = 13;
@@ -525,16 +605,36 @@
             this.groupBoxStation.Controls.Add(this.button3);
             this.groupBoxStation.Controls.Add(this.labelBenchName);
             this.groupBoxStation.Controls.Add(this.button4);
-            this.groupBoxStation.Location = new System.Drawing.Point(8, 174);
+            this.groupBoxStation.Location = new System.Drawing.Point(8, 165);
             this.groupBoxStation.Name = "groupBoxStation";
-            this.groupBoxStation.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxStation.Size = new System.Drawing.Size(313, 155);
             this.groupBoxStation.TabIndex = 16;
             this.groupBoxStation.TabStop = false;
             this.groupBoxStation.Text = "Station";
             // 
+            // listBoxStationInclude
+            // 
+            this.listBoxStationInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxStationInclude.FormattingEnabled = true;
+            this.listBoxStationInclude.ItemHeight = 16;
+            this.listBoxStationInclude.Location = new System.Drawing.Point(191, 39);
+            this.listBoxStationInclude.Name = "listBoxStationInclude";
+            this.listBoxStationInclude.Size = new System.Drawing.Size(110, 100);
+            this.listBoxStationInclude.TabIndex = 7;
+            // 
+            // listBoxStationFile
+            // 
+            this.listBoxStationFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxStationFile.FormattingEnabled = true;
+            this.listBoxStationFile.ItemHeight = 16;
+            this.listBoxStationFile.Location = new System.Drawing.Point(9, 39);
+            this.listBoxStationFile.Name = "listBoxStationFile";
+            this.listBoxStationFile.Size = new System.Drawing.Size(110, 100);
+            this.listBoxStationFile.TabIndex = 6;
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(165, 87);
+            this.button3.Location = new System.Drawing.Point(125, 87);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 42);
             this.button3.TabIndex = 5;
@@ -553,7 +653,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(165, 39);
+            this.button4.Location = new System.Drawing.Point(125, 39);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 42);
             this.button4.TabIndex = 4;
@@ -565,33 +665,55 @@
             this.groupBoxProduct.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxProduct.Controls.Add(this.listBoxProductInclude);
             this.groupBoxProduct.Controls.Add(this.listBoxProductNameFile);
-            this.groupBoxProduct.Controls.Add(this.button2);
-            this.groupBoxProduct.Controls.Add(this.button1);
+            this.groupBoxProduct.Controls.Add(this.buttonReturnProductNameFile);
+            this.groupBoxProduct.Controls.Add(this.buttonPassProductNameFile);
             this.groupBoxProduct.Controls.Add(this.labelProductName);
-            this.groupBoxProduct.Location = new System.Drawing.Point(8, 13);
+            this.groupBoxProduct.Location = new System.Drawing.Point(8, 4);
             this.groupBoxProduct.Name = "groupBoxProduct";
-            this.groupBoxProduct.Size = new System.Drawing.Size(400, 155);
+            this.groupBoxProduct.Size = new System.Drawing.Size(313, 155);
             this.groupBoxProduct.TabIndex = 15;
             this.groupBoxProduct.TabStop = false;
             this.groupBoxProduct.Text = "Product";
             // 
-            // button2
+            // listBoxProductInclude
             // 
-            this.button2.Location = new System.Drawing.Point(165, 87);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 42);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "<<";
-            this.button2.UseVisualStyleBackColor = true;
+            this.listBoxProductInclude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxProductInclude.FormattingEnabled = true;
+            this.listBoxProductInclude.ItemHeight = 16;
+            this.listBoxProductInclude.Location = new System.Drawing.Point(191, 39);
+            this.listBoxProductInclude.Name = "listBoxProductInclude";
+            this.listBoxProductInclude.Size = new System.Drawing.Size(110, 100);
+            this.listBoxProductInclude.TabIndex = 5;
             // 
-            // button1
+            // listBoxProductNameFile
             // 
-            this.button1.Location = new System.Drawing.Point(165, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 42);
-            this.button1.TabIndex = 2;
-            this.button1.Text = ">>";
-            this.button1.UseVisualStyleBackColor = true;
+            this.listBoxProductNameFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxProductNameFile.FormattingEnabled = true;
+            this.listBoxProductNameFile.ItemHeight = 16;
+            this.listBoxProductNameFile.Location = new System.Drawing.Point(9, 39);
+            this.listBoxProductNameFile.Name = "listBoxProductNameFile";
+            this.listBoxProductNameFile.Size = new System.Drawing.Size(110, 100);
+            this.listBoxProductNameFile.TabIndex = 4;
+            // 
+            // buttonReturnProductNameFile
+            // 
+            this.buttonReturnProductNameFile.Location = new System.Drawing.Point(125, 87);
+            this.buttonReturnProductNameFile.Name = "buttonReturnProductNameFile";
+            this.buttonReturnProductNameFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnProductNameFile.TabIndex = 3;
+            this.buttonReturnProductNameFile.Text = "<<";
+            this.buttonReturnProductNameFile.UseVisualStyleBackColor = true;
+            this.buttonReturnProductNameFile.Click += new System.EventHandler(this.buttonReturnProductNameFile_Click);
+            // 
+            // buttonPassProductNameFile
+            // 
+            this.buttonPassProductNameFile.Location = new System.Drawing.Point(125, 39);
+            this.buttonPassProductNameFile.Name = "buttonPassProductNameFile";
+            this.buttonPassProductNameFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassProductNameFile.TabIndex = 2;
+            this.buttonPassProductNameFile.Text = ">>";
+            this.buttonPassProductNameFile.UseVisualStyleBackColor = true;
+            this.buttonPassProductNameFile.Click += new System.EventHandler(this.buttonPassProductNameFile_Click);
             // 
             // labelProductName
             // 
@@ -605,9 +727,9 @@
             // 
             // buttonAddPath
             // 
-            this.buttonAddPath.Location = new System.Drawing.Point(891, 380);
+            this.buttonAddPath.Location = new System.Drawing.Point(915, 227);
             this.buttonAddPath.Name = "buttonAddPath";
-            this.buttonAddPath.Size = new System.Drawing.Size(75, 30);
+            this.buttonAddPath.Size = new System.Drawing.Size(50, 50);
             this.buttonAddPath.TabIndex = 11;
             this.buttonAddPath.Text = "Add";
             this.buttonAddPath.UseVisualStyleBackColor = true;
@@ -647,116 +769,6 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // listBoxProductNameFile
-            // 
-            this.listBoxProductNameFile.FormattingEnabled = true;
-            this.listBoxProductNameFile.ItemHeight = 18;
-            this.listBoxProductNameFile.Location = new System.Drawing.Point(9, 39);
-            this.listBoxProductNameFile.Name = "listBoxProductNameFile";
-            this.listBoxProductNameFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxProductNameFile.TabIndex = 4;
-            // 
-            // listBoxProductInclude
-            // 
-            this.listBoxProductInclude.FormattingEnabled = true;
-            this.listBoxProductInclude.ItemHeight = 18;
-            this.listBoxProductInclude.Location = new System.Drawing.Point(244, 39);
-            this.listBoxProductInclude.Name = "listBoxProductInclude";
-            this.listBoxProductInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxProductInclude.TabIndex = 5;
-            // 
-            // listBoxStationFile
-            // 
-            this.listBoxStationFile.FormattingEnabled = true;
-            this.listBoxStationFile.ItemHeight = 18;
-            this.listBoxStationFile.Location = new System.Drawing.Point(9, 39);
-            this.listBoxStationFile.Name = "listBoxStationFile";
-            this.listBoxStationFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxStationFile.TabIndex = 6;
-            // 
-            // listBoxStationInclude
-            // 
-            this.listBoxStationInclude.FormattingEnabled = true;
-            this.listBoxStationInclude.ItemHeight = 18;
-            this.listBoxStationInclude.Location = new System.Drawing.Point(244, 35);
-            this.listBoxStationInclude.Name = "listBoxStationInclude";
-            this.listBoxStationInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxStationInclude.TabIndex = 7;
-            // 
-            // listBoxLicenseTypeFile
-            // 
-            this.listBoxLicenseTypeFile.FormattingEnabled = true;
-            this.listBoxLicenseTypeFile.ItemHeight = 18;
-            this.listBoxLicenseTypeFile.Location = new System.Drawing.Point(9, 39);
-            this.listBoxLicenseTypeFile.Name = "listBoxLicenseTypeFile";
-            this.listBoxLicenseTypeFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxLicenseTypeFile.TabIndex = 8;
-            // 
-            // listBoxLicenseTypeInclude
-            // 
-            this.listBoxLicenseTypeInclude.FormattingEnabled = true;
-            this.listBoxLicenseTypeInclude.ItemHeight = 18;
-            this.listBoxLicenseTypeInclude.Location = new System.Drawing.Point(244, 39);
-            this.listBoxLicenseTypeInclude.Name = "listBoxLicenseTypeInclude";
-            this.listBoxLicenseTypeInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxLicenseTypeInclude.TabIndex = 15;
-            // 
-            // listBoxUserFile
-            // 
-            this.listBoxUserFile.FormattingEnabled = true;
-            this.listBoxUserFile.ItemHeight = 18;
-            this.listBoxUserFile.Location = new System.Drawing.Point(6, 39);
-            this.listBoxUserFile.Name = "listBoxUserFile";
-            this.listBoxUserFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxUserFile.TabIndex = 16;
-            // 
-            // listBoxItemTypeFile
-            // 
-            this.listBoxItemTypeFile.FormattingEnabled = true;
-            this.listBoxItemTypeFile.ItemHeight = 18;
-            this.listBoxItemTypeFile.Location = new System.Drawing.Point(6, 35);
-            this.listBoxItemTypeFile.Name = "listBoxItemTypeFile";
-            this.listBoxItemTypeFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxItemTypeFile.TabIndex = 20;
-            // 
-            // listBoxLicenseNumberFile
-            // 
-            this.listBoxLicenseNumberFile.FormattingEnabled = true;
-            this.listBoxLicenseNumberFile.HorizontalScrollbar = true;
-            this.listBoxLicenseNumberFile.ItemHeight = 18;
-            this.listBoxLicenseNumberFile.Location = new System.Drawing.Point(6, 39);
-            this.listBoxLicenseNumberFile.Name = "listBoxLicenseNumberFile";
-            this.listBoxLicenseNumberFile.Size = new System.Drawing.Size(150, 94);
-            this.listBoxLicenseNumberFile.TabIndex = 22;
-            // 
-            // listBoxLicenseNumberInclude
-            // 
-            this.listBoxLicenseNumberInclude.FormattingEnabled = true;
-            this.listBoxLicenseNumberInclude.HorizontalScrollbar = true;
-            this.listBoxLicenseNumberInclude.ItemHeight = 18;
-            this.listBoxLicenseNumberInclude.Location = new System.Drawing.Point(244, 39);
-            this.listBoxLicenseNumberInclude.Name = "listBoxLicenseNumberInclude";
-            this.listBoxLicenseNumberInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxLicenseNumberInclude.TabIndex = 24;
-            // 
-            // listBoxUserInclude
-            // 
-            this.listBoxUserInclude.FormattingEnabled = true;
-            this.listBoxUserInclude.ItemHeight = 18;
-            this.listBoxUserInclude.Location = new System.Drawing.Point(244, 39);
-            this.listBoxUserInclude.Name = "listBoxUserInclude";
-            this.listBoxUserInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxUserInclude.TabIndex = 24;
-            // 
-            // listBoxItemTipeInclude
-            // 
-            this.listBoxItemTipeInclude.FormattingEnabled = true;
-            this.listBoxItemTipeInclude.ItemHeight = 18;
-            this.listBoxItemTipeInclude.Location = new System.Drawing.Point(244, 39);
-            this.listBoxItemTipeInclude.Name = "listBoxItemTipeInclude";
-            this.listBoxItemTipeInclude.Size = new System.Drawing.Size(150, 94);
-            this.listBoxItemTipeInclude.TabIndex = 25;
             // 
             // FormApp
             // 
@@ -850,8 +862,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonReturnProductNameFile;
+        private System.Windows.Forms.Button buttonPassProductNameFile;
         public System.Windows.Forms.ListBox listBoxProductNameFile;
         public System.Windows.Forms.ListBox listBoxLicenseNumberInclude;
         public System.Windows.Forms.ListBox listBoxLicenseNumberFile;
