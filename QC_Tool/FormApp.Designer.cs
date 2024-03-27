@@ -51,34 +51,34 @@
             this.groupBoxLicenseNumber = new System.Windows.Forms.GroupBox();
             this.listBoxLicenseNumberInclude = new System.Windows.Forms.ListBox();
             this.listBoxLicenseNumberFile = new System.Windows.Forms.ListBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.buttonReturnLicenseNumberFile = new System.Windows.Forms.Button();
             this.labelItemPath = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.buttonPassLicenseNumberFile = new System.Windows.Forms.Button();
             this.groupBoxType = new System.Windows.Forms.GroupBox();
             this.listBoxItemTipeInclude = new System.Windows.Forms.ListBox();
             this.listBoxItemTypeFile = new System.Windows.Forms.ListBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.buttonReturnItemTypeFile = new System.Windows.Forms.Button();
             this.labelItemType = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.buttonPassItemTypeFile = new System.Windows.Forms.Button();
             this.groupBoxUserLicense = new System.Windows.Forms.GroupBox();
             this.listBoxUserInclude = new System.Windows.Forms.ListBox();
             this.listBoxUserFile = new System.Windows.Forms.ListBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonReturnUserFile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.buttonPassUserFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.groupBoxLicenseType = new System.Windows.Forms.GroupBox();
             this.listBoxLicenseTypeInclude = new System.Windows.Forms.ListBox();
             this.listBoxLicenseTypeFile = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonReturnLicenseTypeFile = new System.Windows.Forms.Button();
             this.labelItemName = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonPassLicenseTypeFile = new System.Windows.Forms.Button();
             this.groupBoxStation = new System.Windows.Forms.GroupBox();
             this.listBoxStationInclude = new System.Windows.Forms.ListBox();
             this.listBoxStationFile = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonReturnBoxStationFile = new System.Windows.Forms.Button();
             this.labelBenchName = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonPassBoxStationFile = new System.Windows.Forms.Button();
             this.groupBoxProduct = new System.Windows.Forms.GroupBox();
             this.listBoxProductInclude = new System.Windows.Forms.ListBox();
             this.listBoxProductNameFile = new System.Windows.Forms.ListBox();
@@ -344,9 +344,9 @@
             // 
             this.groupBoxLicenseNumber.Controls.Add(this.listBoxLicenseNumberInclude);
             this.groupBoxLicenseNumber.Controls.Add(this.listBoxLicenseNumberFile);
-            this.groupBoxLicenseNumber.Controls.Add(this.button11);
+            this.groupBoxLicenseNumber.Controls.Add(this.buttonReturnLicenseNumberFile);
             this.groupBoxLicenseNumber.Controls.Add(this.labelItemPath);
-            this.groupBoxLicenseNumber.Controls.Add(this.button12);
+            this.groupBoxLicenseNumber.Controls.Add(this.buttonPassLicenseNumberFile);
             this.groupBoxLicenseNumber.Location = new System.Drawing.Point(327, 326);
             this.groupBoxLicenseNumber.Name = "groupBoxLicenseNumber";
             this.groupBoxLicenseNumber.Size = new System.Drawing.Size(567, 155);
@@ -374,14 +374,15 @@
             this.listBoxLicenseNumberFile.Size = new System.Drawing.Size(240, 95);
             this.listBoxLicenseNumberFile.TabIndex = 22;
             // 
-            // button11
+            // buttonReturnLicenseNumberFile
             // 
-            this.button11.Location = new System.Drawing.Point(249, 87);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(60, 42);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "<<";
-            this.button11.UseVisualStyleBackColor = true;
+            this.buttonReturnLicenseNumberFile.Location = new System.Drawing.Point(249, 87);
+            this.buttonReturnLicenseNumberFile.Name = "buttonReturnLicenseNumberFile";
+            this.buttonReturnLicenseNumberFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnLicenseNumberFile.TabIndex = 23;
+            this.buttonReturnLicenseNumberFile.Text = "<<";
+            this.buttonReturnLicenseNumberFile.UseVisualStyleBackColor = true;
+            this.buttonReturnLicenseNumberFile.Click += new System.EventHandler(this.buttonReturnLicenseNumberFile_Click);
             // 
             // labelItemPath
             // 
@@ -393,22 +394,23 @@
             this.labelItemPath.TabIndex = 8;
             this.labelItemPath.Text = "License Number:";
             // 
-            // button12
+            // buttonPassLicenseNumberFile
             // 
-            this.button12.Location = new System.Drawing.Point(249, 39);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(60, 42);
-            this.button12.TabIndex = 22;
-            this.button12.Text = ">>";
-            this.button12.UseVisualStyleBackColor = true;
+            this.buttonPassLicenseNumberFile.Location = new System.Drawing.Point(249, 39);
+            this.buttonPassLicenseNumberFile.Name = "buttonPassLicenseNumberFile";
+            this.buttonPassLicenseNumberFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassLicenseNumberFile.TabIndex = 22;
+            this.buttonPassLicenseNumberFile.Text = ">>";
+            this.buttonPassLicenseNumberFile.UseVisualStyleBackColor = true;
+            this.buttonPassLicenseNumberFile.Click += new System.EventHandler(this.buttonPassLicenseNumberFile_Click);
             // 
             // groupBoxType
             // 
             this.groupBoxType.Controls.Add(this.listBoxItemTipeInclude);
             this.groupBoxType.Controls.Add(this.listBoxItemTypeFile);
-            this.groupBoxType.Controls.Add(this.button9);
+            this.groupBoxType.Controls.Add(this.buttonReturnItemTypeFile);
             this.groupBoxType.Controls.Add(this.labelItemType);
-            this.groupBoxType.Controls.Add(this.button10);
+            this.groupBoxType.Controls.Add(this.buttonPassItemTypeFile);
             this.groupBoxType.Location = new System.Drawing.Point(327, 165);
             this.groupBoxType.Name = "groupBoxType";
             this.groupBoxType.Size = new System.Drawing.Size(567, 155);
@@ -436,14 +438,15 @@
             this.listBoxItemTypeFile.Size = new System.Drawing.Size(240, 100);
             this.listBoxItemTypeFile.TabIndex = 20;
             // 
-            // button9
+            // buttonReturnItemTypeFile
             // 
-            this.button9.Location = new System.Drawing.Point(250, 87);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(60, 42);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "<<";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonReturnItemTypeFile.Location = new System.Drawing.Point(250, 87);
+            this.buttonReturnItemTypeFile.Name = "buttonReturnItemTypeFile";
+            this.buttonReturnItemTypeFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnItemTypeFile.TabIndex = 21;
+            this.buttonReturnItemTypeFile.Text = "<<";
+            this.buttonReturnItemTypeFile.UseVisualStyleBackColor = true;
+            this.buttonReturnItemTypeFile.Click += new System.EventHandler(this.buttonReturnItemTypeFile_Click);
             // 
             // labelItemType
             // 
@@ -455,22 +458,23 @@
             this.labelItemType.TabIndex = 6;
             this.labelItemType.Text = "ItemType:";
             // 
-            // button10
+            // buttonPassItemTypeFile
             // 
-            this.button10.Location = new System.Drawing.Point(249, 39);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(60, 42);
-            this.button10.TabIndex = 20;
-            this.button10.Text = ">>";
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonPassItemTypeFile.Location = new System.Drawing.Point(249, 39);
+            this.buttonPassItemTypeFile.Name = "buttonPassItemTypeFile";
+            this.buttonPassItemTypeFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassItemTypeFile.TabIndex = 20;
+            this.buttonPassItemTypeFile.Text = ">>";
+            this.buttonPassItemTypeFile.UseVisualStyleBackColor = true;
+            this.buttonPassItemTypeFile.Click += new System.EventHandler(this.buttonPassItemTypeFile_Click);
             // 
             // groupBoxUserLicense
             // 
             this.groupBoxUserLicense.Controls.Add(this.listBoxUserInclude);
             this.groupBoxUserLicense.Controls.Add(this.listBoxUserFile);
-            this.groupBoxUserLicense.Controls.Add(this.button7);
+            this.groupBoxUserLicense.Controls.Add(this.buttonReturnUserFile);
             this.groupBoxUserLicense.Controls.Add(this.groupBox2);
-            this.groupBoxUserLicense.Controls.Add(this.button8);
+            this.groupBoxUserLicense.Controls.Add(this.buttonPassUserFile);
             this.groupBoxUserLicense.Controls.Add(this.labelUser);
             this.groupBoxUserLicense.Location = new System.Drawing.Point(327, 4);
             this.groupBoxUserLicense.Name = "groupBoxUserLicense";
@@ -499,14 +503,15 @@
             this.listBoxUserFile.Size = new System.Drawing.Size(240, 100);
             this.listBoxUserFile.TabIndex = 16;
             // 
-            // button7
+            // buttonReturnUserFile
             // 
-            this.button7.Location = new System.Drawing.Point(249, 87);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(60, 42);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "<<";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonReturnUserFile.Location = new System.Drawing.Point(249, 87);
+            this.buttonReturnUserFile.Name = "buttonReturnUserFile";
+            this.buttonReturnUserFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnUserFile.TabIndex = 16;
+            this.buttonReturnUserFile.Text = "<<";
+            this.buttonReturnUserFile.UseVisualStyleBackColor = true;
+            this.buttonReturnUserFile.Click += new System.EventHandler(this.buttonReturnUserFile_Click);
             // 
             // groupBox2
             // 
@@ -517,14 +522,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // button8
+            // buttonPassUserFile
             // 
-            this.button8.Location = new System.Drawing.Point(249, 39);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(60, 42);
-            this.button8.TabIndex = 15;
-            this.button8.Text = ">>";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonPassUserFile.Location = new System.Drawing.Point(249, 39);
+            this.buttonPassUserFile.Name = "buttonPassUserFile";
+            this.buttonPassUserFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassUserFile.TabIndex = 15;
+            this.buttonPassUserFile.Text = ">>";
+            this.buttonPassUserFile.UseVisualStyleBackColor = true;
+            this.buttonPassUserFile.Click += new System.EventHandler(this.buttonPassUserFile_Click);
             // 
             // labelUser
             // 
@@ -540,9 +546,9 @@
             // 
             this.groupBoxLicenseType.Controls.Add(this.listBoxLicenseTypeInclude);
             this.groupBoxLicenseType.Controls.Add(this.listBoxLicenseTypeFile);
-            this.groupBoxLicenseType.Controls.Add(this.button5);
+            this.groupBoxLicenseType.Controls.Add(this.buttonReturnLicenseTypeFile);
             this.groupBoxLicenseType.Controls.Add(this.labelItemName);
-            this.groupBoxLicenseType.Controls.Add(this.button6);
+            this.groupBoxLicenseType.Controls.Add(this.buttonPassLicenseTypeFile);
             this.groupBoxLicenseType.Location = new System.Drawing.Point(8, 326);
             this.groupBoxLicenseType.Name = "groupBoxLicenseType";
             this.groupBoxLicenseType.Size = new System.Drawing.Size(313, 155);
@@ -570,14 +576,15 @@
             this.listBoxLicenseTypeFile.Size = new System.Drawing.Size(110, 100);
             this.listBoxLicenseTypeFile.TabIndex = 8;
             // 
-            // button5
+            // buttonReturnLicenseTypeFile
             // 
-            this.button5.Location = new System.Drawing.Point(125, 87);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 42);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "<<";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonReturnLicenseTypeFile.Location = new System.Drawing.Point(125, 87);
+            this.buttonReturnLicenseTypeFile.Name = "buttonReturnLicenseTypeFile";
+            this.buttonReturnLicenseTypeFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnLicenseTypeFile.TabIndex = 14;
+            this.buttonReturnLicenseTypeFile.Text = "<<";
+            this.buttonReturnLicenseTypeFile.UseVisualStyleBackColor = true;
+            this.buttonReturnLicenseTypeFile.Click += new System.EventHandler(this.buttonReturnLicenseTypeFile_Click);
             // 
             // labelItemName
             // 
@@ -589,22 +596,23 @@
             this.labelItemName.TabIndex = 4;
             this.labelItemName.Text = "License Type:";
             // 
-            // button6
+            // buttonPassLicenseTypeFile
             // 
-            this.button6.Location = new System.Drawing.Point(125, 39);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 42);
-            this.button6.TabIndex = 13;
-            this.button6.Text = ">>";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonPassLicenseTypeFile.Location = new System.Drawing.Point(125, 39);
+            this.buttonPassLicenseTypeFile.Name = "buttonPassLicenseTypeFile";
+            this.buttonPassLicenseTypeFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassLicenseTypeFile.TabIndex = 13;
+            this.buttonPassLicenseTypeFile.Text = ">>";
+            this.buttonPassLicenseTypeFile.UseVisualStyleBackColor = true;
+            this.buttonPassLicenseTypeFile.Click += new System.EventHandler(this.buttonPassLicenseTypeFile_Click);
             // 
             // groupBoxStation
             // 
             this.groupBoxStation.Controls.Add(this.listBoxStationInclude);
             this.groupBoxStation.Controls.Add(this.listBoxStationFile);
-            this.groupBoxStation.Controls.Add(this.button3);
+            this.groupBoxStation.Controls.Add(this.buttonReturnBoxStationFile);
             this.groupBoxStation.Controls.Add(this.labelBenchName);
-            this.groupBoxStation.Controls.Add(this.button4);
+            this.groupBoxStation.Controls.Add(this.buttonPassBoxStationFile);
             this.groupBoxStation.Location = new System.Drawing.Point(8, 165);
             this.groupBoxStation.Name = "groupBoxStation";
             this.groupBoxStation.Size = new System.Drawing.Size(313, 155);
@@ -632,14 +640,15 @@
             this.listBoxStationFile.Size = new System.Drawing.Size(110, 100);
             this.listBoxStationFile.TabIndex = 6;
             // 
-            // button3
+            // buttonReturnBoxStationFile
             // 
-            this.button3.Location = new System.Drawing.Point(125, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 42);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "<<";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonReturnBoxStationFile.Location = new System.Drawing.Point(125, 87);
+            this.buttonReturnBoxStationFile.Name = "buttonReturnBoxStationFile";
+            this.buttonReturnBoxStationFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonReturnBoxStationFile.TabIndex = 5;
+            this.buttonReturnBoxStationFile.Text = "<<";
+            this.buttonReturnBoxStationFile.UseVisualStyleBackColor = true;
+            this.buttonReturnBoxStationFile.Click += new System.EventHandler(this.buttonReturnBoxStationFile_Click);
             // 
             // labelBenchName
             // 
@@ -651,14 +660,15 @@
             this.labelBenchName.TabIndex = 2;
             this.labelBenchName.Text = "Station:";
             // 
-            // button4
+            // buttonPassBoxStationFile
             // 
-            this.button4.Location = new System.Drawing.Point(125, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 42);
-            this.button4.TabIndex = 4;
-            this.button4.Text = ">>";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonPassBoxStationFile.Location = new System.Drawing.Point(125, 39);
+            this.buttonPassBoxStationFile.Name = "buttonPassBoxStationFile";
+            this.buttonPassBoxStationFile.Size = new System.Drawing.Size(60, 42);
+            this.buttonPassBoxStationFile.TabIndex = 4;
+            this.buttonPassBoxStationFile.Text = ">>";
+            this.buttonPassBoxStationFile.UseVisualStyleBackColor = true;
+            this.buttonPassBoxStationFile.Click += new System.EventHandler(this.buttonPassBoxStationFile_Click);
             // 
             // groupBoxProduct
             // 
@@ -852,16 +862,16 @@
         private System.Windows.Forms.GroupBox groupBoxLicenseType;
         private System.Windows.Forms.GroupBox groupBoxStation;
         private System.Windows.Forms.GroupBox groupBoxProduct;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonReturnLicenseNumberFile;
+        private System.Windows.Forms.Button buttonPassLicenseNumberFile;
+        private System.Windows.Forms.Button buttonReturnItemTypeFile;
+        private System.Windows.Forms.Button buttonPassItemTypeFile;
+        private System.Windows.Forms.Button buttonReturnUserFile;
+        private System.Windows.Forms.Button buttonPassUserFile;
+        private System.Windows.Forms.Button buttonReturnLicenseTypeFile;
+        private System.Windows.Forms.Button buttonPassLicenseTypeFile;
+        private System.Windows.Forms.Button buttonReturnBoxStationFile;
+        private System.Windows.Forms.Button buttonPassBoxStationFile;
         private System.Windows.Forms.Button buttonReturnProductNameFile;
         private System.Windows.Forms.Button buttonPassProductNameFile;
         public System.Windows.Forms.ListBox listBoxProductNameFile;

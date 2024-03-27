@@ -147,12 +147,62 @@ namespace QC_Tool
 
         private void buttonPassProductNameFile_Click(object sender, EventArgs e)
         {
-            ButtonsFunctionsEngineerTab.passValueButton(listBoxProductNameFile,listBoxProductInclude);
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxProductNameFile, listBoxProductInclude);
         }
 
         private void buttonReturnProductNameFile_Click(object sender, EventArgs e)
         {
             ButtonsFunctionsEngineerTab.removeValueButton(listBoxProductNameFile, listBoxProductInclude);
+        }
+
+        private void buttonPassBoxStationFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxStationFile, listBoxStationInclude);
+        }
+
+        private void buttonReturnBoxStationFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxStationFile, listBoxStationInclude);
+        }
+
+        private void buttonPassLicenseTypeFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxLicenseTypeFile, listBoxLicenseTypeInclude);
+        }
+
+        private void buttonReturnLicenseTypeFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxLicenseTypeFile, listBoxLicenseTypeInclude);
+        }
+
+        private void buttonPassUserFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxUserFile, listBoxUserInclude);
+        }
+
+        private void buttonReturnUserFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxUserFile, listBoxUserInclude);
+        }
+
+        private void buttonPassItemTypeFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxItemTypeFile, listBoxItemTipeInclude);
+        }
+
+        private void buttonReturnItemTypeFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxItemTypeFile, listBoxItemTipeInclude);
+        }
+
+        private void buttonPassLicenseNumberFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.passValueButton(listBoxLicenseNumberFile, listBoxLicenseNumberInclude);
+        }
+
+        private void buttonReturnLicenseNumberFile_Click(object sender, EventArgs e)
+        {
+            ButtonsFunctionsEngineerTab.removeValueButton(listBoxLicenseNumberFile, listBoxLicenseNumberInclude);
         }
     }
 }

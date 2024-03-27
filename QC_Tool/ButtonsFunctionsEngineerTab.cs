@@ -6,12 +6,20 @@ namespace QC_Tool
     {
         public static void passValueButton(ListBox listBoxAll, ListBox listBoxInclude)
         {
-            listBoxInclude.Items.Add(listBoxAll.SelectedItem.ToString());
+            try
+            {
+                listBoxInclude.Items.Add(listBoxAll.SelectedItem.ToString());
+            }
+            catch { }
         }
 
         public static void removeValueButton(ListBox listBoxAll, ListBox listBoxInclude)
         {
-            listBoxInclude.Items.Remove(listBoxAll.SelectedItem.ToString());
+            try
+            {
+                listBoxInclude.Items.Remove(listBoxAll.SelectedItem.ToString());
+            }
+            catch { }
         }
     }
 }

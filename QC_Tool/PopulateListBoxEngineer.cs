@@ -11,98 +11,114 @@ namespace QC_Tool
 
         public void populatelistBoxProductNameFile()
         {
-            doc.Load(filePath);//To do
-            frmApp.listBoxProductNameFile.Items.Clear();
-            frmApp.listBoxProductNameFile.Items.Add("NEW...");
-            int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
-
-            allProducts = new string[countProductName];
-
-            for (int i = 0; i < countProductName; i++)
+            try
             {
-                string productName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
-                frmApp.listBoxProductNameFile.Items.Add(productName);
-                allProducts[i] = productName;
+                doc.Load(filePath);//To do
+                frmApp.listBoxProductNameFile.Items.Clear();
+                frmApp.listBoxProductNameFile.Items.Add("NEW...");
+                int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;
+
+                allProducts = new string[countProductName];
+
+                for (int i = 0; i < countProductName; i++)
+                {
+                    string productName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[0].InnerText;
+                    frmApp.listBoxProductNameFile.Items.Add(productName);
+                    allProducts[i] = productName;
+                }
+                populateListBoxStationFile();
             }
-            populateListBoxStationFile();
+            catch { }
         }
 
         public void populateListBoxStationFile()
         {
-            frmApp.listBoxStationFile.Items.Clear();
-            frmApp.listBoxStationFile.Items.Add("NEW...");
-
-            doc.Load(filePath);//To do
-            int countStationName = 999;
-            int countProd = allProducts.Length;
-
-            for (int i = 0; i < countProd; i++)
+            try
             {
-                countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes.Count;
+                frmApp.listBoxStationFile.Items.Clear();
+                frmApp.listBoxStationFile.Items.Add("NEW...");
 
-                for (int j = 0; j < countStationName; j++)
+                doc.Load(filePath);//To do
+                int countStationName = 999;
+                int countProd = allProducts.Length;
+
+                for (int i = 0; i < countProd; i++)
                 {
-                    string stationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].InnerText;
+                    countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes.Count;
 
-                    if (frmApp.listBoxStationFile.FindStringExact(stationName) == -1)
-                        frmApp.listBoxStationFile.Items.Add(stationName);
+                    for (int j = 0; j < countStationName; j++)
+                    {
+                        string stationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].InnerText;
+
+                        if (frmApp.listBoxStationFile.FindStringExact(stationName) == -1)
+                            frmApp.listBoxStationFile.Items.Add(stationName);
+                    }
                 }
+                populateAtributtesListBoxs();
             }
-            populateAtributtesListBoxs();
+            catch { }
         }
 
         public void populateAtributtesListBoxs()
         {
-            doc.Load(filePath);//To do
-            clearAndAddNew();
-
-            int countStationName = 999;
-            int countItens = 999;
-            int countProd = allProducts.Length;
-
-            for (int i = 0; i < countProd; i++)
+            try
             {
-                countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes.Count;
+                doc.Load(filePath);//To do
+                clearAndAddNew();
 
-                for (int j = 0; j < countStationName; j++)
+                int countStationName = 999;
+                int countItens = 999;
+                int countProd = allProducts.Length;
+
+                for (int i = 0; i < countProd; i++)
                 {
-                    countItens = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes.Count;
+                    countStationName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes.Count;
 
-                    for (int k = 1; k < countItens; k++)
+                    for (int j = 0; j < countStationName; j++)
                     {
-                        string item = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[0].Value;
-                        string license = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[1].Value;
-                        string path = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[2].Value;
+                        countItens = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes.Count;
 
-                        string[] itemName = item.Split('_');
+                        for (int k = 1; k < countItens; k++)
+                        {
+                            string item = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[0].Value;
+                            string license = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[1].Value;
+                            string path = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes[i].ChildNodes[1].ChildNodes[j].ChildNodes[k].Attributes[2].Value;
 
-                        if (frmApp.listBoxLicenseTypeFile.FindStringExact(itemName[0]) == -1)
-                            frmApp.listBoxLicenseTypeFile.Items.Add(itemName[0]);
+                            string[] itemName = item.Split('_');
 
-                        if (frmApp.listBoxUserFile.FindStringExact(itemName[1]) == -1)
-                            frmApp.listBoxUserFile.Items.Add(itemName[1]);
+                            if (frmApp.listBoxLicenseTypeFile.FindStringExact(itemName[0]) == -1)
+                                frmApp.listBoxLicenseTypeFile.Items.Add(itemName[0]);
 
-                        if (frmApp.listBoxItemTypeFile.FindStringExact(license) == -1)
-                            frmApp.listBoxItemTypeFile.Items.Add(license);
+                            if (frmApp.listBoxUserFile.FindStringExact(itemName[1]) == -1)
+                                frmApp.listBoxUserFile.Items.Add(itemName[1]);
 
-                        if (frmApp.listBoxLicenseNumberFile.FindStringExact(path) == -1 && license != "Tool")
-                            frmApp.listBoxLicenseNumberFile.Items.Add(path);
+                            if (frmApp.listBoxItemTypeFile.FindStringExact(license) == -1)
+                                frmApp.listBoxItemTypeFile.Items.Add(license);
+
+                            if (frmApp.listBoxLicenseNumberFile.FindStringExact(path) == -1 && license != "Tool")
+                                frmApp.listBoxLicenseNumberFile.Items.Add(path);
+                        }
                     }
                 }
             }
+            catch { }
         }
 
         private void clearAndAddNew()
         {
-            frmApp.listBoxLicenseTypeFile.Items.Clear();
-            frmApp.listBoxUserFile.Items.Clear();
-            frmApp.listBoxItemTypeFile.Items.Clear();
-            frmApp.listBoxLicenseNumberFile.Items.Clear();
+            try
+            {
+                frmApp.listBoxLicenseTypeFile.Items.Clear();
+                frmApp.listBoxUserFile.Items.Clear();
+                frmApp.listBoxItemTypeFile.Items.Clear();
+                frmApp.listBoxLicenseNumberFile.Items.Clear();
 
-            frmApp.listBoxLicenseTypeFile.Items.Add("NEW...");
-            frmApp.listBoxUserFile.Items.Add("NEW...");
-            frmApp.listBoxItemTypeFile.Items.Add("NEW...");
-            frmApp.listBoxLicenseNumberFile.Items.Add("NEW...");
+                frmApp.listBoxLicenseTypeFile.Items.Add("NEW...");
+                frmApp.listBoxUserFile.Items.Add("NEW...");
+                frmApp.listBoxItemTypeFile.Items.Add("NEW...");
+                frmApp.listBoxLicenseNumberFile.Items.Add("NEW...");
+            }
+            catch { }
         }
     }
 }
