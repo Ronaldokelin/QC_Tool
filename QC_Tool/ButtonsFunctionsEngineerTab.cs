@@ -8,10 +8,26 @@ namespace QC_Tool
         {
             try
             {
-                listBoxInclude.Items.Add(listBoxAll.SelectedItem.ToString());
+                if (listBoxAll.SelectedItem.ToString() == "NEW...")
+                {
+                    NewOption no = new NewOption();
+                    no.Show();
+                    no.addingNew(listBoxInclude);
+                }
+                else
+                    listBoxInclude.Items.Add(listBoxAll.SelectedItem.ToString());
             }
             catch { }
         }
+        public static void passValueButton(ListBox listBoxInclude, string newValue)
+        {
+            try
+            {
+                listBoxInclude.Items.Add(newValue);
+            }
+            catch { }
+        }
+
 
         public static void removeValueButton(ListBox listBoxAll, ListBox listBoxInclude)
         {

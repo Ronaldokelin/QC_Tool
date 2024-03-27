@@ -62,7 +62,7 @@ namespace QC_Tool
 
             firstRow.AddBeforeSelf(
                new XElement("Product",
-               new XElement("ProductName", frmApp.listBoxProductNameFile.Items[0].ToString()),
+               new XElement("ProductName", frmApp.listBoxProductInclude.Items[0].ToString()),
 
                new XElement("Stations",
                new XElement("Bench",

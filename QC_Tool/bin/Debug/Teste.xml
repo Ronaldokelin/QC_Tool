@@ -2,6 +2,15 @@
 <QC_Tool>
   <Products>
     <Product>
+      <ProductName>veg</ProductName>
+      <Stations>
+        <Bench>
+          <BenchName>5GFR1BDTST</BenchName>
+          <Item Name="QSEQ_lenovo" Type="License" Path="6a5de147-0a30-11ee-a260-063166a9270b" />
+        </Bench>
+      </Stations>
+    </Product>
+    <Product>
       <ProductName>MACAN24</ProductName>
       <Stations>
         <Bench>
