@@ -19,7 +19,6 @@ namespace QC_Tool
 
         public void FillingComboBoxProducts()
         {
-            //frmApp = FormApp.getInstance();
             doc.Load(@".\Teste.xml");//To do
             frmApp.comboBoxProducts.Items.Clear();
             int countProductName = doc.SelectSingleNode("QC_Tool").ChildNodes[0].ChildNodes.Count;

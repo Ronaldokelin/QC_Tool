@@ -19,6 +19,7 @@ namespace QC_Tool
         string filepath = @".\LicensesNOK.txt";
         string pathSave = @"C:\temp\License_List.txt";
         CreateNewProduct CnP;
+        PopulateListBoxEngineer PLBE;
 
 
         public FormApp()
@@ -28,6 +29,7 @@ namespace QC_Tool
             GetClasses();
             Dgv.PopulateToolDGV();
             readXML.FillingComboBoxProducts();
+            PLBE.populatelistBoxProductNameFile();
         }
 
         public static FormApp getInstance()
@@ -47,6 +49,7 @@ namespace QC_Tool
             rl = new ResponseLicense();
             uts = new Utils();
             CnP = new CreateNewProduct();
+            PLBE = new PopulateListBoxEngineer();
         }
 
         public string CheckDirectoryQpmCli()

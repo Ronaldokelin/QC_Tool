@@ -33,7 +33,7 @@ namespace QC_Tool
              .Elements("Products")
              .Elements("Product")
              .Elements("ProductName")
-             .Any(x => x.Value == frmApp.textBoxProductName.Text) == true)
+             .Any(x => x.Value == frmApp.listBoxProductInclude.Text) == true)//
                 return true;
 
             return false;
@@ -48,7 +48,7 @@ namespace QC_Tool
              .Elements("Stations")
              .Elements("Bench")
              .Elements("BenchName")
-             .Any(x => x.Value == frmApp.comboBoxBenchName.Text) == true)
+             .Any(x => x.Value == frmApp.listBoxStationInclude.Text) == true)
                 return true;
 
             return false;
@@ -62,16 +62,16 @@ namespace QC_Tool
 
             firstRow.AddBeforeSelf(
                new XElement("Product",
-               new XElement("ProductName", frmApp.textBoxProductName.Text),
+               new XElement("ProductName", frmApp.listBoxProductNameFile.Text),
 
                new XElement("Stations",
                new XElement("Bench",
-               new XElement("BenchName", frmApp.comboBoxBenchName.Text),
+               new XElement("BenchName", frmApp.listBoxStationInclude.Text),
 
                new XElement("Item",
-               new XAttribute("Name", frmApp.textBoxItemName.Text + "_" + frmApp.textBoxUser.Text),
-               new XAttribute("Type", frmApp.comboBoxItemType.Text),
-               new XAttribute("Path", frmApp.textBoxItemPath.Text))))));
+               new XAttribute("Name", frmApp.listBoxLicenseTypeInclude.Text + "_" + frmApp.listBoxUserInclude.Text),
+               new XAttribute("Type", frmApp.listBoxItemTipeInclude.Text),
+               new XAttribute("Path", frmApp.listBoxLicenseNumberInclude.Text))))));
 
             xDocument.Save(filePath);
         }
@@ -87,7 +87,7 @@ namespace QC_Tool
             foreach (string product in xDocument.Descendants("ProductName"))
             {
                 count++;
-                if (product == frmApp.textBoxProductName.Text)
+                if (product == frmApp.listBoxProductNameFile.Text)
                     countBench = count;
             }
             xDocument.Element("QC_Tool").
@@ -97,11 +97,11 @@ namespace QC_Tool
                      ElementAt(countBench).
                      ElementsAfterSelf("Stations").
                      First().AddFirst(new XElement("Bench",
-                                      new XElement("BenchName", frmApp.comboBoxBenchName.Text),
+                                      new XElement("BenchName", frmApp.listBoxStationInclude.Text),
                                       new XElement("Item",
-                                      new XAttribute("Name", frmApp.textBoxItemName.Text + "_" + frmApp.textBoxUser.Text),
-                                      new XAttribute("Type", frmApp.comboBoxItemType.Text),
-                                      new XAttribute("Path", frmApp.textBoxItemPath.Text))));
+                                      new XAttribute("Name", frmApp.listBoxLicenseTypeInclude.Text + "_" + frmApp.listBoxUserInclude.Text),
+                                      new XAttribute("Type", frmApp.listBoxItemTipeInclude.Text),
+                                      new XAttribute("Path", frmApp.listBoxLicenseNumberInclude.Text))));
 
             xDocument.Save(filePath);
         }
