@@ -108,12 +108,19 @@ namespace QC_Tool
                         string dateLic = command.licenseGroupID(xmlAtributes[2, k]);
                         if (dateLic != "")
                         {
-                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
                             var licExpiry = DateTime.Parse(dateLic);
                             var today = DateTime.Now;
                             var diff = licExpiry - today;
 
+                            frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "OK";
                             frmApp.dataGridViewCheckTools.Rows[i].Cells[3].Value = diff.Days + " days";
+                            
+                            int expiry = (int)diff.TotalDays;
+                            if (expiry <= 0)
+                            {                                
+                                frmApp.dataGridViewCheckTools.Rows[i].Cells[2].Value = "NOK";
+                                frmApp.buttonActions.Enabled = true;
+                            }
                         }
                         else
                         {

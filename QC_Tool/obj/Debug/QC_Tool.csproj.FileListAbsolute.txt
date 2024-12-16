@@ -18,3 +18,14 @@ C:\Projetos\QC_Tool\QC_Tool\obj\Debug\QC_Tool.exe
 C:\Projetos\QC_Tool\QC_Tool\obj\Debug\QC_Tool.pdb
 C:\Projetos\QC_Tool\QC_Tool\obj\Debug\QC_Tool.NewOption.resources
 C:\Projetos\QC_Tool\QC_Tool\obj\Debug\QC_Tool.csprojAssemblyReference.cache
+C:\Developer\QC_Tool\QC_Tool\bin\Debug\QC_Tool.exe.config
+C:\Developer\QC_Tool\QC_Tool\bin\Debug\QC_Tool.exe
+C:\Developer\QC_Tool\QC_Tool\bin\Debug\QC_Tool.pdb
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.FormApp.resources
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.NewOption.resources
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.Properties.Resources.resources
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.csproj.GenerateResource.cache
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.csproj.CoreCompileInputs.cache
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.exe
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.pdb
+C:\Developer\QC_Tool\QC_Tool\obj\Debug\QC_Tool.csproj.AssemblyReference.cache
